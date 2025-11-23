@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2023-Autumn-teaching
 venue: "Yangzhou University"
-date: 2023-09
+date: 2023-09-05
 location: "Yangzhou, China"
 ---
 
