@@ -1,13 +1,13 @@
 ---
 permalink: /
-title: "Welcome title"
+title: "Introduction"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Welcome_Main
+Welcome!
 
 Welcome_subtitle
 ======
