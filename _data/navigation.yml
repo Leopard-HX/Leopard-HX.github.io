@@ -31,3 +31,8 @@ main:
     
 #   - title: "Guide"
 #     url: /markdown/
+
+  - title: "Cloud Storage"
+    url: "https://120.25.176.98"
+    external: true
+    icon: "fa-external-link"
