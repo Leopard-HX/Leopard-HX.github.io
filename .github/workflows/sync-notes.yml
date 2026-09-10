@@ -1,0 +1,71 @@
+name: Sync Obsidian notes
+
+# 为什么不是「vault 一 push 就构建」：
+# obsidian-git 每 10 分钟就可能提交一次。如果让 vault 的 push 直接触发站点构建，
+# 站点一天最多会被重建上百次；而 vault 是私有仓库，Actions 分钟数要计费。
+# 所以这里反过来 —— 由站点仓库（公开仓库，Actions 免费）定时去拉 vault，
+# 站点重建频率与你的编辑频率完全解耦。
+
+on:
+  schedule:
+    # 每天 4 次：UTC 03:17 / 09:17 / 15:17 / 21:17 = 北京时间 11:17 / 17:17 / 23:17 / 05:17
+    - cron: "17 3,9,15,21 * * *"
+  workflow_dispatch:
+  push:
+    # 改了同步脚本或本工作流时顺手跑一次，方便验证
+    paths:
+      - "scripts/convert-wikilinks.sh"
+      - ".github/workflows/sync-notes.yml"
+
+# 同一时间只跑一个同步任务；不打断进行中的任务，避免提交到一半
+concurrency:
+  group: sync-notes
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Clone the private Obsidian vault
+        env:
+          VAULT_DEPLOY_KEY: ${{ secrets.VAULT_DEPLOY_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$VAULT_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/vault_deploy_key
+          chmod 600 ~/.ssh/vault_deploy_key
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/vault_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          git clone --depth 1 git@github.com:Leopard-HX/obsidian-vault.git .vault
+
+      - name: Copy only the Notes/ folder
+        # 白名单：vault 里只有 Notes/ 会被拷出来，其余内容（日记、私密笔记……）永远不进入站点
+        run: |
+          set -euo pipefail
+          mkdir -p notes
+          if [ -d .vault/Notes ]; then
+            rsync -a --delete .vault/Notes/ notes/
+          else
+            echo "::warning::vault 里没有 Notes/ 文件夹，本次不更新笔记"
+          fi
+
+      - name: Convert Obsidian syntax
+        run: bash scripts/convert-wikilinks.sh notes
+
+      - name: Commit and push if anything changed
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A notes
+          if git diff --cached --quiet; then
+            echo "笔记没有变化，跳过提交（也就不会触发重建）"
+            exit 0
+          fi
+          git commit -m "chore(notes): sync from obsidian-vault"
+          git push

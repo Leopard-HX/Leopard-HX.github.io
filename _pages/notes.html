@@ -1,0 +1,27 @@
+---
+layout: archive
+title: "Notes"
+permalink: /notes/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>
+  Working notes, written in Obsidian and synced here automatically from
+  <a href="https://github.com/Leopard-HX/obsidian-vault">obsidian-vault</a>
+  (only the <code>Notes/</code> folder is published).
+</p>
+
+{% assign notes = site.pages | where: "is_note", true | sort: "name" %}
+{% if notes.size == 0 %}
+  <p><em>No notes yet.</em></p>
+{% else %}
+  <ul class="note-list">
+    {% for note in notes %}
+      <li>
+        <a href="{{ base_path }}{{ note.url }}">{{ note.title | default: note.name | remove: ".md" }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

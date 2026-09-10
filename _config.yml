@@ -23,7 +23,9 @@ repository               : "Leopard-HX/Leopard-HX.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  # 头像留空 = 侧栏不显示头像（模板自带的 images/profile.png 是灰色占位图，已不再使用）。
+  # 想用照片：把图片放进 images/，然后把下面这行改成 avatar : "你的文件名.png"
+  avatar           : #
   name             : "Hengxin"
   pronouns         : # example: "she/her"  
 #  bio              : "How far must one go to find one's way back to the beginning?"
@@ -189,6 +191,15 @@ exclude:
   - README
   - tmp
   - vendor
+  # 开发用文件，不需要发布到站点
+  - CONTRIBUTING.md
+  - docker-compose.yaml
+  - markdown_generator
+  - scripts
+  - talkmap
+  - talkmap.py
+  - talkmap.ipynb
+  - talkmap_out.ipynb
 keep_files:
   - .git
   - .svn
@@ -218,13 +229,7 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
   publications:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -252,6 +257,17 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # notes/ —— 由 obsidian-vault 同步生成，见 README
+  # （GitHub Pages 自带 jekyll-optional-front-matter，所以这些笔记不需要写 front matter）
+  - scope:
+      path: "notes"
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+      read_time: false
+      is_note: true
   # _teaching
   - scope:
       path: ""

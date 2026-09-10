@@ -9,56 +9,37 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+Contact
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Email: MX120220337@stu.yzu.edu.cn
+* [arXiv](https://arxiv.org/search/gr-qc?query=Hengxin+Lu&searchtype=author&abstracts=show&order=-announced_date_first&size=50) &middot; [ORCID](https://orcid.org/0009-0003-0520-0052) &middot; [INSPIRE-HEP](https://inspirehep.net/authors/2891138)
+* Location: Shenzhen, China
 
-Work experience
+<!-- TODO: 教育经历、工作经历、技能 —— 我没有这些信息，需要你自己补在下面。
+     例如：
+     Education
+     ======
+     * Ph.D. in Physics, <学校>, <年份>
+
+     Work experience
+     ======
+     * <职位>, <单位>, <时间>
+-->
+
+Research interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Generalized entropy and its thermodynamic implications
+* Black hole thermodynamics and the Bekenstein bound
+* Horizon-area dependent modifications of gravity and their cosmological signatures
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
 Talks
 ======
   <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
+    {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams

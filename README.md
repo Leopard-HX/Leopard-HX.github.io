@@ -1,96 +1,82 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# leopard-hx.github.io
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+Personal homepage of Hengxin Lu, built with Jekyll + [Academic Pages](https://github.com/academicpages/academicpages.github.io)
+and served by GitHub Pages from the `master` branch.
 
-# Getting Started
+## 结构速查
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+| 位置 | 作用 |
+| --- | --- |
+| `_config.yml` | 站点配置。**`url` 必须是 `https://leopard-hx.github.io`** —— 全站 CSS/JS/图片/导航的绝对地址都由它拼出来（见 `_includes/base_path`），填错会让整个页面没有样式 |
+| `_data/navigation.yml` | 顶栏导航 |
+| `_pages/` | 独立页面：首页 `about.md`、`cv.md`、`notes.html`（笔记索引）等 |
+| `_publications/`、`_talks/` | 论文与报告，PDF 放 `files/` |
+| `notes/` | **自动生成**，由 obsidian-vault 同步而来，不要手改 |
+| `scripts/convert-wikilinks.sh` | 笔记语法转换脚本（bash + awk，无额外依赖） |
+| `.github/workflows/sync-notes.yml` | 定时同步工作流 |
 
-See more info at https://academicpages.github.io/
+## 笔记同步（Obsidian → 本站）
 
-## Running locally
+笔记源是私有仓库 `Leopard-HX/obsidian-vault`，本地由 Obsidian Git 插件每 10 分钟自动提交推送。
+**只有 vault 里的 `Notes/` 文件夹会被发布**，其它内容（日记、私密笔记……）不会进入这个仓库。
 
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+### 为什么不是「vault 一 push 就构建」
 
-1. Clone the repository and made updates as detailed above.
+obsidian-git 每 10 分钟就可能推一次。如果让 vault 的 push 直接触发站点构建：
 
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try run `sudo apt install ruby-dev ruby-bundler nodejs` again.
+1. 站点重建次数 = 你的提交次数，一天最多上百次，绝大多数是无效重建；
+2. vault 是**私有**仓库，Actions 分钟数要计费（免费额度 2000 分钟/月），很容易烧掉。
 
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
+### 实际方案：站点仓库定时去拉
 
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
+站点仓库是**公开**仓库，Actions 分钟数免费，所以让**它**来拉数据：
 
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stoping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
+- 触发：每 6 小时一次（UTC 03:17 / 09:17 / 15:17 / 21:17），也可以到
+  `Actions → Sync Obsidian notes → Run workflow` 手动触发
+- 认证：站点仓库的 Secret `VAULT_DEPLOY_KEY`，是一把**只读**部署密钥，只有 vault 的读取权限
+- 流程：`git clone` vault → `rsync` 只拷 `Notes/` → 跑转换脚本 → 有变化才 commit + push
 
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
+重建频率与你的编辑频率完全解耦：**改笔记不会触发任何构建**，只有定时任务把内容提交上来时才会重建一次。
 
-## Using Docker
+### 不需要写 front matter
 
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
+GitHub Pages 默认启用了（且无法关闭）这几个插件：
 
-You can build and execute the container by running the following command in the repository:
+- `jekyll-optional-front-matter` —— 没有 front matter 的 `.md` 也会被渲染成页面
+- `jekyll-default-layout` —— 自动补 layout
+- `jekyll-titles-from-headings` —— 用第一个标题当 title
+- `jekyll-relative-links` —— 自动把相对 `.md` 链接改写掉
+
+所以笔记原样丢进 `notes/` 就能渲染，`_config.yml` 里只给 `notes` 目录配了一组 `defaults`
+（`layout: single` / 关掉侧栏 / 打上 `is_note: true` 标签供索引页筛选）。
+
+`scripts/convert-wikilinks.sh` 只负责两件 Jekyll 不会做的事：
+
+1. `[[双向链接]]` / `[[目标|别名]]` / `[[目标#标题]]` / `![[附件.png]]` → 标准 Markdown 链接（绝对路径 `/notes/xxx.html`）
+2. 正文开头的第一个 `# H1` → front matter 的 `title`，避免和版面标题重复显示
+
+找不到目标的链接会退化成纯文本，并在 Actions 日志里列出来。
+
+### 几个注意点
+
+- 笔记文件名**别用** `README.md`、`CONTRIBUTING.md`、`LICENSE` 这类名字 —— `jekyll-optional-front-matter` 对它们不生效
+- 重名笔记（不同子目录下同名）按路径排序取第一个来解析链接
+- 笔记里的图片放 `Notes/` 里就行，会一起同步过去，路径自动变成 `/notes/xxx.png`
+- 想改同步频率，改 `.github/workflows/sync-notes.yml` 里的 `cron`
+- 想彻底停掉笔记同步，直接删 `.github/workflows/sync-notes.yml`
+
+## 添加论文 / 报告
+
+在 `_publications/`（或 `_talks/`）新建 Markdown 文件，复制现有文件的 front matter 结构填字段，
+把 PDF 放进 `files/`，front matter 里用绝对 URL 引用（`https://leopard-hx.github.io/files/xxx.pdf`）。
+
+## 本地预览（可选）
+
+需要 Ruby + Bundler：
 
 ```bash
-chmod -R 777 .
-docker compose up
+bundle install
+bundle exec jekyll serve
 ```
 
-You should now be able to access the website from `localhost:4000`.
-
-### Using the DevContainer in VS Code
-
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
-
-# Maintenance
-
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
-
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
-
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+注意 `_config.yml` 里的 `url` 会让本地预览的资源地址指向线上域名，想在本地看样式得临时把 `url` 改成 `""`。
