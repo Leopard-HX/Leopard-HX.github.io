@@ -52,4 +52,7 @@ html[data-theme="dark"] {
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-primary-color};
     --global-thead-color                : #{$background-lighter};
+    /* 表头文字色：表头背景是 --global-border-color（深青 #005669），
+       背景色的浅色调 #e8e9ea 在它上面对比度约 6.6:1。 */
+    --global-thead-text-color           : #{$background-lighter};
 }

@@ -52,4 +52,7 @@ $sidebar-screen-min-width   : 1024px;
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-primary-color};
     --global-thead-color                : #{$background-lighter};
+    /* 表头文字色：表头背景用的是 --global-border-color（深青），正文色是近黑色，
+       直接用会看不见，所以这里用背景色的浅色调 #fdfdfd（对比度约 9.7:1）。 */
+    --global-thead-text-color           : #{$background-lighter};
 }

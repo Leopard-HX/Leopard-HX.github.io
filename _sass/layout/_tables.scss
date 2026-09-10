@@ -17,6 +17,11 @@ table {
 
 thead {
   background-color: var(--global-border-color);
+  /* 皮肤只给了表头背景色，没有给表头文字色，th 于是继承了正文色。
+     air 皮肤下表头背景是深青色而正文是近黑色，对比度只有 1.6:1，表头几乎读不出来。
+     文字色改由皮肤显式声明（见 _sass/theme/_air_light.scss / _air_dark.scss）；
+     没有声明 --global-thead-text-color 的皮肤保持原行为（inherit），不受影响。 */
+  color: var(--global-thead-text-color, inherit);
   border-bottom: 1px solid var(--global-border-color);
 }
 
