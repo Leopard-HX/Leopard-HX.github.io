@@ -16,6 +16,9 @@ $link                       : mix($primary-color, $text, 40%);
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
 $footer                     : mix(#000, $background, 30%);
+/* 页脚底色是压暗后的深色，原来的页脚文字色 --global-text-color-light
+   是深青色，两者对比度只有 2.06:1。改用背景色的浅色调，对比度约 13.8:1。 */
+$footer-text                : $background-lighter;
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
@@ -39,6 +42,7 @@ html[data-theme="dark"] {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$footer};
+    --global-footer-text-color          : #{$footer-text};
     --global-border-color               : #{$light-primary-color};
     --global-dark-border-color          : #{$background-light};
     --global-code-background-color      : #fafafa;

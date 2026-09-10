@@ -5,7 +5,10 @@
 .page__footer {
   @include clearfix;
   background-color: var(--global-footer-bg-color);
-  color: var(--global-text-color-light);
+  /* 同表头的问题：背景取自 --global-footer-bg-color，文字却取自 --global-text-color-light，
+     两者在 air 皮肤下不搭配（浅色 2.79:1、深色 2.06:1）。文字色改由皮肤声明，
+     没有声明 --global-footer-text-color 的皮肤回落到原变量，行为不变。 */
+  color: var(--global-footer-text-color, var(--global-text-color-light));
 
   float: left;
   margin-left: 0;
@@ -53,7 +56,7 @@
   .fab,
   .far,
   .fal {
-    color: var(--global-text-color-light);
+    color: var(--global-footer-text-color, var(--global-text-color-light));
   }
 }
 
