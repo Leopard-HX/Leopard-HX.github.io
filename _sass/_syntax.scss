@@ -2,7 +2,15 @@
    Syntax highlighting
    ========================================================================== */
 
-div.highlighter-rouge, figure.highlight {
+/* 代码块容器。
+   注意下面第三个选择器的必要性：Rouge 不认识的语言（例如 gitignore、gitattributes）
+   不会生成 div.highlighter-rouge 外壳，Jekyll 只输出 <pre><code class="language-x">，
+   于是这个代码块拿不到 --global-code-background-color 的浅色底；但 _base.scss 里的
+   pre > code 仍然会把文字设成深色的 --global-code-text-color —— 深色皮肤下就成了
+   「深字 + 深页面底」，实测只有 1.33:1，几乎不可读。把这类裸 pre 一并纳入即可。 */
+div.highlighter-rouge,
+figure.highlight,
+pre:not(.highlight) {
   position: relative;
   margin-bottom: 1em;
   padding: 1em;
@@ -26,7 +34,8 @@ div.highlighter-rouge, figure.highlight {
     speak: none;
   }
 
-  .highlight {
+  .highlight,
+  > code {
     margin: 0;
     font-family: $monospace;
     font-size: $type-size-6;
@@ -122,3 +131,46 @@ div.highlighter-rouge, figure.highlight {
 .highlight .vg { color: #22b3eb } /* Name.Variable.Global */
 .highlight .vi { color: #22b3eb } /* Name.Variable.Instance */
 .highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */
+
+/*
+   ---- 对比度修正（目标 WCAG AA 4.5:1）----
+
+   代码块的底色固定是 --global-code-background-color = #fafafa（深浅两套皮肤相同），
+   而 Solarized 的浅色调色板本身是刻意低对比的设计（为了降低视觉疲劳），直接铺在
+   #fafafa 上时下面 7 组颜色达不到 AA。这里保持色相不变、只压暗明度，
+   实测对比度（旧 → 新，公式为 WCAG 2.x 相对亮度比）：
+
+     #22b3eb  2.31:1 → #1668a8  5.62:1   关键字声明 / 标签 / 变量 / 内建伪类
+     #93a1a1  2.56:1 → #5f6f6f  5.04:1   注释
+     #2aa198  3.03:1 → #17796f  5.03:1   字符串 / 数字
+     #859900  3.07:1 → #5c6a00  5.72:1   运算符 / 关键字
+     #B58900  3.07:1 → #7d5f00  5.73:1   内建名
+     #cb4b16  4.41:1 → #a03a10  6.47:1   常量 / 转义字符
+     #dc322f  4.43:1 → #b02622  6.39:1   正则 / 类型
+
+   #586e75（正文默认代码色）本来就是 5.16:1，保持不变。
+
+   这些规则放在文件末尾，靠「同权重、后定义者胜出」覆盖上面的 Solarized 原色；
+   保留原色定义是为了方便对照和将来回退。
+*/
+
+.highlight .kd, .highlight .kr, .highlight .nc, .highlight .nd,
+.highlight .nf, .highlight .nt, .highlight .nv, .highlight .bp,
+.highlight .vc, .highlight .vg, .highlight .vi { color: #1668a8 }
+
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .sb { color: #5f6f6f }
+
+.highlight .gd, .highlight .m, .highlight .s, .highlight .mf,
+.highlight .mh, .highlight .mi, .highlight .mo, .highlight .sc,
+.highlight .s2, .highlight .si, .highlight .sx, .highlight .s1,
+.highlight .ss, .highlight .il { color: #17796f }
+
+.highlight .k, .highlight .o, .highlight .cp, .highlight .cs,
+.highlight .gi, .highlight .kn, .highlight .kp, .highlight .ow { color: #5c6a00 }
+
+.highlight .nb { color: #7d5f00 }
+
+.highlight .x, .highlight .gh, .highlight .gu, .highlight .kc,
+.highlight .no, .highlight .ni, .highlight .ne, .highlight .se { color: #a03a10 }
+
+.highlight .gr, .highlight .kt, .highlight .sr { color: #b02622 }
