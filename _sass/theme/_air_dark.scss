@@ -12,6 +12,10 @@ $background                 : #252a34;
 $background-light           : mix(#fff, $background, 20%);
 $background-lighter         : mix(#fff, $background, 90%);
 $text                       : #eaeaea;
+/* --global-text-color-light（次要文字色）被用到的地方全都是「深色底上的文字」，
+   而原值 $light-primary-color 是压暗 50% 的青 #005669 —— 在深色皮肤下几乎看不见
+   （侧栏 Follow 按钮实测只有 1.74:1）。改成提亮 50% 的青 #80d6da → 8.60:1。 */
+$text-light                 : mix(#fff, $primary-color, 50%);
 $link                       : mix($primary-color, $text, 40%);
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
@@ -47,14 +51,14 @@ html[data-theme="dark"] {
     --global-dark-border-color          : #{$background-light};
     --global-code-background-color      : #fafafa;
     --global-code-text-color            : #{$darker-primary-color};
-    --global-fig-caption-color          : #{$light-primary-color};
+    --global-fig-caption-color          : #{$text-light};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
     --global-masthead-link-color-hover  : #{$background-light};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #{$light-primary-color};
+    --global-text-color-light           : #{$text-light};
     --global-thead-color                : #{$background-lighter};
     /* 表头文字色：表头背景是 --global-border-color（深青 #005669），
        背景色的浅色调 #e8e9ea 在它上面对比度约 6.6:1。 */
