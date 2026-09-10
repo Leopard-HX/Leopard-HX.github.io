@@ -21,7 +21,7 @@ author_profile: true
   <div class="note-index">
 
     {% comment %} 根目录下的笔记（不算在任何子文件夹里） {% endcomment %}
-    {% assign root_notes = notes | where_exp: "n", "n.folder == nil or n.folder == ''" %}
+    {% assign root_notes = notes | where: "folder", "" %}
     {% if root_notes.size > 0 %}
       <ul class="note-list">
         {% for note in root_notes %}
@@ -34,8 +34,8 @@ author_profile: true
       </ul>
     {% endif %}
 
-    {% comment %} 每个子文件夹一节；folder 由 scripts/convert-wikilinks.sh 写进 front matter,
-                  也可以在笔记里自己写 folder: "自定义名字" 来归组 {% endcomment %}
+    {% comment %} 每个子文件夹一节。folder 由 scripts/convert-wikilinks.sh 写进 front matter,
+                  也可以在笔记里自己写 folder 来覆盖分组名 {% endcomment %}
     {% assign folders = notes | group_by: "folder" | sort: "name" %}
     {% for folder in folders %}
       {% if folder.name == nil or folder.name == "" %}{% continue %}{% endif %}
