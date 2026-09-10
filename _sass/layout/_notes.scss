@@ -1,0 +1,75 @@
+/* ==========================================================================
+   NOTES
+   由 obsidian-vault 同步过来的笔记索引页（_pages/notes.html）
+   ========================================================================== */
+
+.note-index {
+  margin-bottom: 2em;
+}
+
+/* 根目录下的笔记列表，以及每个文件夹里的笔记列表 */
+.note-list {
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+
+.note-list__item {
+  margin: 0;
+}
+
+.note-list__link {
+  display: block;
+  padding: 0.4em 0.7em;
+  border-radius: $border-radius;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: $global-transition;
+
+  i {
+    margin-right: 0.5em;
+    opacity: 0.55;
+    font-size: 0.9em;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--global-code-background-color);
+    color: var(--global-link-color-hover);
+
+    i {
+      opacity: 1;
+      color: var(--global-link-color-hover);
+    }
+  }
+}
+
+/* 子文件夹 */
+.note-folder {
+  margin-bottom: 1.5em;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin: 1.5em 0 0.5em;
+    padding-bottom: 0.4em;
+    font-size: $type-size-5;
+    color: var(--global-text-color-light);
+    border-bottom: 1px solid var(--global-border-color);
+
+    i {
+      margin-right: 0.5em;
+    }
+  }
+
+  &__count {
+    margin-left: auto;
+    font-size: 0.7em;
+    font-weight: normal;
+    opacity: 0.7;
+  }
+
+  .note-list {
+    margin-bottom: 0.5em;
+  }
+}

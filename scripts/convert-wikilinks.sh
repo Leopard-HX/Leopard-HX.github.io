@@ -38,6 +38,14 @@ trap 'rm -f "$map_file"' EXIT
     base = rel
     sub(/.*\//, "", base)
 
+    # 重名检测：不同文件夹里的同名笔记，[[链接]] 只能解析到其中一个
+    if (rel ~ /\.md$/) {
+      dupkey = tolower(base)
+      dupcount[dupkey]++
+      dupname[dupkey] = base
+      dups[dupkey] = (dupkey in dups ? dups[dupkey] ", " : "") rel
+    }
+
     n = 0
     keys[++n] = tolower(rel)
     keys[++n] = tolower(base)
@@ -49,14 +57,30 @@ trap 'rm -f "$map_file"' EXIT
     }
     for (i = 1; i <= n; i++) print keys[i] "\t" rel
   }
+  END {
+    for (dupkey in dupcount) {
+      if (dupcount[dupkey] > 1) {
+        label = dupname[dupkey]
+        sub(/\.md$/, "", label)
+        printf "::warning::笔记重名「%s」：%s —— [[%s]] 只会解析到按路径排序最靠前的那个\n", label, dups[dupkey], label > "/dev/stderr"
+      }
+    }
+  }
 ' > "$map_file"
 
 # ---- 2. 逐篇改写
 find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
   stem="${file##*/}"
   stem="${stem%.md}"
-  awk -v map_file="$map_file" -v prefix="/$root/" -v self="$stem" '
+  # 相对 Notes/ 的目录路径（空串 = 直接放在 Notes/ 下），写进 front matter 供索引页分组
+  rel_path="${file#"$root"/}"
+  case "$rel_path" in
+    */*) folder="${rel_path%/*}" ;;
+    *)   folder="" ;;
+  esac
+  awk -v map_file="$map_file" -v prefix="/$root/" -v self="$stem" -v folder="$folder" '
     function encode(s) { gsub(/ /, "%20", s); return s }
+    function yaml_escape(s) { gsub(/\\/, "\\\\", s); gsub(/"/, "\\\"", s); return s }
 
     function site_url(name,   key, u) {
       key = tolower(name)
@@ -132,6 +156,7 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
       }
 
       has_fm = (NR > 0 && converted[1] == "---")
+      folder_line = "folder: \"" yaml_escape(folder) "\""
       strip_h1 = 0
       if (!has_fm) {
         if (start > 0 && converted[start] ~ /^#[ \t]+/) {
@@ -143,16 +168,25 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
         } else {
           title = self                                 # 没有标题就用文件名
         }
-        gsub(/\\/, "\\\\", title)
-        gsub(/"/, "\\\"", title)
         print "---"
-        print "title: \"" title "\""
+        print "title: \"" yaml_escape(title) "\""
+        print folder_line
         print "---"
+      } else {
+        # 已经有 front matter：只在缺 folder 键时往里面补一行，其余原样保留
+        close_fm = 0
+        has_folder_key = 0
+        for (i = 2; i <= NR; i++) {
+          if (converted[i] == "---") { close_fm = i; break }
+          if (converted[i] ~ /^[ \t]*folder[ \t]*:/) has_folder_key = 1
+        }
+        if (close_fm > 0 && !has_folder_key) insert_at = close_fm
       }
 
       for (i = 1; i <= NR; i++) {
         if (strip_h1 && i == start) continue
         if (strip_h1 && i < start && converted[i] ~ /^[ \t]*$/) continue
+        if (insert_at > 0 && i == insert_at) print folder_line
         print converted[i]
       }
 

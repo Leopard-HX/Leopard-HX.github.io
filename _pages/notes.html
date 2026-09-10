@@ -13,15 +13,48 @@ author_profile: true
   (only the <code>Notes/</code> folder is published).
 </p>
 
-{% assign notes = site.pages | where: "is_note", true | sort: "name" %}
+{% assign notes = site.pages | where: "is_note", true | sort: "url" %}
+
 {% if notes.size == 0 %}
   <p><em>No notes yet.</em></p>
 {% else %}
-  <ul class="note-list">
-    {% for note in notes %}
-      <li>
-        <a href="{{ base_path }}{{ note.url }}">{{ note.title | default: note.name | remove: ".md" }}</a>
-      </li>
+  <div class="note-index">
+
+    {% comment %} 根目录下的笔记（不算在任何子文件夹里） {% endcomment %}
+    {% assign root_notes = notes | where_exp: "n", "n.folder == nil or n.folder == ''" %}
+    {% if root_notes.size > 0 %}
+      <ul class="note-list">
+        {% for note in root_notes %}
+          <li class="note-list__item">
+            <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
+              <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% comment %} 每个子文件夹一节；folder 由 scripts/convert-wikilinks.sh 写进 front matter,
+                  也可以在笔记里自己写 folder: "自定义名字" 来归组 {% endcomment %}
+    {% assign folders = notes | group_by: "folder" | sort: "name" %}
+    {% for folder in folders %}
+      {% if folder.name == nil or folder.name == "" %}{% continue %}{% endif %}
+      <section class="note-folder">
+        <h2 class="note-folder__title">
+          <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i>{{ folder.name }}
+          <span class="note-folder__count">{{ folder.items | size }}</span>
+        </h2>
+        <ul class="note-list">
+          {% for note in folder.items %}
+            <li class="note-list__item">
+              <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
+                <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
     {% endfor %}
-  </ul>
+
+  </div>
 {% endif %}
