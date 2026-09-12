@@ -42,10 +42,10 @@ folder: "文章整理/EHT-观测资料"
 > "EHT 观测表明 Kerr 阴影呈 D 形。"（❌ 不准确）
 
 ## 文件清单
-- [M87_EHT_2019.pdf](/notes/文章整理/EHT-观测资料/M87_EHT_2019.pdf)：M87 EHT 论文（arXiv:1906.11238）
+- [`M87_EHT_2019.pdf`](/notes/文章整理/EHT-观测资料/M87_EHT_2019.pdf)：M87 EHT 论文（arXiv:1906.11238）
 - `M87_EHT_official.jpg`：EHT 官方发布的 M87 黑洞图像（ESO 1907a）
 - `SgrA_source.tar.gz`：Sgr A* 论文源文件（arXiv:2311.08680）
-- [Figs/paper1_sample_optionE.pdf](/notes/文章整理/EHT-观测资料/Figs/paper1_sample_optionE.pdf)：Sgr A* 阴影图像（已转 PNG：`Figs/SgrA_shadow.png`）
+- [`Figs/paper1_sample_optionE.pdf`](/notes/文章整理/EHT-观测资料/Figs/paper1_sample_optionE.pdf)：Sgr A* 阴影图像（已转 PNG：`Figs/SgrA_shadow.png`）
 - `Figs/`：Sgr A* 论文其他图像
 
 ## 参考文献
