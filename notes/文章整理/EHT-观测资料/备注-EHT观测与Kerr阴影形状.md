@@ -44,9 +44,12 @@ folder: "文章整理/EHT-观测资料"
 ## 文件清单
 - [`M87_EHT_2019.pdf`](/notes/文章整理/EHT-观测资料/M87_EHT_2019.pdf)：M87 EHT 论文（arXiv:1906.11238）
 - `M87_EHT_official.jpg`：EHT 官方发布的 M87 黑洞图像（ESO 1907a）
-- `SgrA_source.tar.gz`：Sgr A* 论文源文件（arXiv:2311.08680）
+- [`SgrA_EHT_2022.pdf`](/notes/文章整理/EHT-观测资料/SgrA_EHT_2022.pdf)：Sgr A* 论文 PDF（arXiv:2311.08680，ApJ 930, L12；2026-09-12 下载）
+- `SgrA_EHT_2022.html`：Sgr A* 论文 HTML 全文（arXiv LaTeXML，2026-09-12 下载；图形/样式已改写为绝对地址）
 - [`Figs/paper1_sample_optionE.pdf`](/notes/文章整理/EHT-观测资料/Figs/paper1_sample_optionE.pdf)：Sgr A* 阴影图像（已转 PNG：`Figs/SgrA_shadow.png`）
 - `Figs/`：Sgr A* 论文其他图像
+- **M87 论文没有 HTML 版**：1906.11238 投稿于 2019 年，早于 arXiv 的 HTML（LaTeXML）服务，ar5iv 也已不再提供该页（现重定向回 abs 页），故 M87 只有 PDF
+- Sgr A* 论文的 LaTeX 源（`main.tex`、`SAL1.tex`、`GAL-only.tex`、`Acknowledgements-only.tex`、`main.bbl`、`bib.bib`、`EHTCPapers.bib`、`aastex63.cls`、`eht.sty`、`aasjournal.bst`、`yahapj.bst`、`SgrA_source.tar.gz`、`orcid-ID.png`）已于 2026-09-12 按要求删除
 
 ## 参考文献
 1. EHT Collaboration, "First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole", ApJ 875, L1 (2019), arXiv:1906.11238
