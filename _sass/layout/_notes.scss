@@ -112,9 +112,28 @@
 }
 
 .note-subfolder__summary {
+  flex-wrap: wrap;
   padding: 0.35em 0.7em;
   border-bottom: 0;
   font-size: 0.95em;
+}
+
+/* 文件夹名后面的关键词备注。
+   这里刻意「不」单独设 color —— 让它继承 summary 的颜色（普通态是
+   --global-text-color，悬停态被 summary 的 :hover 换成 --global-code-text-color），
+   两种状态下都安全。只靠字号和字重跟文件夹名区分。
+   （如果这里写死 --global-text-color-light，悬停时它会落在 #fafafa 的浅底上，
+   深色皮肤下只有约 1.7:1） */
+.note-subfolder__keywords {
+  min-width: 0;
+  font-size: 0.82em;
+  font-weight: normal;
+
+  &::before {
+    content: "·";
+    margin: 0 0.45em;
+    opacity: 0.55;
+  }
 }
 
 /* 小箭头：展开时转 90° */

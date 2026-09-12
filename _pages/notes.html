@@ -71,12 +71,13 @@ author_profile: true
       {% endfor %}
       {% assign sub_folders = sub_raw | split: "|" | sort %}
       {% assign direct = notes | where: "folder", top %}
+      {% assign top_meta = site.data.notes_folders[top] %}
 
       <details class="note-folder">
         <summary class="note-folder__summary">
           <i class="note-folder__chevron fas fa-fw fa-chevron-right" aria-hidden="true"></i>
           <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
-          <span class="note-folder__name">{{ top }}</span>
+          <span class="note-folder__name">{{ top_meta.label | default: top }}</span>
           <span class="note-folder__count">{{ total }}</span>
         </summary>
 
@@ -94,16 +95,25 @@ author_profile: true
             </ul>
           {% endif %}
 
-          {% comment %} 下一级文件夹，再套一层可折叠区块 {% endcomment %}
+          {% comment %} 下一级文件夹，再套一层可折叠区块。
+            显示名：arXiv-2607.03749v2 → 2607.03749（去掉 arXiv- 前缀和 v1/v2 版本号），
+            用 contains "arXiv-" 作保护，非 arXiv 目录名（比如 vibecoding经验）不会被误切。
+            显示名和关键词备注都可以在 _data/notes_folders.yml 里覆盖 / 补充。 {% endcomment %}
           {% for sub in sub_folders %}
             {% if sub == "" or sub == top %}{% continue %}{% endif %}
             {% assign items = notes | where: "folder", sub %}
-            {% assign sub_name = sub | remove_first: top | remove_first: "/" %}
+            {% assign sub_meta = site.data.notes_folders[sub] %}
+            {% assign sub_label = sub | remove_first: top | remove_first: "/" %}
+            {% if sub_label contains "arXiv-" %}
+              {% assign sub_label = sub_label | remove_first: "arXiv-" | split: "v" | first %}
+            {% endif %}
+            {% assign sub_label = sub_meta.label | default: sub_label %}
             <details class="note-subfolder">
               <summary class="note-subfolder__summary">
                 <i class="note-folder__chevron fas fa-fw fa-chevron-right" aria-hidden="true"></i>
                 <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
-                <span class="note-subfolder__name">{{ sub_name }}</span>
+                <span class="note-subfolder__name">{{ sub_label }}</span>
+                {% if sub_meta.note %}<span class="note-subfolder__keywords">{{ sub_meta.note }}</span>{% endif %}
                 <span class="note-folder__count">{{ items.size }}</span>
               </summary>
               <ul class="note-list">
