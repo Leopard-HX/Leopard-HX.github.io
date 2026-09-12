@@ -3,6 +3,7 @@ layout: archive
 title: "Notes"
 permalink: /notes/
 author_profile: true
+pdf_links: true      # 让 _includes/head.html 给本页也加载 assets/js/pdf-notes.js（给 PDF 链接补「新标签打开 / 下载」）
 ---
 
 {% include base_path %}
@@ -16,12 +17,36 @@ author_profile: true
 
 {% assign notes = site.pages | where: "is_note", true | sort: "url" %}
 
+{% comment %} ---------- ① 把 notes/ 下的 PDF 也整理成一份索引 ----------
+  PDF 是静态文件（site.static_files），不是 page，没有 folder 字段，
+  所以这里预先算好每个 PDF 所在的文件夹，拼成 "folder§文件名§URL" 的条目串，
+  再用 "|" 串起来存成一个字符串（Liquid 没有数组 push，只能这么干），
+  下面各处 split: "|" 之后复用。 {% endcomment %}
+{% assign pdf_index = "" %}
+{% for f in site.static_files %}
+  {% assign f_ext = f.extname | downcase %}
+  {% if f_ext != ".pdf" %}{% continue %}{% endif %}
+  {% unless f.path contains "/notes/" %}{% continue %}{% endunless %}
+  {% assign f_rel = f.path | remove_first: "/notes/" %}
+  {% assign f_parts = f_rel | split: "/" %}
+  {% assign f_upto = f_parts.size | minus: 2 %}
+  {% assign f_folder = "" %}
+  {% if f_upto >= 0 %}
+    {% for i in (0..f_upto) %}
+      {% assign f_folder = f_folder | append: "/" | append: f_parts[i] %}
+    {% endfor %}
+    {% assign f_folder = f_folder | remove_first: "/" %}
+  {% endif %}
+  {% assign pdf_index = pdf_index | append: f_folder | append: "§" | append: f.name | append: "§" | append: f.path | append: "|" %}
+{% endfor %}
+{% assign pdfs = pdf_index | split: "|" %}
+
 {% if notes.size == 0 %}
   <p><em>No notes yet.</em></p>
 {% else %}
   <div class="note-index">
 
-    {% comment %} ---------- ① 根目录下的笔记（folder 为空）：直接平铺 ---------- {% endcomment %}
+    {% comment %} ---------- ② 根目录下的笔记（folder 为空）：直接平铺 ---------- {% endcomment %}
     {% assign root_notes = notes | where: "folder", "" %}
     {% if root_notes.size > 0 %}
       <ul class="note-list note-list--root">
@@ -34,11 +59,13 @@ author_profile: true
         {% endfor %}
       </ul>
     {% endif %}
+    {% include notes-pdf-list.html pdfs=pdfs folder="" %}
 
-    {% comment %} ---------- ② 收集所有顶级文件夹名 ----------
+    {% comment %} ---------- ③ 收集所有顶级文件夹名 ----------
       folder 由 scripts/convert-wikilinks.sh 写进 front matter，形如
       "文章整理/arXiv-2607.03749v2"，所以取第一段作为顶级文件夹。
-      Liquid 没有数组去重，用「|名字|」拼成一串再 split 的老办法去重。 {% endcomment %}
+      Liquid 没有数组去重，用「|名字|」拼成一串再 split 的老办法去重。
+      PDF 也可能单独撑起一个文件夹（例如 参考论文/ 里只有 PDF），所以两边都要收。 {% endcomment %}
     {% assign bucket_raw = "" %}
     {% for note in notes %}
       {% assign f = note.folder | default: "" %}
@@ -49,9 +76,19 @@ author_profile: true
         {% assign bucket_raw = bucket_raw | append: probe %}
       {% endunless %}
     {% endfor %}
+    {% for e in pdfs %}
+      {% if e == "" %}{% continue %}{% endif %}
+      {% assign e_folder = e | split: "§" | first %}
+      {% if e_folder == "" %}{% continue %}{% endif %}
+      {% assign t = e_folder | split: "/" | first %}
+      {% assign probe = "|" | append: t | append: "|" %}
+      {% unless bucket_raw contains probe %}
+        {% assign bucket_raw = bucket_raw | append: probe %}
+      {% endunless %}
+    {% endfor %}
     {% assign top_names = bucket_raw | split: "|" | sort %}
 
-    {% comment %} ---------- ③ 每个顶级文件夹一个可折叠区块（默认收起） ---------- {% endcomment %}
+    {% comment %} ---------- ④ 每个顶级文件夹一个可折叠区块（默认收起） ---------- {% endcomment %}
     {% for top in top_names %}
       {% if top == "" %}{% continue %}{% endif %}
 
@@ -69,6 +106,27 @@ author_profile: true
           {% assign sub_raw = sub_raw | append: probe %}
         {% endunless %}
       {% endfor %}
+
+      {% comment %} PDF 侧：把「只放 PDF 的子文件夹」也收进来，并把 PDF 计入总数。
+        remove_first 匹配不上时会原样返回，所以 e_rest != e_folder 就等价于
+        「e_folder 以 top/ 开头」（比 contains 的子串判断可靠）。 {% endcomment %}
+      {% assign top_pfx = top | append: "/" %}
+      {% assign top_pdf_hits = "" %}
+      {% for e in pdfs %}
+        {% if e == "" %}{% continue %}{% endif %}
+        {% assign e_folder = e | split: "§" | first %}
+        {% assign e_rest = e_folder | remove_first: top_pfx %}
+        {% if e_folder != top and e_rest == e_folder %}{% continue %}{% endif %}
+        {% assign top_pdf_hits = top_pdf_hits | append: "x" %}
+        {% if e_folder != top %}
+          {% assign probe = "|" | append: e_folder | append: "|" %}
+          {% unless sub_raw contains probe %}
+            {% assign sub_raw = sub_raw | append: probe %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+      {% assign total = total | plus: top_pdf_hits.size %}
+
       {% assign sub_folders = sub_raw | split: "|" | sort %}
       {% assign direct = notes | where: "folder", top %}
       {% assign top_meta = site.data.notes_folders[top] %}
@@ -95,6 +153,9 @@ author_profile: true
             </ul>
           {% endif %}
 
+          {% comment %} 直接放在这一层的 PDF {% endcomment %}
+          {% include notes-pdf-list.html pdfs=pdfs folder=top %}
+
           {% comment %} 下一级文件夹，再套一层可折叠区块。
             显示名：arXiv-2607.03749v2 → 2607.03749（去掉 arXiv- 前缀和 v1/v2 版本号），
             用 contains "arXiv-" 作保护，非 arXiv 目录名（比如 vibecoding经验）不会被误切。
@@ -108,23 +169,33 @@ author_profile: true
               {% assign sub_label = sub_label | remove_first: "arXiv-" | split: "v" | first %}
             {% endif %}
             {% assign sub_label = sub_meta.label | default: sub_label %}
+            {% comment %} 这一层的 PDF 条数（并进徽标里，不然只有 PDF 的文件夹会显示 0） {% endcomment %}
+            {% assign sub_pdf_hits = "" %}
+            {% for e in pdfs %}
+              {% if e == "" %}{% continue %}{% endif %}
+              {% assign e_folder = e | split: "§" | first %}
+              {% if e_folder == sub %}{% assign sub_pdf_hits = sub_pdf_hits | append: "x" %}{% endif %}
+            {% endfor %}
             <details class="note-subfolder">
               <summary class="note-subfolder__summary">
                 <i class="note-folder__chevron fas fa-fw fa-chevron-right" aria-hidden="true"></i>
                 <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
                 <span class="note-subfolder__name">{{ sub_label }}</span>
                 {% if sub_meta.note %}<span class="note-subfolder__keywords">{{ sub_meta.note }}</span>{% endif %}
-                <span class="note-folder__count">{{ items.size }}</span>
+                <span class="note-folder__count">{{ items.size | plus: sub_pdf_hits.size }}</span>
               </summary>
-              <ul class="note-list">
-                {% for note in items %}
-                  <li class="note-list__item">
-                    <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
-                      <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
+              {% if items.size > 0 %}
+                <ul class="note-list">
+                  {% for note in items %}
+                    <li class="note-list__item">
+                      <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
+                        <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% include notes-pdf-list.html pdfs=pdfs folder=sub %}
             </details>
           {% endfor %}
         </div>

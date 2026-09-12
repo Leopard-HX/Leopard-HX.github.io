@@ -4,6 +4,8 @@
 #  键  = 笔记 front matter 里的 folder，也就是该笔记在 Notes/ 下的相对目录路径，
 #        由 scripts/convert-wikilinks.sh 自动写入（形如 "文章整理/arXiv-2607.03749v2"）。
 #        键要加引号，因为它含 / 和中文。
+#        只放 PDF、没有笔记的文件夹（例如 "文章整理/参考论文"）也会出现在索引页上，
+#        同样可以在这里补 label / note。
 #
 #  值支持两个键：
 #    label : 覆盖显示名。省略时，子文件夹会自动把 "arXiv-2607.03749v2" 简写成
@@ -16,8 +18,14 @@
 "文章整理":
   label: "文章整理（AI生成警告）"
 
+"文章整理/参考论文":
+  note: "Kubiznak & Mann：PV 临界性"
+
 "文章整理/EHT-观测资料":
   note: "EHT 观测与 Kerr 阴影形状"
+
+"文章整理/EHT-观测资料/Figs":
+  note: "论文插图（PDF）"
 
 "文章整理/arXiv-2211.03512v2":
   note: "带电 AdS 黑洞相变速率 · Kramers 逃逸率"

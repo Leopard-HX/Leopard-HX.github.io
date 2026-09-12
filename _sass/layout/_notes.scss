@@ -171,3 +171,25 @@
   padding: 0.4em 0 0.4em 0.9em;
   border-left: 1px solid var(--global-border-color);
 }
+
+/* ---------- 索引页里的 PDF 条目 ---------- */
+
+/* PDF 列表紧跟在同名文件夹的笔记列表后面，稍微缩一点做区分 */
+.note-list--pdf {
+  margin-top: 0.15em;
+  margin-bottom: 0.35em;
+}
+
+/* 末尾的「PDF」小徽标：颜色继承链接（普通态 --global-text-color，悬停态被
+   .note-list__link:hover 换成 --global-code-text-color），两种状态下都安全 ——
+   这跟 .note-subfolder__keywords 是同一个道理，不要在这里写死颜色 */
+.note-pdf-badge {
+  margin-left: 0.5em;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 999px;
+  font-size: 0.7em;
+  font-weight: normal;
+  line-height: 1.6;
+  vertical-align: 0.1em;
+}

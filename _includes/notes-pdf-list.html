@@ -1,0 +1,31 @@
+{% comment %}
+  列出「某个文件夹直接包含」的 PDF（include.folder 为空串时 = notes/ 根目录）。
+
+  传入：
+    include.pdfs    由 _pages/notes.html 预先整理好的条目数组，
+                    每条形如 "folder§文件名§URL"
+    include.folder  只列出这个文件夹里的 PDF
+
+  PDF 在 Jekyll 眼里是静态文件（site.static_files），不是 page，没有 folder 这个
+  front matter 字段，所以这里自己按「条目里存的 folder」过滤。
+  folder 是「直接包含」的意思：子文件夹里的 PDF 归子文件夹那个节点，不在这里重复列。
+{% endcomment %}
+
+{% include base_path %}
+{% assign pdf_pfx = include.folder %}
+{% capture pdf_items %}
+  {%- for e in include.pdfs -%}
+    {%- if e == "" -%}{%- continue -%}{%- endif -%}
+    {%- assign ep = e | split: "§" -%}
+    {%- if ep.size < 3 -%}{%- continue -%}{%- endif -%}
+    {%- if ep[0] != pdf_pfx -%}{%- continue -%}{%- endif -%}
+    <li class="note-list__item">
+      <a class="note-list__link" href="{{ base_path }}{{ ep[2] | replace: " ", "%20" }}">
+        <i class="fas fa-fw fa-file-pdf" aria-hidden="true"></i>{{ ep[1] }}<span class="note-pdf-badge">PDF</span>
+      </a>
+    </li>
+  {%- endfor -%}
+{% endcapture %}
+{% if pdf_items contains "<li" %}
+  <ul class="note-list note-list--pdf">{{ pdf_items }}</ul>
+{% endif %}

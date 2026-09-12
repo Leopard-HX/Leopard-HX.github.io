@@ -34,7 +34,11 @@
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
+{% endif %}
+
+{% if page.is_note or page.pdf_links %}
 <!-- PDF 支持：把 ![[文件.pdf]] 变成内嵌阅读器，并给 PDF 链接补「新标签打开 / 下载」。
-     渐进增强 —— 脚本没加载时链接照样能点开。 -->
+     渐进增强 —— 脚本没加载时链接照样能点开。
+     笔记页（page.is_note）和笔记索引页（page.pdf_links，见 _pages/notes.html）都加载。 -->
 <script defer src="{{ base_path }}/assets/js/pdf-notes.js"></script>
 {% endif %}

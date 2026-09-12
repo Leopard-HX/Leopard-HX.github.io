@@ -14,7 +14,8 @@
 (function () {
   "use strict";
 
-  var content = document.querySelector(".page__content");
+  // 笔记正文（single 布局）或笔记索引页（archive 布局，_pages/notes.html）
+  var content = document.querySelector(".page__content, .archive, #main");
   if (!content) return;
 
   var PDF_RE = /\.pdf(?:$|[?#])/i;
