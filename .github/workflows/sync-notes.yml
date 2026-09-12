@@ -44,12 +44,23 @@ jobs:
           git clone --depth 1 git@github.com:Leopard-HX/obsidian-vault.git .vault
 
       - name: Copy only the Notes/ folder
-        # 白名单：vault 里只有 Notes/ 会被拷出来，其余内容（日记、私密笔记……）永远不进入站点
+        # 两级白名单：
+        #   1) vault 里只有 Notes/ 会被拷出来，其余内容（日记、私密笔记……）永远不进入站点；
+        #   2) Notes/ 里只有 .md / .pdf 会被拷出来 —— 论文目录里的 .tex / .eps / .tar.gz /
+        #      .png / 00README.json 等只留在 vault 仓库里做备份，不发布到站点。
+        #   另外排除 agent.md 这类「给 AI 看的配置笔记」：它们该进 vault 仓库，但不该出现在站点上。
+        # 注意：rsync 规则是「先匹配者胜」，所以 agent*.md 的 exclude 必须排在 *.md 的 include 之前。
         run: |
           set -euo pipefail
           mkdir -p notes
           if [ -d .vault/Notes ]; then
-            rsync -a --delete .vault/Notes/ notes/
+            rsync -a --delete \
+              --include='*/' \
+              --exclude='[Aa]gent*.md' \
+              --include='*.md' \
+              --include='*.pdf' \
+              --exclude='*' \
+              .vault/Notes/ notes/
           else
             echo "::warning::vault 里没有 Notes/ 文件夹，本次不更新笔记"
           fi

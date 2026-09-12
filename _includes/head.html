@@ -14,3 +14,23 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+
+{% if page.is_note %}
+<!-- 笔记页启用 MathJax 3：Obsidian 笔记里大量使用 $...$ / $$...$$ 数学公式。
+     skipHtmlTags 里带上 pre/code，避免把代码块里的 $ 当成公式。
+     只对 notes/ 下的页面生效（_config.yml 里给 notes scope 设了 is_note: true），
+     不影响首页、CV、论文列表等原有页面。 -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{% endif %}

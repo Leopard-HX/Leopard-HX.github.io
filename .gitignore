@@ -21,3 +21,13 @@ package-lock.json
 
 # Ignore obsidian config
 .obsidian/
+
+# notes/ 由 obsidian-vault 自动同步生成（见 .github/workflows/sync-notes.yml）。
+# 站点只发布 md 和 pdf —— 工作流里的 rsync 已经过滤了一道，这里再兜底一道：
+# 万一以后 rsync 规则被改回「全量拷贝」，也不会把 .tex/.eps/.tar.gz 等源文件提交进站点仓库。
+notes/**
+!notes/**/
+!notes/**/*.md
+!notes/**/*.pdf
+# 给 AI 看的配置笔记：进 vault 仓库可以，上站点不行
+notes/**/[Aa]gent*.md
