@@ -1,0 +1,133 @@
+/* ==========================================================================
+   PDF（笔记页的内嵌阅读器卡片 + PDF 链接的下载按钮）
+
+   scripts/convert-wikilinks.sh 把 ![[文件.pdf]] 写成
+     <a class="pdf-embed" data-pdf-height="620" href="…">文件.pdf</a>
+   然后由 assets/js/pdf-notes.js 在浏览器里换成这里的 .pdf-card 卡片。
+
+   配色：卡片内部一律「固定浅底 + 深青字」——和代码块同一套安全组合。
+   --global-code-background-color 在两套皮肤里都是写死的 #fafafa，所以文字只能用
+   --global-code-text-color（$darker-primary-color，浅色 #003a51 / 深色 #004548，
+   两套皮肤下都约 10:1）。不能改用 --global-text-color（深色皮肤下是浅灰 #eaeaea，
+   落在 #fafafa 上只有约 1.1:1），也不能用 --global-link-color-hover（深色皮肤下
+   是 mix(#000, link, 25%)，对 #fafafa 只有约 3.2:1）。
+   按钮的文字色靠 `color: inherit` 从 .pdf-card 继承，选择器写成
+   .pdf-card .pdf-card__btn（0,2,0）是为了压过 .page__content a（0,1,1），
+   否则链接色会把深青覆盖掉。
+   ========================================================================== */
+
+.pdf-card {
+  margin: 1.5em 0;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: var(--global-code-background-color, #fafafa);
+  color: var(--global-code-text-color, #003a51);
+  line-height: 1.5;
+}
+
+.pdf-card__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.55em 0.75em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 0.8em;
+}
+
+.pdf-card__name {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  min-width: 0;
+  font-weight: 600;
+
+  /* PDF 图标用站点代码高亮里那个压暗过的红（对 #fafafa 约 6.4:1），
+     比 Font Awesome 默认的正红安全 */
+  i {
+    color: #b02622;
+  }
+}
+
+.pdf-card__filename {
+  overflow-wrap: anywhere;
+}
+
+.pdf-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-left: auto;
+}
+
+.pdf-card .pdf-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.2em 0.65em;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.045);
+  color: inherit;
+  font: inherit;
+  font-size: 0.95em;
+  line-height: 1.7;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $global-transition;
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba(0, 0, 0, 0.32);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.pdf-card__viewport {
+  height: var(--pdf-height, 620px);
+  max-height: 78vh;
+  background-color: #f4f4f4;
+}
+
+.pdf-card__frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pdf-card--collapsed .pdf-card__viewport {
+  display: none;
+}
+
+/* 普通 PDF 链接后面的下载按钮（由 pdf-notes.js 追加在链接后面）。
+   这里不写 color，让它跟正文里的其它链接同色 —— 那套颜色已经在对比度审计里过了。 */
+.pdf-download {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.3em;
+  padding: 0 0.3em;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  font-size: 0.75em;
+  line-height: 1.6;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .pdf-card__actions {
+    margin-left: 0;
+  }
+
+  .pdf-card__viewport {
+    height: var(--pdf-height, 420px);
+  }
+}

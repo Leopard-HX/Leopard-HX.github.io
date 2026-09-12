@@ -9,6 +9,12 @@
 #   1. [[双向链接]]、[[目标|别名]]、[[目标#标题]]、![[附件]]  →  标准 Markdown 链接
 #   2. 正文开头的第一个 H1  →  front matter 的 title（否则会和版面标题重复显示）；
 #      完全没有标题的笔记就用文件名当 title
+#   3. PDF 相关：
+#        ![[论文.pdf]]        →  <a class="pdf-embed">…</a>，笔记页会把它渲染成内嵌阅读器
+#        ![[论文.pdf|900]]    →  同上，阅读器高 900px（数字别名当高度）
+#        ![[论文.pdf#page=5]] →  链接/阅读器直接翻到第 5 页
+#        `论文.pdf`           →  行内代码里的 PDF 文件名自动变成链接（解析得到才变）
+#      围栏代码块（``` / ~~~）内部一律不改写。
 #
 # 用法:  scripts/convert-wikilinks.sh notes
 # 说明:  原地修改 notes/ 下的 .md；笔记内链写成绝对路径 /notes/名字/
@@ -82,8 +88,42 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
     function encode(s) { gsub(/ /, "%20", s); return s }
     function yaml_escape(s) { gsub(/\\/, "\\\\", s); gsub(/"/, "\\\"", s); return s }
 
-    function site_url(name,   key, u) {
+    # 属性/文本里要转义的 HTML 特殊字符（& 在 gsub 的替换串里要写成 \&）
+    function html_escape(s) {
+      gsub(/&/, "\\&amp;", s)
+      gsub(/</, "\\&lt;", s)
+      gsub(/>/, "\\&gt;", s)
+      gsub(/"/, "\\&quot;", s)
+      return s
+    }
+
+    # 行内代码里的 PDF 文件名（Obsidian 笔记里常写成「本目录 PDF：`xxx.pdf`」）
+    # 只要能解析到 notes/ 下的文件，就顺手变成可点的链接。
+    function link_pdf_codes(line,   out, code, u) {
+      out = ""
+      while (match(line, /`[^`]+`/)) {
+        out  = out substr(line, 1, RSTART - 1)
+        code = substr(line, RSTART + 1, RLENGTH - 2)
+        u = site_url(code)
+        if (tolower(u) ~ /\.pdf$/) {
+          out = out "[" code "](" u ")"
+        } else {
+          out = out substr(line, RSTART, RLENGTH)
+        }
+        line = substr(line, RSTART + RLENGTH)
+      }
+      return out line
+    }
+
+    function site_url(name,   key, base, u) {
       key = tolower(name)
+      # `Figs/x.pdf`、`../a/b.md` 这类带目录的写法在映射表里查不到时，
+      # 退回按文件名匹配（和 Obsidian 的行为一致：优先全路径，其次文件名）
+      if (key != "" && !(key in url)) {
+        base = key
+        sub(/.*\//, "", base)
+        if (base != key && (base in url)) key = base
+      }
       if (key == "" || !(key in url)) return ""
       u = url[key]
       if (u ~ /\.md$/) {                     # 笔记：页面 URL 是 /notes/名字/
@@ -100,9 +140,23 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
       }
       close(map_file)
       missing = 0
+      infence = 0
+      default_pdf_height = 620
     }
 
     {
+      # 围栏代码块内部一个字都不改（笔记里有 ``` 包起来的 shell / gitattributes 片段，
+      # 里面出现 *[[...]]* 或 x.pdf 都是示例代码，改了会把示例改坏）
+      if ($0 ~ /^[ \t]*(```|~~~)/) {
+        infence = !infence
+        converted[NR] = $0
+        next
+      }
+      if (infence) {
+        converted[NR] = $0
+        next
+      }
+
       line = $0
       out = ""
       while (match(line, /!?\[\[[^][]+\]\]/)) {
@@ -139,13 +193,36 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
         }
 
         is_file = (u !~ /\/$/)                           # 笔记链接以 / 结尾，附件不是
-        if (alias ~ /^[0-9]+$/ && embed) alias = ""      # ![[img.png|300]] 的宽度参数
+        numeric = ""
+        if (alias ~ /^[0-9]+$/) {                        # ![[img.png|300]] 的宽度参数
+          numeric = alias
+          if (embed) alias = ""
+        }
+        # 附件的 #page=5 之类「查看参数」保留在 URL 上（浏览器自带的 PDF 阅读器认这个）
+        if (is_file && tolower(u) ~ /\.pdf$/ && heading ~ /^page=/) {
+          u = u "#" heading
+          heading = ""
+        }
         label = alias != "" ? alias : target
         if (alias == "" && label ~ /\.md$/) sub(/\.md$/, "", label)
         if (heading != "") label = label " - " heading
-        out = out (embed && is_file ? "!" : "") "[" label "](" u ")"
+
+        if (embed && is_file && tolower(u) ~ /\.pdf($|[?#])/) {
+          # 内嵌 PDF：这里输出一个「行内 HTML 的 span 级 <a>」—— kramdown（GFM）会
+          # 原样透传行内 HTML，而 notes 页的 assets/js/pdf-notes.js 再把它升级成
+          # 内嵌阅读器（含「新标签打开 / 下载 / 收起」）。
+          # 之所以不在这里直接写 <div>/<iframe>：嵌入点常常在段落或引用块中间，
+          # 块级 HTML 会把 Markdown 段落截断。数字别名当阅读器高度用：
+          #   ![[论文.pdf]]        → 默认 620px 高
+          #   ![[论文.pdf|900]]    → 900px 高
+          height = (numeric != "") ? numeric : default_pdf_height
+          out = out "<a class=\"pdf-embed\" data-pdf-height=\"" height "\"" \
+                    " href=\"" html_escape(u) "\">" html_escape(label) "</a>"
+        } else {
+          out = out (embed && is_file ? "!" : "") "[" label "](" u ")"
+        }
       }
-      converted[NR] = out line
+      converted[NR] = link_pdf_codes(out line)
       next
     }
 
