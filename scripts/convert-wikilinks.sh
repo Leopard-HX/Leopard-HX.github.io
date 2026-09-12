@@ -98,7 +98,9 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
     }
 
     # 行内代码里的 PDF 文件名（Obsidian 笔记里常写成「本目录 PDF：`xxx.pdf`」）
-    # 只要能解析到 notes/ 下的文件，就顺手变成可点的链接。
+    # 只要能解析到 notes/ 下的文件，就顺手变成可点的链接。链接文字仍然套一层
+    # 行内代码（[`x.pdf`](url)），这样保留原来「代码样式」的外观 —— 站点里
+    # a>code 会沿用代码块那套安全配色，深色皮肤下也不会掉对比度。
     function link_pdf_codes(line,   out, code, u) {
       out = ""
       while (match(line, /`[^`]+`/)) {
@@ -106,7 +108,7 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
         code = substr(line, RSTART + 1, RLENGTH - 2)
         u = site_url(code)
         if (tolower(u) ~ /\.pdf$/) {
-          out = out "[" code "](" u ")"
+          out = out "[`" code "`](" u ")"
         } else {
           out = out substr(line, RSTART, RLENGTH)
         }

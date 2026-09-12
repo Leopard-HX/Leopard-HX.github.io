@@ -23,8 +23,9 @@ folder: ""
 
 ## 4. 普通链接（应出现下载按钮）
 
-- [M87_EHT_2019.pdf](/notes/文章整理/EHT-观测资料/M87_EHT_2019.pdf)
+- [`M87_EHT_2019.pdf`](/notes/文章整理/EHT-观测资料/M87_EHT_2019.pdf)
 - [带 #page 的链接](/notes/文章整理/arXiv-2604.25791v1/2604.25791v1.pdf#page=3)
+- 段落里的行内样式：[`Globe_2.pdf`](/notes/文章整理/EHT-观测资料/Figs/Globe_2.pdf)，后面还有文字。
 
 ## 5. 围栏代码块里的东西不该被改
 

@@ -71,10 +71,15 @@
   function buildCard(url, label, height) {
     var name = label || fileName(url);
 
-    var card = document.createElement("figure");
+    // 刻意用 <div> 而不是 <figure>/<figcaption>：主题里
+    //   figure { display:flex; justify-content:space-between; flex-wrap:wrap }
+    //   figcaption { color: var(--global-fig-caption-color); font-family: Georgia }
+    //   figcaption a { border-bottom: 1px solid … }
+    // 会把卡片拆成两列、并把文字换成深色皮肤下只有 1.6:1 的 --global-fig-caption-color。
+    var card = document.createElement("div");
     card.className = "pdf-card";
 
-    var bar = document.createElement("figcaption");
+    var bar = document.createElement("div");
     bar.className = "pdf-card__bar";
 
     var title = document.createElement("span");

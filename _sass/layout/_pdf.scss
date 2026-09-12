@@ -16,31 +16,40 @@
    否则链接色会把深青覆盖掉。
    ========================================================================== */
 
+/* 卡片刻意不用 <figure>/<figcaption>：主题里 figure 是
+   display:flex; justify-content:space-between; flex-wrap:wrap，卡片会被拆成两列；
+   figcaption 还会把文字色换成 --global-fig-caption-color（air_dark 下是 #80d6da，
+   落在 #fafafa 上只有 1.6:1）。这里用 div，并把字号/行高/颜色全部写死成安全值。 */
+
 .pdf-card {
+  display: block;
   margin: 1.5em 0;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
   overflow: hidden;
   background-color: var(--global-code-background-color, #fafafa);
   color: var(--global-code-text-color, #003a51);
+  font-family: inherit;
   line-height: 1.5;
 }
 
-.pdf-card__bar {
+.pdf-card .pdf-card__bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6em;
   padding: 0.55em 0.75em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--global-code-text-color, #003a51);
   font-size: 0.8em;
 }
 
-.pdf-card__name {
+.pdf-card .pdf-card__name {
   display: flex;
   align-items: center;
   gap: 0.45em;
   min-width: 0;
+  color: inherit;
   font-weight: 600;
 
   /* PDF 图标用站点代码高亮里那个压暗过的红（对 #fafafa 约 6.4:1），
@@ -54,7 +63,7 @@
   overflow-wrap: anywhere;
 }
 
-.pdf-card__actions {
+.pdf-card .pdf-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4em;
@@ -96,6 +105,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  margin: 0;      /* 主题里有 figure iframe { margin-bottom: 1em }，防一手 */
   border: 0;
 }
 
