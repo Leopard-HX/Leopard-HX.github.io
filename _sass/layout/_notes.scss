@@ -130,8 +130,10 @@
   font-weight: normal;
 
   &::before {
-    content: "·";
-    margin: 0 0.45em;
+    /* 用破折号而不是「·」：关键词内部本身也用「·」分隔多个主题，
+       分隔符得跟它区分开 */
+    content: "—";
+    margin: 0 0.5em;
     opacity: 0.55;
   }
 }
