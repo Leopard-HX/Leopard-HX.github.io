@@ -133,7 +133,8 @@
 }
 
 @media (max-width: 37.5em) {
-  .pdf-card__actions {
+  /* 选择器要和上面的基础规则一样带 .pdf-card 前缀，不然特异性更低、覆盖不了 */
+  .pdf-card .pdf-card__actions {
     margin-left: 0;
   }
 
