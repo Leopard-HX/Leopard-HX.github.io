@@ -118,6 +118,8 @@
 .pdf-download {
   display: inline-flex;
   align-items: center;
+  /* 在索引页里它是 .note-list__item（flex 容器）的子项，别被拉伸、别换行 */
+  flex: 0 0 auto;
   margin-left: 0.3em;
   padding: 0 0.3em;
   border: 1px solid var(--global-border-color);

@@ -22,11 +22,16 @@
 }
 
 .note-list__item {
+  /* 用 flex：PDF 条目末尾会由 assets/js/pdf-notes.js 追加一个下载按钮，
+     而 .note-list__link 是 block，不这样按钮会被挤到下一行去 */
+  display: flex;
+  align-items: center;
   margin: 0;
 }
 
 .note-list__link {
   display: block;
+  flex: 1 1 auto;
   padding: 0.4em 0.7em;
   border-radius: $border-radius;
   color: var(--global-text-color);
