@@ -11,6 +11,7 @@ author_profile: true
   Working notes, written in Obsidian and synced here automatically from
   <a href="https://github.com/Leopard-HX/obsidian-vault">obsidian-vault</a>
   (only the <code>Notes/</code> folder is published).
+  Click a folder to expand it.
 </p>
 
 {% assign notes = site.pages | where: "is_note", true | sort: "url" %}
@@ -20,10 +21,10 @@ author_profile: true
 {% else %}
   <div class="note-index">
 
-    {% comment %} 根目录下的笔记（不算在任何子文件夹里） {% endcomment %}
+    {% comment %} ---------- ① 根目录下的笔记（folder 为空）：直接平铺 ---------- {% endcomment %}
     {% assign root_notes = notes | where: "folder", "" %}
     {% if root_notes.size > 0 %}
-      <ul class="note-list">
+      <ul class="note-list note-list--root">
         {% for note in root_notes %}
           <li class="note-list__item">
             <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
@@ -34,26 +35,90 @@ author_profile: true
       </ul>
     {% endif %}
 
-    {% comment %} 每个子文件夹一节。folder 由 scripts/convert-wikilinks.sh 写进 front matter,
-                  也可以在笔记里自己写 folder 来覆盖分组名 {% endcomment %}
-    {% assign folders = notes | group_by: "folder" | sort: "name" %}
-    {% for folder in folders %}
-      {% if folder.name == nil or folder.name == "" %}{% continue %}{% endif %}
-      <section class="note-folder">
-        <h2 class="note-folder__title">
-          <i class="fas fa-fw fa-folder-open" aria-hidden="true"></i>{{ folder.name }}
-          <span class="note-folder__count">{{ folder.items | size }}</span>
-        </h2>
-        <ul class="note-list">
-          {% for note in folder.items %}
-            <li class="note-list__item">
-              <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
-                <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
-              </a>
-            </li>
+    {% comment %} ---------- ② 收集所有顶级文件夹名 ----------
+      folder 由 scripts/convert-wikilinks.sh 写进 front matter，形如
+      "文章整理/arXiv-2607.03749v2"，所以取第一段作为顶级文件夹。
+      Liquid 没有数组去重，用「|名字|」拼成一串再 split 的老办法去重。 {% endcomment %}
+    {% assign bucket_raw = "" %}
+    {% for note in notes %}
+      {% assign f = note.folder | default: "" %}
+      {% if f == "" %}{% continue %}{% endif %}
+      {% assign t = f | split: "/" | first %}
+      {% assign probe = "|" | append: t | append: "|" %}
+      {% unless bucket_raw contains probe %}
+        {% assign bucket_raw = bucket_raw | append: probe %}
+      {% endunless %}
+    {% endfor %}
+    {% assign top_names = bucket_raw | split: "|" | sort %}
+
+    {% comment %} ---------- ③ 每个顶级文件夹一个可折叠区块（默认收起） ---------- {% endcomment %}
+    {% for top in top_names %}
+      {% if top == "" %}{% continue %}{% endif %}
+
+      {% comment %} 统计该顶级文件夹下的笔记总数，并收集其下所有 folder 值（含自身） {% endcomment %}
+      {% assign sub_raw = "" %}
+      {% assign total = 0 %}
+      {% for note in notes %}
+        {% assign f = note.folder | default: "" %}
+        {% if f == "" %}{% continue %}{% endif %}
+        {% assign t = f | split: "/" | first %}
+        {% if t != top %}{% continue %}{% endif %}
+        {% assign total = total | plus: 1 %}
+        {% assign probe = "|" | append: f | append: "|" %}
+        {% unless sub_raw contains probe %}
+          {% assign sub_raw = sub_raw | append: probe %}
+        {% endunless %}
+      {% endfor %}
+      {% assign sub_folders = sub_raw | split: "|" | sort %}
+      {% assign direct = notes | where: "folder", top %}
+
+      <details class="note-folder">
+        <summary class="note-folder__summary">
+          <i class="note-folder__chevron fas fa-fw fa-chevron-right" aria-hidden="true"></i>
+          <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
+          <span class="note-folder__name">{{ top }}</span>
+          <span class="note-folder__count">{{ total }}</span>
+        </summary>
+
+        <div class="note-folder__body">
+          {% comment %} 直接放在这一层的笔记 {% endcomment %}
+          {% if direct.size > 0 %}
+            <ul class="note-list">
+              {% for note in direct %}
+                <li class="note-list__item">
+                  <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
+                    <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% comment %} 下一级文件夹，再套一层可折叠区块 {% endcomment %}
+          {% for sub in sub_folders %}
+            {% if sub == "" or sub == top %}{% continue %}{% endif %}
+            {% assign items = notes | where: "folder", sub %}
+            {% assign sub_name = sub | remove_first: top | remove_first: "/" %}
+            <details class="note-subfolder">
+              <summary class="note-subfolder__summary">
+                <i class="note-folder__chevron fas fa-fw fa-chevron-right" aria-hidden="true"></i>
+                <i class="fas fa-fw fa-folder" aria-hidden="true"></i>
+                <span class="note-subfolder__name">{{ sub_name }}</span>
+                <span class="note-folder__count">{{ items.size }}</span>
+              </summary>
+              <ul class="note-list">
+                {% for note in items %}
+                  <li class="note-list__item">
+                    <a class="note-list__link" href="{{ base_path }}{{ note.url }}">
+                      <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i>{{ note.title | default: note.name | remove: ".md" }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </details>
           {% endfor %}
-        </ul>
-      </section>
+        </div>
+      </details>
     {% endfor %}
 
   </div>

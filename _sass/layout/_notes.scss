@@ -1,17 +1,24 @@
 /* ==========================================================================
    NOTES
    由 obsidian-vault 同步过来的笔记索引页（_pages/notes.html）
+
+   文件夹用原生 <details>/<summary> 实现：默认全部收起，点标题才展开，
+   不依赖 JavaScript。
    ========================================================================== */
 
 .note-index {
   margin-bottom: 2em;
 }
 
-/* 根目录下的笔记列表，以及每个文件夹里的笔记列表 */
+/* 笔记链接列表：根目录、文件夹内、子文件夹内共用 */
 .note-list {
-  margin: 0 0 1.5em;
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.note-list--root {
+  margin-bottom: 1.25em;
 }
 
 .note-list__item {
@@ -32,44 +39,114 @@
     font-size: 0.9em;
   }
 
+  /* 悬停底色是固定浅色 #fafafa（两套皮肤都是），所以文字必须配
+     --global-code-text-color（深青）—— 这正是代码块的配色组合，
+     两套皮肤下都有约 10:1。
+     不能用 --global-text-color（深色皮肤下它是浅灰 #eaeaea，铺在 #fafafa
+     上只有约 1.1:1），也不能用 --global-link-color-hover（深色皮肤下是
+     mix(#000, link, 25%)，对 #fafafa 只有约 3.2:1）。 */
   &:hover,
   &:focus {
     background-color: var(--global-code-background-color);
-    color: var(--global-link-color-hover);
+    color: var(--global-code-text-color);
 
     i {
       opacity: 1;
-      color: var(--global-link-color-hover);
+      color: var(--global-code-text-color);
     }
   }
 }
 
-/* 子文件夹 */
-.note-folder {
-  margin-bottom: 1.5em;
+/* ---------- 可折叠的文件夹 ---------- */
 
-  &__title {
-    display: flex;
-    align-items: center;
-    margin: 1.5em 0 0.5em;
-    padding-bottom: 0.4em;
-    font-size: $type-size-5;
-    color: var(--global-text-color-light);
-    border-bottom: 1px solid var(--global-border-color);
+.note-folder {
+  margin-bottom: 0.35em;
+}
+
+.note-subfolder {
+  margin-bottom: 0.2em;
+}
+
+.note-folder__summary,
+.note-subfolder__summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.55em 0.7em;
+  border-bottom: 1px solid var(--global-border-color);
+  border-radius: $border-radius $border-radius 0 0;
+  font-size: $type-size-5;
+  color: var(--global-text-color);
+  cursor: pointer;
+  user-select: none;
+  transition: $global-transition;
+
+  /* 去掉 <summary> 的默认三角标记：Chrome/Safari 用 ::-webkit-details-marker，
+     Firefox 用 list-style */
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    content: "";
+  }
+
+  i {
+    opacity: 0.6;
+    font-size: 0.9em;
+  }
+
+  /* 和 .note-list__link 用同一组安全配色（浅底 + 深青字） */
+  &:hover,
+  &:focus-visible {
+    background-color: var(--global-code-background-color);
+    color: var(--global-code-text-color);
 
     i {
-      margin-right: 0.5em;
+      opacity: 1;
+      color: var(--global-code-text-color);
     }
   }
+}
 
-  &__count {
-    margin-left: auto;
-    font-size: 0.7em;
-    font-weight: normal;
-    opacity: 0.7;
-  }
+.note-subfolder__summary {
+  padding: 0.35em 0.7em;
+  border-bottom: 0;
+  font-size: 0.95em;
+}
 
-  .note-list {
-    margin-bottom: 0.5em;
-  }
+/* 小箭头：展开时转 90° */
+.note-folder__chevron {
+  transition: transform 0.2s ease-in-out;
+}
+
+.note-folder[open] > .note-folder__summary > .note-folder__chevron,
+.note-subfolder[open] > .note-subfolder__summary > .note-folder__chevron {
+  transform: rotate(90deg);
+}
+
+.note-folder__name,
+.note-subfolder__name {
+  font-weight: 600;
+}
+
+/* 条数徽标：颜色继承 summary（不额外调色/降透明度），只靠字号和描边区分，
+   这样在任何背景（普通 / 悬停）下都跟标题一样清晰 */
+.note-folder__count {
+  margin-left: auto;
+  padding: 0.1em 0.55em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 999px;
+  font-size: 0.7em;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+/* 展开后的内容区，往右缩进一级 */
+.note-folder__body {
+  margin-left: 0.35em;
+  padding: 0.4em 0 0.4em 0.9em;
+  border-left: 1px solid var(--global-border-color);
 }
