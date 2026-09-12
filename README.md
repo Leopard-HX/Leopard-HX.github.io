@@ -13,6 +13,7 @@ and served by GitHub Pages from the `master` branch.
 | `_publications/`、`_talks/` | 论文与报告，PDF 放 `files/` |
 | `notes/` | **自动生成**，由 obsidian-vault 同步而来，不要手改 |
 | `scripts/convert-wikilinks.sh` | 笔记语法转换脚本（bash + awk，无额外依赖） |
+| `assets/js/pdf-notes.js`、`_sass/layout/_pdf.scss` | 笔记里的 PDF 支持（内嵌阅读器 + 下载按钮），只对笔记页和笔记索引页生效 |
 | `.github/workflows/sync-notes.yml` | 定时同步工作流 |
 
 ## 笔记同步（Obsidian → 本站）
@@ -50,14 +51,37 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
 所以笔记原样丢进 `notes/` 就能渲染，`_config.yml` 里只给 `notes` 目录配了一组 `defaults`
 （`layout: single` / 关掉侧栏 / 打上 `is_note: true` 标签供索引页筛选）。
 
-`scripts/convert-wikilinks.sh` 只负责两件 Jekyll 不会做的事：
+`scripts/convert-wikilinks.sh` 只负责 Jekyll 不会做的三件事：
 
-1. `[[双向链接]]` / `[[目标|别名]]` / `[[目标#标题]]` / `![[附件.png]]` → 标准 Markdown 链接
+1. `[[双向链接]]` / `[[目标|别名]]` / `[[目标#标题]]` / `![[附件]]` → 标准 Markdown 链接
    （笔记写成绝对路径 `/notes/名字/`，附件写成 `/notes/文件名`）
-2. 正文开头的第一个 `# H1` → front matter 的 `title`（并从正文里删掉，避免和版面标题重复显示）；
+2. PDF 相关的写法（见下面「笔记里的 PDF」）
+3. 正文开头的第一个 `# H1` → front matter 的 `title`（并从正文里删掉，避免和版面标题重复显示）；
    完全没有标题的笔记就用文件名当 `title`
 
 找不到目标的链接会退化成纯文本，并在 Actions 日志里列出来。
+围栏代码块（``` / ~~~）内部一律不改写，所以写示例很安全。
+
+### 笔记里的 PDF
+
+只有 `Notes/` 下的 **`.md` 和 `.pdf`** 会同步过来（`.tex`/`.eps`/`.png`/`source.tar.gz`/`00README.json`/`agent*.md`
+都只留在 vault 里），PDF 直接丢在笔记旁边就行，然后在笔记里按下面的写法引用：
+
+| 笔记里写 | 站点上显示 |
+| --- | --- |
+| `![[论文.pdf]]` | **内嵌 PDF 阅读器**（页面里直接翻页读）+「新标签打开 / 下载 / 收起」 |
+| `![[论文.pdf\|900]]` | 同上，阅读器高 900px（数字别名当高度） |
+| `![[论文.pdf#page=5]]` | 打开时直接翻到第 5 页 |
+| `[[论文.pdf]]` 或 `` `论文.pdf` `` | 普通链接（新标签打开）+ 后面跟一个下载按钮 |
+
+- 行内代码里的 PDF 文件名会自动变成链接（链接文字仍套一层行内代码，保留原来的代码外观），
+  前提是文件真在 `Notes/` 下；带目录的 `Figs/x.pdf` 也认（先按全路径匹配、再退回按文件名匹配）。
+- 实现：脚本把 `![[论文.pdf]]` 写成 `<a class="pdf-embed" data-pdf-height="620" href="…">`（行内 HTML，
+  kramdown 的 GFM 解析器会原样透传），再由 `assets/js/pdf-notes.js` 在浏览器里升级成 `.pdf-card` 卡片，
+  样式在 `_sass/layout/_pdf.scss`。脚本是渐进增强的，没加载时链接照样能点。
+- `/notes/` 索引页（`_pages/notes.html`，靠 front matter 的 `pdf_links: true` 也加载同一个脚本）
+  会把 PDF 和同目录的笔记列在一起，条目末尾带一个「PDF」小徽标；只放 PDF、没有笔记的文件夹
+  （例如 `参考论文/`）同样会出现，文件夹徽标里的数字也是「笔记 + PDF」的总数。
 
 ### 索引页的分组
 
@@ -71,7 +95,9 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
 
 - 笔记文件名**别用** `README.md`、`CONTRIBUTING.md`、`LICENSE` 这类名字 —— `jekyll-optional-front-matter` 对它们不生效
 - 重名笔记（不同子目录下同名）按路径排序取第一个来解析链接
-- 笔记里的图片放 `Notes/` 里就行，会一起同步过去，路径自动变成 `/notes/xxx.png`
+- 图片（`.png`/`.jpg`/`.svg`…）**不会**发布到站点：rsync 白名单只放行 `*.md` 和 `*.pdf`。
+  笔记里引用的插图在站点上是死链，要发布的话得同时改 `.github/workflows/sync-notes.yml`
+  的 include 白名单和站点 `.gitignore` 的 `notes/**` 规则
 - 想改同步频率，改 `.github/workflows/sync-notes.yml` 里的 `cron`
 - 想彻底停掉笔记同步，直接删 `.github/workflows/sync-notes.yml`
 
