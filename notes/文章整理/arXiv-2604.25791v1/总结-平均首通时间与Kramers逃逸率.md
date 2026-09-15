@@ -633,27 +633,9 @@ folder: "文章整理/arXiv-2604.25791v1"
   $$
 
   （原文式 (33)）。
-  [引·[17] §III："Therefore, if the entropy of the regular black holes satisfy the area law, the temperature should be
+  [引·[17] §III："Therefore, if the entropy of the regular black holes satisfy the area law, the temperature should be $T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H$"（式(33)）]
 
-  $$
-  T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H
-  $$
-
-  "（式(33)）]
-
-- 由此产生两种"记账方式"：> 原文："We have two choices to connect Eq.(32) with the first law of thermodynamics, $\delta E=T\delta S$. The first one is
-
-  $$
-  E\leftrightarrow M,\ \delta S\leftrightarrow\delta A/4/C(M,r_h),\ T\leftrightarrow T_h
-  $$
-
-  ; The second one is
-
-  $$
-  S\leftrightarrow A/4,\ \delta E\leftrightarrow C(M,r_h)\delta M,\ T\leftrightarrow T_h
-  $$
-
-  . We tend to believe the latter one."
+- 由此产生两种"记账方式"：> 原文："We have two choices to connect Eq.(32) with the first law of thermodynamics, $\delta E=T\delta S$. The first one is $E\leftrightarrow M,\ \delta S\leftrightarrow\delta A/4/C(M,r_h),\ T\leftrightarrow T_h$; The second one is $S\leftrightarrow A/4,\ \delta E\leftrightarrow C(M,r_h)\delta M,\ T\leftrightarrow T_h$. We tend to believe the latter one."
   [引·[17] §III 式(32) 之后]
 - 其直接结论是：> 原文："Thus the black hole mass $M$ cannot be considered as the internal energy $E$ of the black hole system generally."
   [引·[17] §III；同文摘要亦云："In this case, the black hole mass $M$ can no longer be considered as the internal energy of the regular black holes."]
@@ -700,13 +682,7 @@ folder: "文章整理/arXiv-2604.25791v1"
 
   [引·[17] §III 式(34) 及其后]
 
-- 关键是电荷的共轭势要由电场重新算出，而不是照搬朴素的 $Q/r_h$：> 原文："the electric potential on the horizon can be calculated according to electric field,
-
-  $$
-  \Phi_h=\int_{r_h}^{\infty}E\,dr
-  $$
-
-  ."
+- 关键是电荷的共轭势要由电场重新算出，而不是照搬朴素的 $Q/r_h$：> 原文："the electric potential on the horizon can be calculated according to electric field, $\Phi_h=\int_{r_h}^{\infty}E\,dr$."
   [引·[17] §III 式(34) 之后]
 
 - [17] 还强调这个问题的触发条件正是 $T^\mu{}_\nu$ 含 $M$：> 原文："When this is applied to the case of linear or nonlinear electrodynamics, even with scalar fields, the first law also holds true and the first term on the right hand side will be replaced with $\Phi\delta Q+\dots$ [Rasheed; Gibbons]. But, if the energy-momentum tensor $T_{\mu\nu}$ includes the black hole mass $M$, the situation will be very different."

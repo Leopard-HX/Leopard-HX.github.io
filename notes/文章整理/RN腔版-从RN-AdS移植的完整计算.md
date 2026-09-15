@@ -59,13 +59,7 @@ folder: "文章整理"
    $$
 
    其中 $T$ 为系综（环境）温度；$T=T_h$ 时系综由在壳黑洞态构成并处于平衡，$T\ne T_h$ 时系综中所有可能态偏离在壳态。
-   [引·2211 式(7)："
-
-   $$
-   f(x)=\int(T_h-T)dS
-   $$
-
-   "；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
+   [引·2211 式(7)："$f(x)=\int(T_h-T)dS$"；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
 
 6. 热势的极值点由 $3px^4-8tx^3+6x^2-1=0$ 决定；当 $0<p<1$、$t\in(t_1,t_3)$ 时该方程有三个正实根，从小到大记为 $x_1,x_2,x_3$，它们本质上是 $T_h=T$（即 $t_h=t$）的解。
    [引·2211 §II："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$. When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$."；"According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."]
