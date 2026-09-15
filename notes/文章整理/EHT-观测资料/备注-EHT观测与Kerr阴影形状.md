@@ -55,3 +55,4 @@ folder: "文章整理/EHT-观测资料"
 1. EHT Collaboration, "First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole", ApJ 875, L1 (2019), arXiv:1906.11238
 2. EHT Collaboration, "First Sagittarius A* Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole in the Center of the Milky Way", ApJ 930, L12 (2022), arXiv:2311.08680
 3. S. Chandrasekhar, "The Mathematical Theory of Black Holes", Oxford University Press (1992) — D 形阴影的理论来源
+

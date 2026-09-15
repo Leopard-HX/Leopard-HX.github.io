@@ -297,3 +297,4 @@ TB = (r^2 - q^2)/(4 Pi r^3 Sqrt[fB]);
 - arXiv:2211.03512，Sec. II–III，Eqs. (1)–(12)，源码 PTR2209.tex 行 62–76、86–145、162–175。
 - arXiv:2607.03749，Sec. II，Eqs. (1)–(7) 与 (10)（度规、第一定律、$S,V,E,T,P$ 和温度三次方程），源码 v14.tex 行 99–200；Sec. III 可逆路径行 327–336；Sec. V 结论行 913–950，明确指出 charged black hole 属于自然的后续推广。
 - 论文链接：[2211.03512](https://arxiv.org/abs/2211.03512)，[2607.03749](https://arxiv.org/abs/2607.03749)。
+

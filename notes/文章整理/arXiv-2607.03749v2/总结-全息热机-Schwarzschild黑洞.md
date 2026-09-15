@@ -101,11 +101,11 @@ folder: "文章整理/arXiv-2607.03749v2"
 22. **度规**：四维渐近平坦 Schwarzschild 置于有限球形腔中，$f(r)=1-r_h/r$，腔位于 $r_B>r_h$。
     > 原文："We consider a four-dimensional, asymptotically flat Schwarzschild black hole enclosed in a finite spherical cavity. The spacetime metric is given by"（其后为
 
-$$
-ds^2 = - f(r)dt^2 + f^{-1}(r)dr^2 + r^2 d\Omega_{2}^2,
-$$
+    $$
+    ds^2 = - f(r)dt^2 + f^{-1}(r)dr^2 + r^2 d\Omega_{2}^2,
+    $$
 
-$f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity is located at the radius $r_B>r_h$."
+    $f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity is located at the radius $r_B>r_h$."
 
 23. **全息解释**：假设类时边界 $r=r_B$ 上的准局部热系统具有全息解释，即边界热态由腔内 Schwarzschild 几何编码；在这个意义上，类时边界充当**全息屏**。
     > 原文："We assume that the quasi-local thermodynamic system defined on the timelike boundary at $r=r_B$ admits a holographic interpretation: the boundary thermal state is encoded by the Schwarzschild geometry inside the cavity. In this sense, the timelike boundary acts as a holographic screen [Bousso1999]."
@@ -195,7 +195,7 @@ $f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity
     r_h(T,V) = \frac{r_B}{3}\left[1+2\cos\left(\frac{\alpha(T,V)}{3}\right)\right]
     $$
 
-（式 (7)），其中
+    （式 (7)），其中
 
     $$
     \alpha(T,V)=\arccos\left[1-\frac{27}{8\pi VT^2}\right],
@@ -221,7 +221,7 @@ $f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity
     T(S,P)=\frac{1}{4\sqrt{\pi GS}\,y(S,P)},
     $$
 
-$V(S,P)=\frac{4GS}{[1-y(S,P)^2]^2}$（式 (15)），焓
+    $V(S,P)=\frac{4GS}{[1-y(S,P)^2]^2}$（式 (15)），焓
 
     $$
     H(S,P)=\sqrt{\frac{S}{\pi G}}\frac{1+3y(S,P)}{4y(S,P)[1+y(S,P)]}
@@ -267,11 +267,11 @@ $V(S,P)=\frac{4GS}{[1-y(S,P)^2]^2}$（式 (15)），焓
     因此在定容下吸热会提高大黑洞分支（$x>2/3$）的边界温度，但降低小黑洞分支（$x<2/3$）的温度；反之放热降低大分支温度而提高小分支温度。该符号变化与定容热容 $C_V$ 在 $x=2/3$ 处变号是同一次变号。
     > 原文："In an \emph{isochoric} stroke, $dV=0$, the cavity wall is held fixed. No mechanical work is performed, and heat exchange changes only the entropy. Isochoric heat input grows the black hole, while isochoric heat rejection shrinks it. The associated temperature change is branch-dependent. At fixed $V$, one finds"；"Thus, heat input at fixed volume raises the boundary temperature on the large black hole branch ($x>2/3$), but lowers it on the small black hole branch ($x<2/3$). Conversely, heat rejection lowers the temperature on the large branch but raises it on the small branch. The sign change in
 
-$$
-\left(\partial T/\partial S\right)_V
-$$
+    $$
+    \left(\partial T/\partial S\right)_V
+    $$
 
-is the same sign change as that of the fixed-volume heat capacity $C_V$ at $x=2/3$ [York1990]."
+    is the same sign change as that of the fixed-volume heat capacity $C_V$ at $x=2/3$ [York1990]."
 
 51. **绝热冲程**：不交换热量；由于可逆故 $dS=0$，视界大小保持不变，唯一的几何变化是腔壁的重新标度，准局部能量的变化完全来自机械功；这一点与大小分支之分无关。
     > 原文："In an \emph{adiabatic} stroke, no heat is exchanged. Since the process is reversible, $dS=0$, so the horizon size remains fixed. The only geometric change is the rescaling of the cavity wall, and the corresponding change in quasi-local energy is entirely due to mechanical work. This is independent of the large/small branch distinction."
@@ -291,17 +291,17 @@ is the same sign change as that of the fixed-volume heat capacity $C_V$ at $x=2/
     因此在**大黑洞分支** $(\partial V/\partial S)_T>0$，在**小黑洞分支** $(\partial V/\partial S)_T<0$。
     > 原文："In an \emph{isothermal} stroke, $dT=0$, the boundary temperature at the cavity wall is held fixed. The cavity wall expands or contracts while the working substance remains in thermal contact with a reservoir at the same boundary temperature, so both $S$ and $V$ vary along the isothermal curve $T(S,V)=T_0$. Here the relation between heat flow and cavity motion is branch-dependent. Along an isotherm one finds"；"Thus
 
-$$
-\left(\partial V/\partial S\right)_T>0
-$$
+    $$
+    \left(\partial V/\partial S\right)_T>0
+    $$
 
- on the large black hole branch, while
+    on the large black hole branch, while
 
-$$
-\left(\partial V/\partial S\right)_T<0
-$$
+    $$
+    \left(\partial V/\partial S\right)_T<0
+    $$
 
-on the small black hole branch."
+    on the small black hole branch."
 
 55. **等温冲程的物理细节**：等温吸热在**两支**上都增熵并使视界变大；在大分支伴随腔的膨胀，在小分支伴随压缩；反之等温放热在**两支**上都减熵并使视界缩小，大分支上腔被压缩而小分支上腔被膨胀。
     > 原文："Isothermal heat input increases the entropy and grows the horizon on both branches. On the large branch, this is accompanied by expansion of the cavity, whereas on the small branch, it is accompanied by compression. Conversely, isothermal heat rejection decreases the entropy and shrinks the horizon on both branches; the cavity is compressed on the large branch but expanded on the small branch."
@@ -510,7 +510,7 @@ on the small black hole branch."
      Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
      $$
 
-（式 (31)），外部放热为冷等温线上的放热
+     （式 (31)），外部放热为冷等温线上的放热
 
      $$
      Q_{\mathrm{out}}^{\mathrm{reg}}=Q_{\mathrm{out}}^{3\to4}
@@ -538,7 +538,7 @@ on the small black hole branch."
      \frac{\partial}{\partial T}\Delta S|_T=\frac{1}{T}\left[C_V(T,V_2)-C_V(T,V_1)\right]=0,
      $$
 
-故 $\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}},$式 (33) 退化为
+     故 $\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}},$式 (33) 退化为
 
      $$
      \eta_{\mathrm{Stirling}}^{\mathrm{reg}}=1-\frac{T_{\rm c}}{T_{\rm h}}=\eta_{\rm Carnot}.
@@ -546,11 +546,11 @@ on the small black hole branch."
 
      > 原文："Indeed, under condition~\eqref{eq:volume-independent-cv}, $ Q_{\mathrm{mis}}=0.$"；"Moreover, since"；"one obtains"；"Hence
 
-$$
-\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}}
-$$
+     $$
+     \Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}}
+     $$
 
-, and equation~\eqref{eq:eta_stirling_reg} reduces to"
+     , and equation~\eqref{eq:eta_stirling_reg} reduces to"
 
 106. **条件性质的辨析**：$C_V$ 与体积无关是逐点匹配的**充分但非必要**条件；反过来，较弱的 $Q_{\rm mis}=0$ 本身只保证等容能量的**积分**相等，并不保证热量在其被储存的同一温度上被归还，因此本身并不保证可逆再生。
      > 原文："The volume independence of $C_V$ is a sufficient, but not necessary, condition for pointwise matching on a particular cycle. Conversely, the weaker condition $Q_{\mathrm{mis}}=0$ by itself guarantees only equality of the integrated isochoric energies. It does not ensure that heat is returned at the same temperatures at which it was stored, and therefore does not by itself guarantee reversible regeneration."
@@ -587,7 +587,7 @@ $$
      Q_{\mathrm{in}}^{4\to1}=Q_{\mathrm{out}}^{2\to3}+Q_{\mathrm{mis}}
      $$
 
- 都须外部提供；有再生时 $Q_{\mathrm{out}}^{2\to3}$ 被内部回收，只需补足剩下的亏缺 $Q_{\rm mis}$。因此
+     都须外部提供；有再生时 $Q_{\mathrm{out}}^{2\to3}$ 被内部回收，只需补足剩下的亏缺 $Q_{\rm mis}$。因此
 
      $$
      Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
@@ -596,17 +596,17 @@ $$
      小于 $Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}$（因 $Q_{\mathrm{out}}^{2\to3}>0$）；净功相同故再生提高效率。
      > 原文："The comparison with the non-regenerative Stirling cycle follows directly from the external heat balance. Both cycles follow the same path in the $P$-$V$ plane and therefore perform the same net work. Without regeneration, the full isochoric heat input"；"must be supplied externally. With regeneration, $Q_{\mathrm{out}}^{2\to3}$ is recycled internally, so only the remaining deficit $Q_{\mathrm{mis}}$ must be supplied externally. Hence
 
-$$
-Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
-$$
+     $$
+     Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
+     $$
 
- is smaller than
+     is smaller than
 
-$$
-Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}
-$$
+     $$
+     Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}
+     $$
 
-, since $Q_{\mathrm{out}}^{2\to3}>0$. Because the net work is the same, regeneration therefore increases the efficiency."
+     , since $Q_{\mathrm{out}}^{2\to3}>0$. Because the net work is the same, regeneration therefore increases the efficiency."
 
 113. **Stirling 效率层级**：结合亚 Carnot 结果，对每个满足 $T_{\rm h}>T_{\rm c}$、$V_2>V_1$ 的大分支循环
 
@@ -653,11 +653,11 @@ $$
      由于各循环使用的体积与压强约束不同，这些排序是所选循环族的特征，而非普适排名。
      > 原文："The volume-dependent comparisons in Figures~\ref{fig:eff_vmax} and~\ref{fig:eff_vmin} do not exhibit a fixed hierarchy among the displayed efficiencies over their full parameter ranges. By contrast, for the common entropy endpoints and fixed control parameters used in Figures~\ref{fig:eff_smax} and~\ref{fig:eff_smin}, the efficiencies satisfy
 
-$$
-\eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}
-$$
+     $$
+     \eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}
+     $$
 
-throughout their common domain. Since the cycles use different volume and pressure constraints, these orderings are features of the chosen cycle families rather than universal rankings."
+     throughout their common domain. Since the cycles use different volume and pressure constraints, these orderings are features of the chosen cycle families rather than universal rankings."
 
 121. **可推广的方向**：同样的准局部构造可用于带电或转动黑洞、带有限类时边界的 de Sitter / anti-de Sitter 背景中的黑洞、高维解，以及高阶曲率理论中的黑洞。
      > 原文："Several extensions are natural. The same quasi-local construction can be applied to charged or rotating black holes, black holes in de Sitter or anti-de Sitter backgrounds with a finite timelike boundary, higher-dimensional solutions, and black holes in higher-curvature theories."

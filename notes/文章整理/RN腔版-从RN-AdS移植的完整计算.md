@@ -37,15 +37,15 @@ folder: "文章整理"
 
    临界值为 $r_c=\sqrt6Q$、
 
-$$
-T_c=\frac{\sqrt6}{18\pi Q}
-$$
+   $$
+   T_c=\frac{\sqrt6}{18\pi Q}
+   $$
 
-、$P_c=\frac{1}{96\pi Q^2}$、
+   、$P_c=\frac{1}{96\pi Q^2}$、
 
-$$
-G_c=\frac{\sqrt6Q}{3}.
-$$
+   $$
+   G_c=\frac{\sqrt6Q}{3}.
+   $$
 
    [引·2211 式(1)(2)(3)(4)(5)]
 
@@ -61,11 +61,11 @@ $$
    其中 $T$ 为系综（环境）温度；$T=T_h$ 时系综由在壳黑洞态构成并处于平衡，$T\ne T_h$ 时系综中所有可能态偏离在壳态。
    [引·2211 式(7)："
 
-$$
-f(x)=\int(T_h-T)dS
-$$
+   $$
+   f(x)=\int(T_h-T)dS
+   $$
 
-"；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
+   "；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
 
 6. 热势的极值点由 $3px^4-8tx^3+6x^2-1=0$ 决定；当 $0<p<1$、$t\in(t_1,t_3)$ 时该方程有三个正实根，从小到大记为 $x_1,x_2,x_3$，它们本质上是 $T_h=T$（即 $t_h=t$）的解。
    [引·2211 §II："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$. When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$."；"According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."]
@@ -137,7 +137,7 @@ $$
     \langle t\rangle=\frac{1}{D}\int_{r_A}^{r_m}dr\int_{r_A}^{r}dr'\,e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))},
     $$
 
-Kramers 近似
+    Kramers 近似
 
     $$
     r_k=\frac{\sqrt{|\mathcal{U}''(r_{\min})\mathcal{U}''(r_{\max})|}}{2\pi}e^{-\frac{\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})}{D}},
@@ -212,11 +212,11 @@ Kramers 近似
 29. 由 $y^2\ge0$ 得**定义域 $x\in[q^2,1]$**；两端 $x=q^2$ 与 $x=1$ 分别对应腔壁落在内视界 $r_-=Q^2/r_h$ 与外视界 $r_+=r_h$ 上（此时 $f(r_B)=0$）。
     [算·S2 的因子化形式直接给出；推·$f(r)=0$ 的两根为
 
-$$
-r_\pm=\frac{r_h}{2}+\frac{Q^2}{2r_h}\pm\frac12\big(r_h-\frac{Q^2}{r_h}\big),
-$$
+    $$
+    r_\pm=\frac{r_h}{2}+\frac{Q^2}{2r_h}\pm\frac12\big(r_h-\frac{Q^2}{r_h}\big),
+    $$
 
-即 $r_+=r_h$、$r_-=Q^2/r_h$]
+    即 $r_+=r_h$、$r_-=Q^2/r_h$]
 
 30. $q=0$ 时 $y^2=1-x$，与 [03749] 式(11) 完全一致；定义域退化为 $x\in(0,1)$，且 $x=0$ 即 $r_h=0$ 的热平直空间（此时 $E=P=0$，见第 12 条引文）。
     [算·S2；引·[03749] §II：「$E$ 与 $P$ 在 Minkowski 时空（$r_h=0$）中恒为零」]
@@ -288,11 +288,11 @@ $$
 
     [算·S4：`E - (2 T S - 2 P V + Phi Q)` 化简为 `0`；推·
 
-$$
-E(\lambda^2S,\lambda^2V,\lambda Q)=\lambda E(S,V)
-$$
+    $$
+    E(\lambda^2S,\lambda^2V,\lambda Q)=\lambda E(S,V)
+    $$
 
-的秩 1 齐次性 + Euler 定理]
+    的秩 1 齐次性 + Euler 定理]
 
 40. 第 39 条与 [25791] 式(15) 的形式一致：
 
@@ -347,11 +347,11 @@ $$
 
     [引·[25791] 式(17) 的构造精神；推·固定 $V$ 时 $dE=T_hdS$（第 38 条取 $dV=dQ=0$），故
 
-$$
-\int(T_h-T)dS=E-TS+\text{const}=F_{\rm off},
-$$
+    $$
+    \int(T_h-T)dS=E-TS+\text{const}=F_{\rm off},
+    $$
 
-即 [25791] 的 $\mathcal U$ 在固定 $V$ 时退化为 Helmholtz 自由能]
+    即 [25791] 的 $\mathcal U$ 在固定 $V$ 时退化为 Helmholtz 自由能]
 
 50. 定义无量纲量
 
@@ -473,11 +473,11 @@ $$
 
     | $q=Q/r_B$ | $T_1r_B$（极小） | $T_2r_B$（等深） | $T_3r_B$（极大） |
 
-$$
-\frac{T_2-T_1}{T_3-T_1}
-$$
+    $$
+    \frac{T_2-T_1}{T_3-T_1}
+    $$
 
-| **$r_{k1}/r_{k2}$（在 $T_2$）** | $x_1,x_2,x_3$ |
+    | **$r_{k1}/r_{k2}$（在 $T_2$）** | $x_1,x_2,x_3$ |
     |---|---|---|---|---|---|---|
     | 0.05 | 0.2059688 | 0.2489693 | 0.6505471 | 0.096722 | **2.073629** | 0.054631, 0.411903, 0.863512 |
     | 0.10 | 0.2035767 | 0.2304518 | 0.3473674 | 0.186904 | **1.524364** | 0.120735, 0.445274, 0.829753 |

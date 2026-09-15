@@ -582,13 +582,13 @@ folder: "文章整理/arXiv-2604.25791v1"
   M=\frac{(g^2+r_h^2)^{3/2}}{2r_h^2}
   $$
 
-（与式(9) 之差为 0）；由
+  （与式(9) 之差为 0）；由
 
   $$
   T_H=\frac{1}{2\pi r_h}\frac{dM}{dr_h}
   $$
 
- 得 $T_H=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}$（与式(10) 之差为 0）；由
+  得 $T_H=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}$（与式(10) 之差为 0）；由
 
   $$
   T_h=\frac{f'(r_h)}{4\pi}
@@ -635,11 +635,11 @@ folder: "文章整理/arXiv-2604.25791v1"
   （原文式 (33)）。
   [引·[17] §III："Therefore, if the entropy of the regular black holes satisfy the area law, the temperature should be
 
-$$
-T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H
-$$
+  $$
+  T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H
+  $$
 
-"（式(33)）]
+  "（式(33)）]
 
 - 由此产生两种"记账方式"：> 原文："We have two choices to connect Eq.(32) with the first law of thermodynamics, $\delta E=T\delta S$. The first one is
 
@@ -647,7 +647,7 @@ $$
   E\leftrightarrow M,\ \delta S\leftrightarrow\delta A/4/C(M,r_h),\ T\leftrightarrow T_h
   $$
 
-; The second one is
+  ; The second one is
 
   $$
   S\leftrightarrow A/4,\ \delta E\leftrightarrow C(M,r_h)\delta M,\ T\leftrightarrow T_h

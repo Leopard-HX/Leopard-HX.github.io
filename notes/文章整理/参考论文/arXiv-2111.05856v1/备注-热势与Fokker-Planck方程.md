@@ -77,11 +77,11 @@ $$
 
     > 原文："For a specific black hole thermodynamic system, we can construct the thermal potential"；"
 
-$$
-U=\int(T_h-T)\,\mathrm{d}S
-$$
+    $$
+    U=\int(T_h-T)\,\mathrm{d}S
+    $$
 
-"
+    "
 
 12. **积分变量与状态方程**：熵 $S$ 视为变量；$T_h=t(S,Y)$ 是熵与其它参数（AdS 半径 $l$、电荷 $Q$、角动量 $J$ 等）满足的关系；系综温度 $T$ 是独立常数，可取任意正值。
     > 原文："where the thermodynamic entropy $S$ of the black hole is seen as a variable. For black holes, we know $T_h=t(S,Y)$, where the function $t(S,Y)$ is the relation satisfied by thermodynamic entropy $S$ and other parameters $Y$ of the black hole, like the AdS radius $l$, charge $Q$, angular momentum $J$, etc. The ensemble temperature $T$ now here is treated as an independent constant, which can take any positive value in any way."
@@ -97,11 +97,11 @@ $$
 
     > 原文："in the equilibrium state, the thermal potential will show extreme behavior, i.e.,"；"
 
-$$
-\mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h
-$$
+    $$
+    \mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h
+    $$
 
-"（原文式 (2)）
+    "（原文式 (2)）
 
 15. **稳定性判据**：极值点的凹凸性与热力学稳定性相关；$\partial t(S,Y)/\partial S>0$ 稳定，$<0$ 不稳定。
     > 原文："the concavity and convexity at the extreme point are related to the stability of the thermodynamic system"；"When $\partial t(S,Y)/\partial S>0$, the thermodynamic system is in a stable state, while $\partial t(S,Y)/\partial S<0$ corresponds to an unstable state."（原文式 (3) 后）
@@ -115,17 +115,17 @@ $$
     可得热势等于 $E+PV-TS$。
     > 原文："according to the first law of thermodynamics
 
-$$
-\mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V
-$$
+    $$
+    \mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V
+    $$
 
-, where $E$ is the internal energy, $P$ is the pressure, and $V$ is the thermodynamic volume of the system, we have"；"
+    , where $E$ is the internal energy, $P$ is the pressure, and $V$ is the thermodynamic volume of the system, we have"；"
 
-$$
-U=\int(T_h-T)\,\mathrm{d}S=E+PV-TS
-$$
+    $$
+    U=\int(T_h-T)\,\mathrm{d}S=E+PV-TS
+    $$
 
-"（原文式 (4)）
+    "（原文式 (4)）
 
 17. **与自由能图景的关系**：形式上，本文构造的热势等价于自由能图景中的 off-shell 自由能。
     > 原文："Formally, we can see that the thermal potential constructed in this paper is equivalent to the off-shell free energy in the free energy landscape [Li2020]."
@@ -157,11 +157,11 @@ $$
     （原文式 (7)），并构造 Hermitian 算子 $L=-e^{\Phi/2}L_{\rm FP}e^{-\Phi/2}$，本征方程 $L\psi=\varepsilon\psi$（原文式 (8)）。
     > 原文："For convenience, we introduce $\Phi(x)=f(x)/D$ resulting that the Fokker-Planck operator $L_{\rm FP}$ can be written as"；"Easily, we can obtain an Hermitian operator
 
-$$
-L:=-e^{\Phi(x)/2}L_{\rm FP}e^{-\Phi(x)/2}
-$$
+    $$
+    L:=-e^{\Phi(x)/2}L_{\rm FP}e^{-\Phi(x)/2}
+    $$
 
-and the eigenvalue equation (6) becomes"
+    and the eigenvalue equation (6) becomes"
 
 22. **等效量子力学形式**：$L=-D\partial_x^2+V_s(x)$，其中
 
@@ -172,11 +172,11 @@ and the eigenvalue equation (6) becomes"
     （原文式 (9)）。
     > 原文："the Hermitian operator $L$ has the same form as the single-particle Hamilton operator in quantum mechanics,"；"
 
-$$
-L=-D\partial_x^2+V_s(x),\;V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)
-$$
+    $$
+    L=-D\partial_x^2+V_s(x),\;V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)
+    $$
 
-"
+    "
 
 23. **边界条件**：反射边界（RBC）、吸收边界（ABC）、自然边界（NBC）三种。
     > 原文："Reflecting boundary condition (RBC): in the region $x>x_{\max}$ or $x<x_{\min}$, the potential $\Phi(x)$ tends to an infinite high positive value, which requires $S=0$."；"Absorbing boundary condition (ABC): ... which requires $e^{\Phi}W=0$."；"Natural boundary condition (NBC): for $x_{\max}\to+\infty$ and $x_{\min}\to-\infty$, we have $S=0$ or $e^{\Phi}W=0$."
@@ -191,7 +191,7 @@ $$
     T_h=\frac{1}{4\pi r_h}
     $$
 
-、$S=\pi r_h^2$（原文式 (11)），热势
+    、$S=\pi r_h^2$（原文式 (11)），热势
 
     $$
     U=\frac{1}{2}r_h-\pi T r_h^2
@@ -200,11 +200,11 @@ $$
     （原文式 (12)），为倒谐振子势（inverted harmonic oscillator potential）。
     > 原文："$T_h=\frac{1}{4\pi r_h},\;S=\pi r_h^2$"；"In the light of Eq. (1), we can obtain the thermal potential of the Schwarzschild black hole easily"；"
 
-$$
-U=\frac{1}{2}r_h-\pi T r_h^2
-$$
+    $$
+    U=\frac{1}{2}r_h-\pi T r_h^2
+    $$
 
-"；"It is the inverted harmonic oscillator potential or parabolic potential barrier"
+    "；"It is the inverted harmonic oscillator potential or parabolic potential barrier"
 
 25. **Schwarzschild 能谱**：$\varepsilon_n=2\pi T(n+1)$，$n=0,1,2,\cdots$（原文式 (15)），基态 $\varepsilon_0=2\pi T$（原文式 (17)）；当 $T=T_h=1/(8\pi M)$ 时
 
@@ -215,11 +215,11 @@ $$
     （原文式 (21)）。
     > 原文："$\varepsilon_n=2\pi T(n+1),\;n=0,1,2,\cdots$"；"$\varepsilon_0=2\pi T$"；"
 
-$$
-\varepsilon_n=\frac{n+1}{4M},\;n=0,1,2,\cdots
-$$
+    $$
+    \varepsilon_n=\frac{n+1}{4M},\;n=0,1,2,\cdots
+    $$
 
-"
+    "
 
 26. **BTZ 黑洞**：
 
@@ -227,7 +227,7 @@ $$
     T_h=\frac{r_h}{2\pi l^2}
     $$
 
-、$S=\frac{1}{2}\pi r_h$（原文式 (23)），热势
+    、$S=\frac{1}{2}\pi r_h$（原文式 (23)），热势
 
     $$
     U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h
@@ -236,11 +236,11 @@ $$
     （原文式 (24)），为谐振子势（harmonic oscillator potential）。
     > 原文："$T_h=\frac{r_h}{2\pi l^2},\;S=\frac{1}{2}\pi r_h$"；"With the help of Eq. (1), we can obtain the thermal potential of the BTZ black hole"；"
 
-$$
-U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h
-$$
+    $$
+    U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h
+    $$
 
-"；"Obviously, BTZ black hole is in harmonic oscillator potential"
+    "；"Obviously, BTZ black hole is in harmonic oscillator potential"
 
 27. **BTZ 能谱**：
 
