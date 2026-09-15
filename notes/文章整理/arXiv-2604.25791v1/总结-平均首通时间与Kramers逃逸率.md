@@ -23,7 +23,7 @@ folder: "文章整理/arXiv-2604.25791v1"
 | 篇幅 | 13 页 6 图 | > "13 pages, 6 figures. To be published in Chinese Physics C" |
 | 分类 | gr-qc | > "Subjects: General Relativity and Quantum Cosmology (gr-qc)" |
 | 关键词 | Kramers 逃逸率；Bardeen-AdS；黑洞热力学 | > "Keywords: kramers escape rate; bardeen-AdS; black hole thermodynamics" |
-| DOI / BibTeX | 可通过 arXiv 导出 | > "https://doi.org/10.48550/arXiv.2604.25791"；"Cite as: arXiv:2604.25791 [gr-qc]" |
+| DOI / BibTeX | 可通过 arXiv 导出 | > "https://doi.org/10.48550/arXiv.2604.25791. Cite as: arXiv:2604.25791 [gr-qc]" |
 
 ---
 
@@ -169,7 +169,7 @@ folder: "文章整理/arXiv-2604.25791v1"
     \int_{S_1}^{S_2} T_h\,dS = T\cdot(S_2-S_1) \;\Rightarrow\; \int_{S_1}^{S_2}(T_h-T)\,dS = 0 \qquad \text{(原文式 (16))}
     $$
 
-    > 原文："In the extended phase space of black hole thermodynamics, the phase transition of black hole can be determined by the Maxwell equal area law."；"The Maxwell equal area law states that there exists an isotherm T such that AreaA=AreaB, as shown in Fig 1."
+    > 原文："In the extended phase space of black hole thermodynamics, the phase transition of black hole can be determined by the Maxwell equal area law.. The Maxwell equal area law states that there exists an isotherm T such that AreaA=AreaB, as shown in Fig 1."
     > 原文式 (16)："∫S1S2 Th dS = T·(S2−S1) ⇒ ∫S1S2 (Th−T) dS = 0"
 
 34. **本文定义**：放开等面积律约束，引入广义自由能 $\mathcal{U}$（又称热势）
@@ -225,7 +225,7 @@ folder: "文章整理/arXiv-2604.25791v1"
     $$
 
     （原文式 (20)），其中 $X$ 是解释为非平衡热力学体积的辅助变量，$F(X,T,P)=P-f(X,T)$，$P=f(V,T)$ 为物态方程；$\mathcal{L}$ 的极值出现在 $X$ 满足物态方程处，即平衡体积 $X=V_{\text{eq}}$。
-    > 原文："Regarding the Landau potential [38]"；"where X is an auxiliary variable interpreted as the non-equilibrium thermodynamic volume, and F(X,T,P)=P−f(X,T) with P=f(V,T) the equation of state. The extremum of ℒ occurs when X satisfies the equation of state, i.e., at the equilibrium volume X=Veq."
+    > 原文："Regarding the Landau potential [38], where X is an auxiliary variable interpreted as the non-equilibrium thermodynamic volume, and F(X,T,P)=P−f(X,T) with P=f(V,T) the equation of state. The extremum of ℒ occurs when X satisfies the equation of state, i.e., at the equilibrium volume X=Veq."
 
 44. **三种离壳势的区别**：$\mathcal{U}$（$T$–$S$ 平面）以环境温度作为离壳变量；$\mathcal{G}$（$G$–$T$ 或 $G$–$P$ 平面）通过解除 $T=T_h$ 约束推广 Gibbs 自由能；$\mathcal{L}$（$P$–$V$ 平面）以非平衡体积 $X$ 作为离壳变量。
     > 原文："The three off-shell potentials differ in which variable is taken off-shell and which thermodynamic plane they naturally belong to. 𝒰 (on the T-S plane) takes the ambient temperature as the off-shell variable; 𝒢 (on the G-T or G-P plane) generalizes the Gibbs free energy by lifting the constraint T=Th; ℒ (on the P-V plane) uses the non‑equilibrium volume X as the off-shell variable."
@@ -253,7 +253,7 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："where the ρ(r,t) is the probability distribution of black hole states, β=1/T denotes the inverse temperature, 𝒰(r) is the generalized free energy in our work, and D is the diffusion coefficient. The radius of the black hole event horizon r is regarded as a order parameter of the system."
 
 50. **两类边界条件**（原文式 (22)、(23)）：在 $r_A$ 处取**反射**边界条件（概率流为零），在 $r_m$ 处取**吸收**边界条件（概率密度为零）。
-    > 原文式 (22)、(23)："j(rA,t) = −D( e^{−β𝒰(r)} ∂/∂r ( e^{β𝒰(r)} ρ(r,t) ) )|_{r=rA} = 0"；"ρ(rm,t)=0"
+    > 原文式 (22)、(23)："j(rA,t) = −D( e^{−β𝒰(r)} ∂/∂r ( e^{β𝒰(r)} ρ(r,t) ) )|_{r=rA} = 0. ρ(rm,t)=0"
     > 原文："To render the Fokker-Planck equation more tractable, we prescribe the following boundary conditions"
 
 51. **反射边界的意义**：$r_A$ 处概率流 $j$ 为零，表示没有态流出系统；$r_A$ 通常选为相变动力学的初始态。
@@ -368,7 +368,7 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："In fact, these dashed lines represent the generalized free energy calculated using the 'temperature' derived from the inner horizon radius. Consequently, their thermodynamic behavior is physically meaningless."
 
 68. **图 2 的参数**：(a) $L=15,m_0=10,T=0.017854$；(b) $L=15,m_0=6.5,T=0.018759$；(c) $L=15,m_0=3,T=0.019729$；(d) $L=10,m_0=2.05,T=0.027750$；(e) $L=7.67,m_0=1.39,T=0.03550$；(a)–(c) 为 Type I，(d)(e) 为 Type II。
-    > 原文（图 2 题注）："(a)L=15,m0=10,T=0.017854. (b)L=15,m0=6.5,T=0.018759. (c)L=15,m0=3,T=0.019729. (d)L=10,m0=2.05,T=0.027750. (e)L=7.67,m0=1.39,T=0.03550."；"Panels (a)–(c) correspond to Type I black holes, while (d) and (e) represent Type II black holes. The solid lines depict the relationship between the generalized free energy 𝒰 and the event horizon r+. In contrast, dashed lines denote non-physical, unattainable regions."
+    > 原文（图 2 题注）："(a)L=15,m0=10,T=0.017854. (b)L=15,m0=6.5,T=0.018759. (c)L=15,m0=3,T=0.019729. (d)L=10,m0=2.05,T=0.027750. (e)L=7.67,m0=1.39,T=0.03550.. Panels (a)–(c) correspond to Type I black holes, while (d) and (e) represent Type II black holes. The solid lines depict the relationship between the generalized free energy 𝒰 and the event horizon r+. In contrast, dashed lines denote non-physical, unattainable regions."
 
 69. **广义自由能行为分三类**：Case 1 只在曲线后半段有定义，对应文献 [20] 的 Type I 黑洞；Case 2 在某个中间区域无定义；Case 3 在整个区间可定义。Case 2 与 Case 3 对应文献 [20] 的 Type II 黑洞。
     > 原文："It is readily apparent that the behavior of the generalized free energy is classified into three cases. Case 1 is defined only in the latter half of the curve and corresponds to the Type I black holes in [20]. Case 2 is undefined in some intermediate region. Case 3 is definable across the entire interval. Both case 2 and case 3 curves correspond to the Type II black holes discussed in reference [20]."

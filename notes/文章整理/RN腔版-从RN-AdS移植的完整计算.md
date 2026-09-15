@@ -59,13 +59,13 @@ folder: "文章整理"
    $$
 
    其中 $T$ 为系综（环境）温度；$T=T_h$ 时系综由在壳黑洞态构成并处于平衡，$T\ne T_h$ 时系综中所有可能态偏离在壳态。
-   [引·2211 式(7)："$f(x)=\int(T_h-T)dS$"；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
+   [引·2211 式(7)："$f(x)=\int(T_h-T)dS$. Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
 
 6. 热势的极值点由 $3px^4-8tx^3+6x^2-1=0$ 决定；当 $0<p<1$、$t\in(t_1,t_3)$ 时该方程有三个正实根，从小到大记为 $x_1,x_2,x_3$，它们本质上是 $T_h=T$（即 $t_h=t$）的解。
-   [引·2211 §II："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$. When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$."；"According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."]
+   [引·2211 §II："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$. When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$.. According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."]
 
 7. 三个关键温度 $t_1,t_2,t_3$：$t_1$ 与 $t_3$ 分别为 swallowtail 尖端的"最低温度"与"最高温度"，$t_2$ 为 swallowtail 自交点温度；$t=t_2$ 时热势的两个全局极小相等（"$\omega$-well"）。
-   [引·2211 式(9)及其后："where $t_1$ and $t_3$ are the local minimum temperature and the local maximum temperature of the swallowtail tip, and $t_2$ is the temperature of the swallowtail intersection."；"When the ensemble temperature $t=t_2$, the two global minima in the thermal potential are equal, labeled as $\omega$-well."]
+   [引·2211 式(9)及其后："where $t_1$ and $t_3$ are the local minimum temperature and the local maximum temperature of the swallowtail tip, and $t_2$ is the temperature of the swallowtail intersection.. When the ensemble temperature $t=t_2$, the two global minima in the thermal potential are equal, labeled as $\omega$-well."]
 
 8. 两个方向的 Kramers 速率为
 
@@ -77,7 +77,7 @@ folder: "文章整理"
    [引·2211 式(10)(11)(12)]
 
 9. 该文的核心结论：相变率随温度先增后减；在 $t=t_2$（两阱等深、Gibbs 意义下的共存温度）处 $r_{k1}$ 仍远大于 $r_{k2}$；只有到 $t=t^*\in(t_2,t_3)$ 两者才相等（动力学平衡）；整体过程由小→大主导，呈显著**非对称**。
-   [引·2211 §II："At $t_2$, according to the diagram (b) in FIG. 1, the two global minima in the thermal potential are equal, but the transition rates $r_{k1}$ and $r_{k2}$ are not equal. The rate $r_{k1}$ is much larger than the rate $r_{k2}$ …"；"At $t^*$, the transition rates $r_{k1}$ and $r_{k2}$ are equal, and the net rate is zero, which means that the transition between the two phases reaches dynamic equilibrium."]
+   [引·2211 §II："At $t_2$, according to the diagram (b) in FIG. 1, the two global minima in the thermal potential are equal, but the transition rates $r_{k1}$ and $r_{k2}$ are not equal. The rate $r_{k1}$ is much larger than the rate $r_{k2}$ …. At $t^*$, the transition rates $r_{k1}$ and $r_{k2}$ are equal, and the net rate is zero, which means that the transition between the two phases reaches dynamic equilibrium."]
 
 10. 该文强调这是 Gibbs 自由能分析**给不出**的信息，并把它列为自己填补的空白。
     [引·2211 §III："This is the important information about the phase transition of black holes that we cannot get in the analysis of Gibbs free energy."；摘要："This study filled a research gap of a stochastic process analysis on the issue of the first-order phase transition rate in the AdS black hole."]
@@ -85,7 +85,7 @@ folder: "文章整理"
 ### 1.2 [03749] 的腔壁形式与 Schwarzschild 结果（要移植到的框架）
 
 11. 把黑洞置于有限球形腔 $r_B>r_h$，准局部热力学的状态变量为 $(E,T,S,P,V)$，其中 $E$ 为 Brown–York 准局部能量、$T$ 为腔壁上的红移 Hawking 温度（Tolman 温度）、$P$ 为 Brown–York 表面压力，且 $S=\pi r_h^2/G$、$V=4\pi r_B^2$。
-    [引·03749 §II 式(2)(3)(4)(5) 及其说明："The internal energy $E$ is equal to the quasi-local Brown-York energy"；"the local temperature at the boundary is the redshifted Hawking temperature seen by an observer at $r=r_B$, also known as the Tolman temperature"；"the holographic pressure $P$ is the Brown-York surface pressure"；"$V$ is … the spatial volume of the boundary thermodynamic system, which has two spatial dimensions. We therefore refer to $V$ as the boundary volume. Its conjugate $P$ is a surface pressure"]
+    [引·03749 §II 式(2)(3)(4)(5) 及其说明："The internal energy $E$ is equal to the quasi-local Brown-York energy, the local temperature at the boundary is the redshifted Hawking temperature seen by an observer at $r=r_B$, also known as the Tolman temperature, the holographic pressure $P$ is the Brown-York surface pressure. $V$ is … the spatial volume of the boundary thermodynamic system, which has two spatial dimensions. We therefore refer to $V$ as the boundary volume. Its conjugate $P$ is a surface pressure"]
 
 12. 基本关系为 $dE=TdS-PdV$。
     [引·03749 式(1)]
@@ -123,7 +123,7 @@ folder: "文章整理"
     $$
 
     （$P$–$V$ 平面）；并指出在 $P$–$V$ 分析中后者更自然。
-    [引·25791 式(20) 及其后："ℒ (on the P-V plane) uses the non‑equilibrium volume X as the off-shell variable."；"for G-T/G-P or P-V analyses, 𝒢 or ℒ would be more natural."]
+    [引·25791 式(20) 及其后："ℒ (on the P-V plane) uses the non‑equilibrium volume X as the off-shell variable., for G-T/G-P or P-V analyses, 𝒢 or ℒ would be more natural."]
 
 20. MFPT 精确积分
 
@@ -138,7 +138,7 @@ folder: "文章整理"
     $$
 
     二者近似互为倒数，且后者要求深阱条件 $\Delta\mathcal{U}\gg D$。
-    [引·25791 式(26)(32) 及其后："Consequently, they are approximately reciprocals of each other"；"In general, this requires the thermal potential to satisfy the deep well condition, namely Δ𝒰=𝒰(rmax)−𝒰(rmin)≫D."]
+    [引·25791 式(26)(32) 及其后："Consequently, they are approximately reciprocals of each other. In general, this requires the thermal potential to satisfy the deep well condition, namely Δ𝒰=𝒰(rmax)−𝒰(rmin)≫D."]
 
 21. [25791] 在扩展相空间中的推广第一定律与 Smarr 关系含物质/耦合项：
 
@@ -155,7 +155,7 @@ folder: "文章整理"
     [引·2405 摘要："we obtain the phase diagrams for the black hole in cavity, which reveal a Hawking-Page type transition for the uncharged black hole and a Van der Waals type transition for the charged black hole."]
 
 23. Kramers 公式里 $\beta$ 与 $D$ 的关系有明确约定：$D=k_BT/\eta$，$\eta$ 为摩擦系数，故 $1/D=\beta\eta$；且 HP 型（阱为边界半抛物）会带来 1/2 因子。
-    [引·2408 §3.1："$\beta$ denotes the inverse temperature $1/k_BT$, and $D$ is the diffusion coefficient, given by $k_BT/\eta$, where $k_B$ is the Boltzmann constant and $\eta$ is the dissipation or friction coefficient."；"the origin of the 1/2 factor is that we approximate the potential energy function as nearly half a parabola, while equation (21) assumed a symmetric parabola, considering the doubled distance traveled."]
+    [引·2408 §3.1："$\beta$ denotes the inverse temperature $1/k_BT$, and $D$ is the diffusion coefficient, given by $k_BT/\eta$, where $k_B$ is the Boltzmann constant and $\eta$ is the dissipation or friction coefficient., the origin of the 1/2 factor is that we approximate the potential energy function as nearly half a parabola, while equation (21) assumed a symmetric parabola, considering the doubled distance traveled."]
 
 ---
 
@@ -424,7 +424,7 @@ folder: "文章整理"
 ## 9. 三个特征温度与两个 Kramers 速率
 
 64. 仿照 [2211] 的定义，记 $T_1\equiv T_B(x_m)$（极小温度）、$T_3\equiv T_B(x_M)$（极大温度）、$T_2$ 为**两阱等深**温度（由 $F_{\rm off}(x_1)=F_{\rm off}(x_3)$ 定出）。
-    [引·[2211]："$t_1$ and $t_3$ are the local minimum temperature and the local maximum temperature of the swallowtail tip, and $t_2$ is the temperature of the swallowtail intersection."；"When the ensemble temperature $t=t_2$, the two global minima in the thermal potential are equal"]
+    [引·[2211]："$t_1$ and $t_3$ are the local minimum temperature and the local maximum temperature of the swallowtail tip, and $t_2$ is the temperature of the swallowtail intersection.. When the ensemble temperature $t=t_2$, the two global minima in the thermal potential are equal"]
 
 65. 在 $T_2$ 处两个势垒高度严格相等，这是第 64 条定义的数值检验。
     [算·N2 的 [18'] 行：$q=0.15$ 时 `g(x2)-g(x1) = g(x2)-g(x3) = 0.01120239`]

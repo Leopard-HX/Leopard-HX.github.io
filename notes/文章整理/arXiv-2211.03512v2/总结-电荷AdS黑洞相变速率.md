@@ -115,7 +115,7 @@ folder: "文章整理/arXiv-2211.03512v2"
     $$
 
     其中 $Q$ 为总电荷，$P$ 为由 $P=3/(8\pi l^2)$ 定义的热力学压强，$l$ 为 AdS 半径。
-    > 原文："We briefly review the thermodynamic behavior of the charged AdS black hole [12]. The mass of the black hole in terms of the radius of the event horizon $r_h$ is"；"where $Q$ is the total charge of the black hole, $P$ is the thermodynamic pressure defined by $P=3/(8\pi l^2)$, and $l$ is the AdS radius."
+    > 原文："We briefly review the thermodynamic behavior of the charged AdS black hole [12]. The mass of the black hole in terms of the radius of the event horizon $r_h$ is, where $Q$ is the total charge of the black hole, $P$ is the thermodynamic pressure defined by $P=3/(8\pi l^2)$, and $l$ is the AdS radius."
 
 25. **温度**：
 
@@ -196,7 +196,7 @@ folder: "文章整理/arXiv-2211.03512v2"
     $$
 
     、$\frac{3x}{2}.$）
-    > 原文："Substituting Eqs. (2), (3), (5) and (6) into Eq. (7) and completing the integration, we can obtain the expression of the thermal potential for the charged AdS black hole:"；"where we replace the ensemble temperature $T$ with its dimensionless version $t$ via $t:=T/T_c$."
+    > 原文："Substituting Eqs. (2), (3), (5) and (6) into Eq. (7) and completing the integration, we can obtain the expression of the thermal potential for the charged AdS black hole:, where we replace the ensemble temperature $T$ with its dimensionless version $t$ via $t:=T/T_c$."
     > ⚠️ **该式在 arXiv HTML 中的渲染有损**（根号丢失、分母丢失），本文档第十节给出了独立复算的等价形式与验证方法。
 
 38. **三个关键温度**：$t_1$ 与 $t_3$ 分别是 swallowtail 尖端的局部最小温度与局部最大温度，$t_2$ 是 swallowtail 交点温度。
@@ -287,7 +287,7 @@ folder: "文章整理/arXiv-2211.03512v2"
     > **算·根数扫描**（$p=0.5$）：$t=0.70\to1$ 个正根、$0.7326\to3$、$0.75\to3$、$0.8446\to3$、$0.8447\to1$、$0.9\to1$、$1.0\to1$——与"$0<p<1$ 且 $t\in(t_1,t_3)$ 恰有三个实正根"一致（$t_1=0.7325378$、$t_3=0.8446232$）。
 
 49. **图 2**：以图示给出 $p=0.5$ 时方程 $t_h=t$ 的三个实根 $x_1,x_2,x_3$，可以清楚看到三个位置之间的间隔。
-    > 原文（图 2 题注）："Graphic representation of three real roots ($x_1$, $x_2$, and $x_3$) of an equation $t_h=t$ at the pressure $p=0.5$ for the charged AdS black hole."；"With the dimensionless quantities (6), we present a plot to illustrate this point in FIG. 2, in which we can easily see the separations between the three positions."
+    > 原文（图 2 题注）："Graphic representation of three real roots ($x_1$, $x_2$, and $x_3$) of an equation $t_h=t$ at the pressure $p=0.5$ for the charged AdS black hole.. With the dimensionless quantities (6), we present a plot to illustrate this point in FIG. 2, in which we can easily see the separations between the three positions."
 
     > **算·三根间距**：$0.5768511,\;1.3568998,\;2.4516094$，间距 $0.78005$ 与 $1.09471$（比值 $1.403$）；且 $x_1x_3=1/\sqrt p=1.41421$（推导见 Q1 第 3 节）。
 
