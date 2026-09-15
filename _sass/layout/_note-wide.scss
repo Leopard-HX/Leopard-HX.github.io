@@ -1,0 +1,42 @@
+/* ==========================================================================
+   NOTE PAGE — 放宽笔记正文版面
+   ==========================================================================
+
+   主题给 .page 用的是 Susy 网格：
+
+       @include span(10 of 12 last);
+       @include prefix(0.5 of 12);
+       @include suffix(2 of 12);
+
+   其中右侧那 2 列（宽屏下约 150px）本来是留给「页面目录」的。笔记页没有目录，
+   白白吃掉四分之一宽度，长公式和长表格只能横向滚动。
+
+   这里给笔记页改成整行。作用域是 body.is-note，由 _layouts/default.html 依据
+   front matter 的 page.is_note 输出（_config.yml 里给 notes scope 设了
+   is_note: true）—— 首页 / CV / 论文列表等页面完全不受影响。
+   ========================================================================== */
+
+body.is-note {
+  #main {
+    /* 主题原本把上限卡在 $x-large（约 925px），大屏下两边留白过多 */
+    @include breakpoint($x-large) {
+      max-width: 1200px;
+    }
+  }
+
+  .page {
+    @include breakpoint($large) {
+      /* 覆盖 Susy 的 span(10 of 12) + prefix(0.5) + suffix(2)：
+         prefix/suffix 生成的是左右 padding，宽度则由 span 给出 */
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  /* full() 生成的 100% 宽度保持原样，这里只是防止别处再塞上限 */
+  .page__inner-wrap,
+  .page__content {
+    max-width: none;
+  }
+}
