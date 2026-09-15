@@ -16,22 +16,21 @@
    is_note: true）—— 首页 / CV / 论文列表等页面完全不受影响。
    ========================================================================== */
 
+/* 刻意不套 breakpoint($large)/breakpoint($x-large)：主题里这些断点是
+   max-width 语义，包进去反而会让规则在大屏（≥$x-large）失效。
+   这几条在窄屏下本来就等价于「100% 宽、无额外内边距」，写在外面无害。 */
 body.is-note {
   #main {
-    /* 主题原本把上限卡在 $x-large（约 925px），大屏下两边留白过多 */
-    @include breakpoint($x-large) {
-      max-width: 1200px;
-    }
+    /* 主题原本把上限卡在 925px，大屏下两边留白过多 */
+    max-width: 1200px;
   }
 
   .page {
-    @include breakpoint($large) {
-      /* 覆盖 Susy 的 span(10 of 12) + prefix(0.5) + suffix(2)：
-         prefix/suffix 生成的是左右 padding，宽度则由 span 给出 */
-      width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-    }
+    /* 覆盖 Susy 的 span(10 of 12) + prefix(0.5) + suffix(2)：
+       prefix/suffix 生成的是左右 padding，宽度则由 span 给出 */
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   /* full() 生成的 100% 宽度保持原样，这里只是防止别处再塞上限 */
