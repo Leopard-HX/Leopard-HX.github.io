@@ -1,0 +1,21 @@
+/* MathJax 公式排版
+ *
+ * 笔记里的块级公式最终由 MathJax 渲染成 mjx-container[display="true"]。
+ * 这里只补两件事：
+ *   1. 块级公式独占一行、上下留白（默认继承的 margin 太紧，会和正文挤在一起）
+ *   2. 超长公式横向滚动，而不是把版面撑破（窄屏上尤其明显）
+ */
+
+mjx-container[display="true"] {
+  display: block;
+  margin: 1.2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 行内公式在窄屏下也可能比容器宽，给个横向滚动兜底 */
+mjx-container:not([display="true"]) {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

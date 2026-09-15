@@ -32,7 +32,10 @@
     }
   };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- 自托管（assets/js/mathjax/es5/）：原来走 cdn.jsdelivr.net，国内网络下会间歇性连不上，
+     一旦脚本没加载，整页公式就退化成字面 $...$。CHTML 的字体在同目录的
+     output/chtml/fonts/woff-v2/，MathJax 会依据脚本自身的 URL 自动去取，无需额外配置。 -->
+<script id="MathJax-script" async src="{{ base_path }}/assets/js/mathjax/es5/tex-chtml.js"></script>
 
 {% endif %}
 
