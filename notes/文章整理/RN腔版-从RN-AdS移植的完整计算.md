@@ -35,14 +35,37 @@ folder: "文章整理"
    M=\frac{r_h}{2}+\frac{4\pi Pr_h^3}{3}+\frac{Q^2}{2r_h},\quad T_h=\frac{1}{4\pi r_h}\Big(1+8\pi Pr_h^2-\frac{Q^2}{r_h^2}\Big),\quad S=\pi r_h^2,\quad G=M-T_hS,
    $$
 
-   临界值为 $r_c=\sqrt6Q$、$T_c=\frac{\sqrt6}{18\pi Q}$、$P_c=\frac{1}{96\pi Q^2}$、$G_c=\frac{\sqrt6Q}{3}$。
+   临界值为 $r_c=\sqrt6Q$、
+
+$$
+T_c=\frac{\sqrt6}{18\pi Q}
+$$
+
+、$P_c=\frac{1}{96\pi Q^2}$、
+
+$$
+G_c=\frac{\sqrt6Q}{3}.
+$$
+
    [引·2211 式(1)(2)(3)(4)(5)]
 
 4. 无量纲量为 $t_h:=T_h/T_c$、$p:=P/P_c$、$x:=r_h/r_c$、$g:=G/G_c$。
    [引·2211 式(6)]
 
-5. 热势（即 [25791] 的广义自由能）定义为 $f(x)=\int(T_h-T)\,dS$，其中 $T$ 为系综（环境）温度；$T=T_h$ 时系综由在壳黑洞态构成并处于平衡，$T\ne T_h$ 时系综中所有可能态偏离在壳态。
-   [引·2211 式(7)："$f(x)=\int(T_h-T)dS$"；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
+5. 热势（即 [25791] 的广义自由能）定义为
+
+   $$
+   f(x)=\int(T_h-T)\,dS,
+   $$
+
+   其中 $T$ 为系综（环境）温度；$T=T_h$ 时系综由在壳黑洞态构成并处于平衡，$T\ne T_h$ 时系综中所有可能态偏离在壳态。
+   [引·2211 式(7)："
+
+$$
+f(x)=\int(T_h-T)dS
+$$
+
+"；"Here, when the ensemble temperature $T$ is equal to the Hawking temperature $T_h$, the ensemble is made up of an on-shell black hole state and is in equilibrium. Moreover, when $T\neq T_h$, all possible states in the canonical ensemble deviate from the on-shell black hole state."]
 
 6. 热势的极值点由 $3px^4-8tx^3+6x^2-1=0$ 决定；当 $0<p<1$、$t\in(t_1,t_3)$ 时该方程有三个正实根，从小到大记为 $x_1,x_2,x_3$，它们本质上是 $T_h=T$（即 $t_h=t$）的解。
    [引·2211 §II："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$. When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$."；"According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."]
@@ -50,7 +73,13 @@ folder: "文章整理"
 7. 三个关键温度 $t_1,t_2,t_3$：$t_1$ 与 $t_3$ 分别为 swallowtail 尖端的"最低温度"与"最高温度"，$t_2$ 为 swallowtail 自交点温度；$t=t_2$ 时热势的两个全局极小相等（"$\omega$-well"）。
    [引·2211 式(9)及其后："where $t_1$ and $t_3$ are the local minimum temperature and the local maximum temperature of the swallowtail tip, and $t_2$ is the temperature of the swallowtail intersection."；"When the ensemble temperature $t=t_2$, the two global minima in the thermal potential are equal, labeled as $\omega$-well."]
 
-8. 两个方向的 Kramers 速率为 $r_{k1}=\frac{\sqrt{|f''(x_1)f''(x_2)|}}{2\pi}e^{-\frac{f(x_2)-f(x_1)}{D}}$（小→大）与 $r_{k2}=\frac{\sqrt{|f''(x_3)f''(x_2)|}}{2\pi}e^{-\frac{f(x_2)-f(x_3)}{D}}$（大→小），其中 $D$ 为常数扩散系数。
+8. 两个方向的 Kramers 速率为
+
+   $$
+   r_{k1}=\frac{\sqrt{|f''(x_1)f''(x_2)|}}{2\pi}e^{-\frac{f(x_2)-f(x_1)}{D}}
+   $$
+
+   （小→大）与 $r_{k2}=\frac{\sqrt{|f''(x_3)f''(x_2)|}}{2\pi}e^{-\frac{f(x_2)-f(x_3)}{D}}$（大→小），其中 $D$ 为常数扩散系数。
    [引·2211 式(10)(11)(12)]
 
 9. 该文的核心结论：相变率随温度先增后减；在 $t=t_2$（两阱等深、Gibbs 意义下的共存温度）处 $r_{k1}$ 仍远大于 $r_{k2}$；只有到 $t=t^*\in(t_2,t_3)$ 两者才相等（动力学平衡）；整体过程由小→大主导，呈显著**非对称**。
@@ -70,7 +99,13 @@ folder: "文章整理"
 13. 对 $E$ 与 $P$ 施加平直空间背景减除，使它们在 $r_h=0$ 的 Minkowski 时空中恒为零。
     [引·03749 §II："A flat-space background subtraction is applied to both $E$ and $P$, so that they vanish identically in Minkowski spacetime, for which $r_h = 0$."]
 
-14. 反解 Tolman 温度方程得到三次方程 $r_h^3-r_Br_h^2+\frac{r_B}{(4\pi T)^2}=0$；York 证明当 $r_BT>\sqrt{27}/(8\pi)$ 时它在 $0<r_h<r_B$ 内有两个正实根，分别对应小分支 $0<x<2/3$ 与大分支 $2/3<x<1$（$x\equiv r_h/r_B$）。
+14. 反解 Tolman 温度方程得到三次方程
+
+    $$
+    r_h^3-r_Br_h^2+\frac{r_B}{(4\pi T)^2}=0;
+    $$
+
+    York 证明当 $r_BT>\sqrt{27}/(8\pi)$ 时它在 $0<r_h<r_B$ 内有两个正实根，分别对应小分支 $0<x<2/3$ 与大分支 $2/3<x<1$（$x\equiv r_h/r_B$）。
     [引·03749 式(6) 及其后："York [York1985a,York1990] showed that this cubic equation admits two distinct positive, real roots in the physical range $0<r_h<r_B$ when $r_B T>\sqrt{27}/(8\pi)$. Introducing $x\equiv r_h/r_B=\sqrt{4GS/V}$, these roots correspond to the small black hole branch $0<x<2/3$ and the large black hole branch $2/3<x<1$."]
 
 15. 红移参数 $y\equiv\sqrt{1-r_h/r_B}$（$0<y<1$）度量视界与腔壁之间的引力红移。
@@ -87,13 +122,37 @@ folder: "文章整理"
 18. 其极值条件为 $d\mathcal{U}/dS=0\Rightarrow T=T_h$；极小值对应热稳定态，极大值对应热不稳定态。
     [引·25791 式(18) 及其后："The minima of the generalized free energy landscape correspond to thermally stable black hole states, whereas the maxima signify thermally unstable ones."]
 
-19. [25791] 列出三种离壳势：$\mathcal{U}$（$T$–$S$ 平面）、$\mathcal{G}$（$G$–$T$/$G$–$P$ 平面）、$\mathcal{L}=\int F(X,T,P)dX$（$P$–$V$ 平面）；并指出在 $P$–$V$ 分析中后者更自然。
+19. [25791] 列出三种离壳势：$\mathcal{U}$（$T$–$S$ 平面）、$\mathcal{G}$（$G$–$T$/$G$–$P$ 平面）、
+
+    $$
+    \mathcal{L}=\int F(X,T,P)dX
+    $$
+
+    （$P$–$V$ 平面）；并指出在 $P$–$V$ 分析中后者更自然。
     [引·25791 式(20) 及其后："ℒ (on the P-V plane) uses the non‑equilibrium volume X as the off-shell variable."；"for G-T/G-P or P-V analyses, 𝒢 or ℒ would be more natural."]
 
-20. MFPT 精确积分 $\langle t\rangle=\frac{1}{D}\int_{r_A}^{r_m}dr\int_{r_A}^{r}dr'\,e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))}$，Kramers 近似 $r_k=\frac{\sqrt{|\mathcal{U}''(r_{\min})\mathcal{U}''(r_{\max})|}}{2\pi}e^{-\frac{\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})}{D}}$，二者近似互为倒数，且后者要求深阱条件 $\Delta\mathcal{U}\gg D$。
+20. MFPT 精确积分
+
+    $$
+    \langle t\rangle=\frac{1}{D}\int_{r_A}^{r_m}dr\int_{r_A}^{r}dr'\,e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))},
+    $$
+
+Kramers 近似
+
+    $$
+    r_k=\frac{\sqrt{|\mathcal{U}''(r_{\min})\mathcal{U}''(r_{\max})|}}{2\pi}e^{-\frac{\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})}{D}},
+    $$
+
+    二者近似互为倒数，且后者要求深阱条件 $\Delta\mathcal{U}\gg D$。
     [引·25791 式(26)(32) 及其后："Consequently, they are approximately reciprocals of each other"；"In general, this requires the thermal potential to satisfy the deep well condition, namely Δ𝒰=𝒰(rmax)−𝒰(rmin)≫D."]
 
-21. [25791] 在扩展相空间中的推广第一定律与 Smarr 关系含物质/耦合项：$dM=T_hdS+VdP+\Phi_mdQ_m+\phi_mdm_0+\phi_qdq_0$、$M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0$。
+21. [25791] 在扩展相空间中的推广第一定律与 Smarr 关系含物质/耦合项：
+
+    $$
+    dM=T_hdS+VdP+\Phi_mdQ_m+\phi_mdm_0+\phi_qdq_0
+    $$
+
+    、$M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0.$
     [引·25791 式(13)(15)]
 
 ### 1.4 其它两个必要的文献定位
@@ -108,7 +167,13 @@ folder: "文章整理"
 
 ## 2. 几何、视界与定义域
 
-24. 取四维渐近平坦 Reissner–Nordström 度规 $ds^2=-fdt^2+f^{-1}dr^2+r^2d\Omega_2^2$，$f(r)=1-\frac{2M}{r}+\frac{Q^2}{r^2}$，腔壁取在 $r=r_B$。
+24. 取四维渐近平坦 Reissner–Nordström 度规 $ds^2=-fdt^2+f^{-1}dr^2+r^2d\Omega_2^2$，
+
+    $$
+    f(r)=1-\frac{2M}{r}+\frac{Q^2}{r^2},
+    $$
+
+    腔壁取在 $r=r_B$。
     [推·[03749] §II 的 Schwarzschild 设置加上电荷项；引·[03749]："We consider a four-dimensional, asymptotically flat Schwarzschild black hole enclosed in a finite spherical cavity."]
 
 25. 事件视界 $f(r_h)=0$ 给出质量—半径关系
@@ -145,7 +210,13 @@ folder: "文章整理"
     （推导：$2M/r_B=(r_h+Q^2/r_h)/r_B=x+q^2/x$，$Q^2/r_B^2=q^2$。）
 
 29. 由 $y^2\ge0$ 得**定义域 $x\in[q^2,1]$**；两端 $x=q^2$ 与 $x=1$ 分别对应腔壁落在内视界 $r_-=Q^2/r_h$ 与外视界 $r_+=r_h$ 上（此时 $f(r_B)=0$）。
-    [算·S2 的因子化形式直接给出；推·$f(r)=0$ 的两根为 $r_\pm=\frac{r_h}{2}+\frac{Q^2}{2r_h}\pm\frac12\big(r_h-\frac{Q^2}{r_h}\big)$，即 $r_+=r_h$、$r_-=Q^2/r_h$]
+    [算·S2 的因子化形式直接给出；推·$f(r)=0$ 的两根为
+
+$$
+r_\pm=\frac{r_h}{2}+\frac{Q^2}{2r_h}\pm\frac12\big(r_h-\frac{Q^2}{r_h}\big),
+$$
+
+即 $r_+=r_h$、$r_-=Q^2/r_h$]
 
 30. $q=0$ 时 $y^2=1-x$，与 [03749] 式(11) 完全一致；定义域退化为 $x\in(0,1)$，且 $x=0$ 即 $r_h=0$ 的热平直空间（此时 $E=P=0$，见第 12 条引文）。
     [算·S2；引·[03749] §II：「$E$ 与 $P$ 在 Minkowski 时空（$r_h=0$）中恒为零」]
@@ -191,7 +262,7 @@ folder: "文章整理"
     \Phi=\frac{q(1-x)}{G\,x\,y}.
     $$
 
-    [推·$\partial E/\partial Q=r_B(-y_q)(1/r_B)=-y_q=q(1-x)/(xy)$；算·S4：第一定律的 $dq$ 分量检验为 0]
+    [推·$\partial E/\partial Q=r_B(-y_q)(1/r_B)=-y_q=q(1-x)/(xy);$算·S4：第一定律的 $dq$ 分量检验为 0]
     （物理解释：标准的视界—腔壁电势差为 $Q/r_h-Q/r_B=q(1-x)/x$；本条结果等于它再除以红移因子 $y$，即**腔壁上实测的红移电势**。）
 
 37. 于是带电腔的准局部热力学完全由 $(x,q)$（或 $(S,V,Q)$）与上四式确定，**无需**引入宇宙学常数或独立压强。
@@ -215,9 +286,21 @@ folder: "文章整理"
     E=2TS-2PV+\Phi Q.
     $$
 
-    [算·S4：`E - (2 T S - 2 P V + Phi Q)` 化简为 `0`；推·$E(\lambda^2S,\lambda^2V,\lambda Q)=\lambda E(S,V)$ 的秩 1 齐次性 + Euler 定理]
+    [算·S4：`E - (2 T S - 2 P V + Phi Q)` 化简为 `0`；推·
 
-40. 第 39 条与 [25791] 式(15) 的形式一致：$M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0$，只是腔里没有 $\Lambda$ 的 $VP$ 项来源，$P$ 由第 35 条给出。
+$$
+E(\lambda^2S,\lambda^2V,\lambda Q)=\lambda E(S,V)
+$$
+
+的秩 1 齐次性 + Euler 定理]
+
+40. 第 39 条与 [25791] 式(15) 的形式一致：
+
+    $$
+    M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0,
+    $$
+
+    只是腔里没有 $\Lambda$ 的 $VP$ 项来源，$P$ 由第 35 条给出。
     [引·[25791] 式(15)；算·S4]
 
 ---
@@ -262,7 +345,13 @@ folder: "文章整理"
     F_{\rm off}(r_h;T,r_B,Q)=E(S(r_h),V)-T\,S(r_h).
     $$
 
-    [引·[25791] 式(17) 的构造精神；推·固定 $V$ 时 $dE=T_hdS$（第 38 条取 $dV=dQ=0$），故 $\int(T_h-T)dS=E-TS+\text{const}=F_{\rm off}$，即 [25791] 的 $\mathcal U$ 在固定 $V$ 时退化为 Helmholtz 自由能]
+    [引·[25791] 式(17) 的构造精神；推·固定 $V$ 时 $dE=T_hdS$（第 38 条取 $dV=dQ=0$），故
+
+$$
+\int(T_h-T)dS=E-TS+\text{const}=F_{\rm off},
+$$
+
+即 [25791] 的 $\mathcal U$ 在固定 $V$ 时退化为 Helmholtz 自由能]
 
 50. 定义无量纲量
 
@@ -310,7 +399,7 @@ folder: "文章整理"
 56. $q=0$ 时 $\mathrm{cond}=x^3(2-3x)$，唯一根为 $x=2/3$——正是 [03749] 的**分支合并点**，这是本推导的第一个自洽性检验。
     [算·N2 的 [19] 行：`q=0` 时极值点数值为 `{0.66666667}`；引·[03749]："the small black hole branch $0<x<2/3$ and the large black hole branch $2/3<x<1$"]
 
-57. $T_B(2/3,0)=\dfrac{3\sqrt3}{8\pi}=\dfrac{\sqrt{27}}{8\pi}$，与 [03749] 的临界温度完全一致。
+57. $T_B(2/3,0)=\dfrac{3\sqrt3}{8\pi}=\dfrac{\sqrt{27}}{8\pi},$与 [03749] 的临界温度完全一致。
     [推·$T_B=1/(4\pi r_Bxy)$，$x=2/3$、$y=1/\sqrt3$；引·[03749]："$r_B T>\sqrt{27}/(8\pi)$"]
 
 58. **临界电荷**：由 $\mathrm{cond}=0$ 与 $\mathrm{cond}'=0$ 联立，物理解为
@@ -382,7 +471,13 @@ folder: "文章整理"
 
 70. 对 $q<q_c$ 的若干取值，三个特征温度、等深位置与速率比如下：
 
-    | $q=Q/r_B$ | $T_1r_B$（极小） | $T_2r_B$（等深） | $T_3r_B$（极大） | $\frac{T_2-T_1}{T_3-T_1}$ | **$r_{k1}/r_{k2}$（在 $T_2$）** | $x_1,x_2,x_3$ |
+    | $q=Q/r_B$ | $T_1r_B$（极小） | $T_2r_B$（等深） | $T_3r_B$（极大） |
+
+$$
+\frac{T_2-T_1}{T_3-T_1}
+$$
+
+| **$r_{k1}/r_{k2}$（在 $T_2$）** | $x_1,x_2,x_3$ |
     |---|---|---|---|---|---|---|
     | 0.05 | 0.2059688 | 0.2489693 | 0.6505471 | 0.096722 | **2.073629** | 0.054631, 0.411903, 0.863512 |
     | 0.10 | 0.2035767 | 0.2304518 | 0.3473674 | 0.186904 | **1.524364** | 0.120735, 0.445274, 0.829753 |
@@ -443,7 +538,13 @@ folder: "文章整理"
 80. **HP 型的 1/2 因子不适用于带电腔**：[2408] 指出边界半抛物阱会带来 1/2 因子；带电腔的两个阱均为内部完整抛物阱（$g''(x_1)>0$、$g''(x_3)>0$ 且在定义域内部），故第 67 条的曲率比公式无需该修正。
     [引·[2408]："the origin of the 1/2 factor is that we approximate the potential energy function as nearly half a parabola, while equation (21) assumed a symmetric parabola"；算·N2 的 [17'] 行 $g''=\{1.896126,\;-0.467999,\;1.145349\}$]
 
-81. **$\beta$/$D$ 约定问题在此框架下可自洽处理**：按 [2408] 取 $D=k_BT/\eta$（即 $1/D=\beta\eta$），第 66 条的 $e^{-\Delta F/D}$ 与 [25791] 的 $e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))}$ 在同一约定下等价；本笔记的所有比值结论（第 67 条）与 $D,\eta$ 无关，故不受该约定影响。
+81. **$\beta$/$D$ 约定问题在此框架下可自洽处理**：按 [2408] 取 $D=k_BT/\eta$（即 $1/D=\beta\eta$），第 66 条的 $e^{-\Delta F/D}$ 与 [25791] 的
+
+    $$
+    e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))}
+    $$
+
+    在同一约定下等价；本笔记的所有比值结论（第 67 条）与 $D,\eta$ 无关，故不受该约定影响。
     [引·[2408]："$D$ is the diffusion coefficient, given by $k_BT/\eta$"；引·[25791] 式(26) 与式(32) 的两套写法；算·第 67 条]
 
 ---
@@ -464,7 +565,13 @@ folder: "文章整理"
 85. **带电定容热容已完成。** 固定 $V,Q$ 时
     $C_{V,Q}=T(2\pi r_B^2x/G)/T_B'(x)$，故其符号等于 $T_B'$ 的符号；在驻点上 $g''=2\pi xT_B'$，所以 $C_{V,Q}>0$（外侧大分支）与 $g''>0$ 完全等价，中间分支为负且不稳定。详细推导见第 15.2 节。
 
-86. **与热机的接口已明确其适用范围。** Kramers 率是相间跃迁的逆等待时间，不能直接等同于 [03749] 中准静态循环的周期。若人为规定一次跃迁驱动一个循环，可定义 $\tau_{\rm sw}=1/r_k$、$\mathcal P=W r_k$；其中 $W=\oint P\,dV$ 仍需给定具体腔壁循环路径。没有路径和摩擦系数时，功率没有唯一数值，因此本文只保留速率与自由能结果，不把 $r_k$ 误作热机周期。
+86. **与热机的接口已明确其适用范围。** Kramers 率是相间跃迁的逆等待时间，不能直接等同于 [03749] 中准静态循环的周期。若人为规定一次跃迁驱动一个循环，可定义 $\tau_{\rm sw}=1/r_k$、$\mathcal P=W r_k$；其中
+
+    $$
+    W=\oint P\,dV
+    $$
+
+    仍需给定具体腔壁循环路径。没有路径和摩擦系数时，功率没有唯一数值，因此本文只保留速率与自由能结果，不把 $r_k$ 误作热机周期。
 
 ---
 
@@ -553,7 +660,12 @@ $g=GF_{\rm off}/r_B$ 中这些因子会完全消去。
  C_{V,Q}=T\left(\frac{\partial S}{\partial T}\right)_{V,Q}
  =T\,\frac{(2\pi r_B^2x/G)}{T_B'(x)} .
 \]
-在物理解域 $q^2<x<1$ 内 $T>0$，所以 $\operatorname{sgn}C_{V,Q}=\operatorname{sgn}T_B'(x)$。
+在物理解域 $q^2<x<1$ 内 $T>0$，所以
+
+$$
+\operatorname{sgn}C_{V,Q}=\operatorname{sgn}T_B'(x).
+$$
+
 另一方面
 \[
  g'(x)=2\pi x\,[T_B(x)-T],\qquad
@@ -577,3 +689,4 @@ $g=GF_{\rm off}/r_B$ 中这些因子会完全消去。
 本文采用与 Schwarzschild 腔文献相同的平直背景减除：$E$ 和 $P$ 在 $M=Q=0$ 的 Minkowski 时空归零。
 对固定非零 $Q$ 的参考态并不存在同样的平直 Maxwell 解，因此不能再额外声称“同电荷背景减除”。这一定义选择会改变自由能的整体常数，
 但不会改变驻点方程、两阱等深条件或 Kramers 速率比；若改用其他参考项，应在全文同时平移 $F_{\rm off}$ 并重新声明规范。
+

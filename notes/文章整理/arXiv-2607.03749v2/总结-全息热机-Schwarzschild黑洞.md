@@ -99,7 +99,13 @@ folder: "文章整理/arXiv-2607.03749v2"
 ## 四、腔中 Schwarzschild 黑洞的全息热力学（Sec. II）
 
 22. **度规**：四维渐近平坦 Schwarzschild 置于有限球形腔中，$f(r)=1-r_h/r$，腔位于 $r_B>r_h$。
-    > 原文："We consider a four-dimensional, asymptotically flat Schwarzschild black hole enclosed in a finite spherical cavity. The spacetime metric is given by"（其后为 $ds^2 = - f(r)dt^2 + f^{-1}(r)dr^2 + r^2 d\Omega_{2}^2$，$f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity is located at the radius $r_B>r_h$."
+    > 原文："We consider a four-dimensional, asymptotically flat Schwarzschild black hole enclosed in a finite spherical cavity. The spacetime metric is given by"（其后为
+
+$$
+ds^2 = - f(r)dt^2 + f^{-1}(r)dr^2 + r^2 d\Omega_{2}^2,
+$$
+
+$f(r) = 1 - r_h/r$）；"where $r_h$ is the horizon radius. The spherical cavity is located at the radius $r_B>r_h$."
 
 23. **全息解释**：假设类时边界 $r=r_B$ 上的准局部热系统具有全息解释，即边界热态由腔内 Schwarzschild 几何编码；在这个意义上，类时边界充当**全息屏**。
     > 原文："We assume that the quasi-local thermodynamic system defined on the timelike boundary at $r=r_B$ admits a holographic interpretation: the boundary thermal state is encoded by the Schwarzschild geometry inside the cavity. In this sense, the timelike boundary acts as a holographic screen [Bousso1999]."
@@ -183,7 +189,19 @@ folder: "文章整理/arXiv-2607.03749v2"
 38. **只取大黑洞分支的原因**：形式上循环可以画在任一支上，但对本文考虑的热库驱动的可逆循环，限制在大黑洞分支；因为 $2/3<x<1$ 时定容热容为正，该分支在固定边界体积下做准静态热交换是**局部稳定**的；相反小黑洞分支 $C_V<0$，热交换引起的温度涨落被放大而非衰减，不适合作被动稳定的工作物质。
     > 原文："Formally, thermodynamic cycles can be drawn on either branch. For the reservoir driven reversible cycles considered here, however, we restrict to the large black hole branch. The fixed volume heat capacity is positive for $2/3<x<1$, so this branch is locally stable under quasi-static heat exchange at fixed boundary volume. By contrast, the small black hole branch has $C_V<0$: a temperature fluctuation induced by heat exchange is amplified rather than damped, making this branch unsuitable as a passively stable working substance."
 
-39. **大黑洞分支的视界半径闭式解**：$r_h(T,V) = \frac{r_B}{3}\left[1+2\cos\left(\frac{\alpha(T,V)}{3}\right)\right]$（式 (7)），其中 $\alpha(T,V)=\arccos\left[1-\frac{27}{8\pi VT^2}\right]$，$0\le\alpha\le\pi$（式 (8)）；小黑洞分支形式相同，只是余弦幅角平移 $4\pi/3$，即 $\cos[(\alpha+4\pi)/3]$。
+39. **大黑洞分支的视界半径闭式解**：
+
+    $$
+    r_h(T,V) = \frac{r_B}{3}\left[1+2\cos\left(\frac{\alpha(T,V)}{3}\right)\right]
+    $$
+
+（式 (7)），其中
+
+    $$
+    \alpha(T,V)=\arccos\left[1-\frac{27}{8\pi VT^2}\right],
+    $$
+
+    $0\le\alpha\le\pi$（式 (8)）；小黑洞分支形式相同，只是余弦幅角平移 $4\pi/3$，即 $\cos[(\alpha+4\pi)/3]$。
     > 原文："In closed form, the horizon radius for the large black hole is given by"；"where the auxiliary angle $\alpha$ is defined by"；"The horizon radius for the small black hole branch takes the same form, except that the cosine argument in \eqref{eq:rh_large} is shifted by $4\pi/3$, i.e. $\cos [(\alpha + 4\pi)/3]$."
 
 ### 4.3 焓表示 $(S,P)$
@@ -197,7 +215,19 @@ folder: "文章整理/arXiv-2607.03749v2"
 42. **唯一物理根**：当 $S>0$、$P>0$ 时式 (12) 有唯一物理根 $y(S,P)\in(0,1)$，可用 Ferrari 方法以闭式给出（式 (13)），其中 $w=w(S,P)$ 由无量纲组合 $Z\equiv GP\sqrt{\pi GS}$ 表达（式 (14)）。
     > 原文："For $S>0$ and $P>0$ this admits a unique physical root $y(S,P)\in(0,1)$, which can be obtained in closed form via Ferrari's method as \cite{Borsboom:2026sex}"；"In terms of the dimensionless combination $Z \equiv GP\sqrt{\pi GS}$, the function $w(S,P)$ is"
 
-43. **物态方程与焓的紧凑形式**：$T(S,P)=\frac{1}{4\sqrt{\pi GS}\,y(S,P)}$，$V(S,P)=\frac{4GS}{[1-y(S,P)^2]^2}$（式 (15)），焓 $H(S,P)=\sqrt{\frac{S}{\pi G}}\frac{1+3y(S,P)}{4y(S,P)[1+y(S,P)]}$（式 (16)）；这些闭式表达是计算 Brayton 与 Diesel 循环等压冲程所需的全部内容。
+43. **物态方程与焓的紧凑形式**：
+
+    $$
+    T(S,P)=\frac{1}{4\sqrt{\pi GS}\,y(S,P)},
+    $$
+
+$V(S,P)=\frac{4GS}{[1-y(S,P)^2]^2}$（式 (15)），焓
+
+    $$
+    H(S,P)=\sqrt{\frac{S}{\pi G}}\frac{1+3y(S,P)}{4y(S,P)[1+y(S,P)]}
+    $$
+
+    （式 (16)）；这些闭式表达是计算 Brayton 与 Diesel 循环等压冲程所需的全部内容。
     > 原文："The equations of state then take the compact form"；"and the enthalpy is"；"These closed-form expressions for the enthalpy and equations of state in this representation are all that is required to evaluate the isobaric strokes of the Brayton and Diesel cycles below."
 
 ---
@@ -235,7 +265,13 @@ folder: "文章整理/arXiv-2607.03749v2"
     $$
 
     因此在定容下吸热会提高大黑洞分支（$x>2/3$）的边界温度，但降低小黑洞分支（$x<2/3$）的温度；反之放热降低大分支温度而提高小分支温度。该符号变化与定容热容 $C_V$ 在 $x=2/3$ 处变号是同一次变号。
-    > 原文："In an \emph{isochoric} stroke, $dV=0$, the cavity wall is held fixed. No mechanical work is performed, and heat exchange changes only the entropy. Isochoric heat input grows the black hole, while isochoric heat rejection shrinks it. The associated temperature change is branch-dependent. At fixed $V$, one finds"；"Thus, heat input at fixed volume raises the boundary temperature on the large black hole branch ($x>2/3$), but lowers it on the small black hole branch ($x<2/3$). Conversely, heat rejection lowers the temperature on the large branch but raises it on the small branch. The sign change in $\left(\partial T/\partial S\right)_V$ is the same sign change as that of the fixed-volume heat capacity $C_V$ at $x=2/3$ [York1990]."
+    > 原文："In an \emph{isochoric} stroke, $dV=0$, the cavity wall is held fixed. No mechanical work is performed, and heat exchange changes only the entropy. Isochoric heat input grows the black hole, while isochoric heat rejection shrinks it. The associated temperature change is branch-dependent. At fixed $V$, one finds"；"Thus, heat input at fixed volume raises the boundary temperature on the large black hole branch ($x>2/3$), but lowers it on the small black hole branch ($x<2/3$). Conversely, heat rejection lowers the temperature on the large branch but raises it on the small branch. The sign change in
+
+$$
+\left(\partial T/\partial S\right)_V
+$$
+
+is the same sign change as that of the fixed-volume heat capacity $C_V$ at $x=2/3$ [York1990]."
 
 51. **绝热冲程**：不交换热量；由于可逆故 $dS=0$，视界大小保持不变，唯一的几何变化是腔壁的重新标度，准局部能量的变化完全来自机械功；这一点与大小分支之分无关。
     > 原文："In an \emph{adiabatic} stroke, no heat is exchanged. Since the process is reversible, $dS=0$, so the horizon size remains fixed. The only geometric change is the rescaling of the cavity wall, and the corresponding change in quasi-local energy is entirely due to mechanical work. This is independent of the large/small branch distinction."
@@ -253,7 +289,19 @@ folder: "文章整理/arXiv-2607.03749v2"
     $$
 
     因此在**大黑洞分支** $(\partial V/\partial S)_T>0$，在**小黑洞分支** $(\partial V/\partial S)_T<0$。
-    > 原文："In an \emph{isothermal} stroke, $dT=0$, the boundary temperature at the cavity wall is held fixed. The cavity wall expands or contracts while the working substance remains in thermal contact with a reservoir at the same boundary temperature, so both $S$ and $V$ vary along the isothermal curve $T(S,V)=T_0$. Here the relation between heat flow and cavity motion is branch-dependent. Along an isotherm one finds"；"Thus $\left(\partial V/\partial S\right)_T>0$ on the large black hole branch, while $\left(\partial V/\partial S\right)_T<0$ on the small black hole branch."
+    > 原文："In an \emph{isothermal} stroke, $dT=0$, the boundary temperature at the cavity wall is held fixed. The cavity wall expands or contracts while the working substance remains in thermal contact with a reservoir at the same boundary temperature, so both $S$ and $V$ vary along the isothermal curve $T(S,V)=T_0$. Here the relation between heat flow and cavity motion is branch-dependent. Along an isotherm one finds"；"Thus
+
+$$
+\left(\partial V/\partial S\right)_T>0
+$$
+
+ on the large black hole branch, while
+
+$$
+\left(\partial V/\partial S\right)_T<0
+$$
+
+on the small black hole branch."
 
 55. **等温冲程的物理细节**：等温吸热在**两支**上都增熵并使视界变大；在大分支伴随腔的膨胀，在小分支伴随压缩；反之等温放热在**两支**上都减熵并使视界缩小，大分支上腔被压缩而小分支上腔被膨胀。
     > 原文："Isothermal heat input increases the entropy and grows the horizon on both branches. On the large branch, this is accompanied by expansion of the cavity, whereas on the small branch, it is accompanied by compression. Conversely, isothermal heat rejection decreases the entropy and shrinks the horizon on both branches; the cavity is compressed on the large branch but expanded on the small branch."
@@ -456,7 +504,19 @@ folder: "文章整理/arXiv-2607.03749v2"
 101. **净功不变**：回热器不改变净功，因为再生只是在内部重新分配热量而不改变 $P$–$V$ 平面上的路径。
      > 原文："The net work is unchanged by the regenerator, because regeneration redistributes heat internally without changing the path in the $P$-$V$ plane."
 
-102. **再生式 Stirling 效率**：对 Schwarzschild-腔热机，局部失配为亏缺符号，故回热器留下必须由外部提供的热缺口 $Q_{\rm mis}$；外部吸热为 $Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}$（式 (31)），外部放热为冷等温线上的放热 $Q_{\mathrm{out}}^{\mathrm{reg}}=Q_{\mathrm{out}}^{3\to4}$（式 (32)），于是再生式 Stirling 效率为
+102. **再生式 Stirling 效率**：对 Schwarzschild-腔热机，局部失配为亏缺符号，故回热器留下必须由外部提供的热缺口 $Q_{\rm mis}$；外部吸热为
+
+     $$
+     Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
+     $$
+
+（式 (31)），外部放热为冷等温线上的放热
+
+     $$
+     Q_{\mathrm{out}}^{\mathrm{reg}}=Q_{\mathrm{out}}^{3\to4}
+     $$
+
+     （式 (32)），于是再生式 Stirling 效率为
 
      $$
      \eta_{\mathrm{Stirling}}^{\mathrm{reg}}=1-\frac{Q_{\mathrm{out}}^{3\to4}}{Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}}=1-\frac{T_{\rm c}\Delta S|_{T_{\rm c}}}{T_{\rm h}\Delta S|_{T_{\rm h}}+Q_{\mathrm{mis}}} \qquad \text{(式 (33))}
@@ -472,8 +532,25 @@ folder: "文章整理/arXiv-2607.03749v2"
 104. **充分条件**：理想再生式 Stirling 热机达到 Carnot 效率的一个充分条件是定容热容与体积无关，即 $C_V(T,V)=C_V(T)$（式 (34)）；该条件保证等容热交换逐点匹配——$2\to3$ 中每个温度放出的热恰好等于 $4\to1$ 中同一温度所需的热，于是回热器回到初态的能量与熵，两条等容线上都不需要外部热交换。
      > 原文："A sufficient condition for an ideal regenerative Stirling engine to attain the Carnot efficiency is that the fixed-volume heat capacity be independent of volume \cite{LilaniVisser2026}"；"This condition ensures pointwise matching of the isochoric heat exchanges: the heat released at each temperature during $2\to3$ is exactly equal to the heat required at the same temperature during $4\to1$. Consequently, the regenerator returns to its initial energy and entropy, and no external heat exchange is required along either isochore."
 
-105. **由该条件推出 Carnot 效率**：在条件 (34) 下 $Q_{\mathrm{mis}}=0$；又因 $C_V=T(\partial S/\partial T)_V$，得 $\frac{\partial}{\partial T}\Delta S|_T=\frac{1}{T}\left[C_V(T,V_2)-C_V(T,V_1)\right]=0$，故 $\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}}$，式 (33) 退化为 $\eta_{\mathrm{Stirling}}^{\mathrm{reg}}=1-\frac{T_{\rm c}}{T_{\rm h}}=\eta_{\rm Carnot}$。
-     > 原文："Indeed, under condition~\eqref{eq:volume-independent-cv}, $ Q_{\mathrm{mis}}=0.$"；"Moreover, since"；"one obtains"；"Hence $\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}}$, and equation~\eqref{eq:eta_stirling_reg} reduces to"
+105. **由该条件推出 Carnot 效率**：在条件 (34) 下 $Q_{\mathrm{mis}}=0$；又因 $C_V=T(\partial S/\partial T)_V$，得
+
+     $$
+     \frac{\partial}{\partial T}\Delta S|_T=\frac{1}{T}\left[C_V(T,V_2)-C_V(T,V_1)\right]=0,
+     $$
+
+故 $\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}},$式 (33) 退化为
+
+     $$
+     \eta_{\mathrm{Stirling}}^{\mathrm{reg}}=1-\frac{T_{\rm c}}{T_{\rm h}}=\eta_{\rm Carnot}.
+     $$
+
+     > 原文："Indeed, under condition~\eqref{eq:volume-independent-cv}, $ Q_{\mathrm{mis}}=0.$"；"Moreover, since"；"one obtains"；"Hence
+
+$$
+\Delta S|_{T_{\rm h}}=\Delta S|_{T_{\rm c}}
+$$
+
+, and equation~\eqref{eq:eta_stirling_reg} reduces to"
 
 106. **条件性质的辨析**：$C_V$ 与体积无关是逐点匹配的**充分但非必要**条件；反过来，较弱的 $Q_{\rm mis}=0$ 本身只保证等容能量的**积分**相等，并不保证热量在其被储存的同一温度上被归还，因此本身并不保证可逆再生。
      > 原文："The volume independence of $C_V$ is a sufficient, but not necessary, condition for pointwise matching on a particular cycle. Conversely, the weaker condition $Q_{\mathrm{mis}}=0$ by itself guarantees only equality of the integrated isochoric energies. It does not ensure that heat is returned at the same temperatures at which it was stored, and therefore does not by itself guarantee reversible regeneration."
@@ -492,14 +569,44 @@ folder: "文章整理/arXiv-2607.03749v2"
 
      > 原文："Consequently, for $V_2>V_1$ the local mismatch has the fixed deficit sign $dQ_{\mathrm{loc}}(T)<0$, as shown in Eq.~\eqref{eq:positive-mismatch}. The regenerative Schwarzschild Stirling cycle therefore remains strictly sub-Carnot for every large branch cycle with $T_{\rm h}>T_{\rm c}$ and $V_2>V_1$,"
 
-110. **高温渐近行为（大分支）**：如附录所示，固定 $T_{\rm c}$、$V_1$、$V_2$ 时，再生式效率与 Carnot 界的差距在 $T_{\rm h}$ 很大时被压低，$\eta_{\rm Carnot}-\eta_{\mathrm{Stirling}}^{\mathrm{reg}}=\mathcal{O}(1/T_{\rm h})$（$T_{\rm h}\to\infty$）；因此大分支再生式效率从**下方**趋近 Carnot 界。
+110. **高温渐近行为（大分支）**：如附录所示，固定 $T_{\rm c}$、$V_1$、$V_2$ 时，再生式效率与 Carnot 界的差距在 $T_{\rm h}$ 很大时被压低，
+
+     $$
+     \eta_{\rm Carnot}-\eta_{\mathrm{Stirling}}^{\mathrm{reg}}=\mathcal{O}(1/T_{\rm h})
+     $$
+
+     （$T_{\rm h}\to\infty$）；因此大分支再生式效率从**下方**趋近 Carnot 界。
      > 原文："As shown in Appendix~\ref{app:stirling_limit}, at fixed $T_{\rm c}$, $V_1$, and $V_2$, the gap between the regenerative efficiency and the Carnot bound is suppressed at large $T_{\rm h}$,"；"The large branch regenerative efficiency therefore approaches the Carnot bound from below."
 
 111. **小分支的差别**：小分支循环同样是亚 Carnot，但与大分支不同，$T_{\rm h}$ 增大时视界是**缩小**而非趋近腔壁，因此当 $T_{\rm h}\to\infty$ 时效率与 Carnot 界保持有限距离；该极限间距在附录中显式导出。
      > 原文："The small branch cycle is likewise sub-Carnot. However, unlike on the large branch, the horizon shrinks as $T_{\rm h}$ increases rather than approaching the cavity wall, so the efficiency remains a finite distance below the Carnot bound as $T_{\rm h}\to\infty$. This limiting separation is derived explicitly in Appendix~\ref{app:stirling_limit}."
 
-112. **再生 vs. 非再生**：与非再生 Stirling 的比较直接来自外部热平衡——两循环在 $P$–$V$ 平面上路径相同，因而净功相同；无再生时，全部等容吸热 $Q_{\mathrm{in}}^{4\to1}=Q_{\mathrm{out}}^{2\to3}+Q_{\mathrm{mis}}$ 都须外部提供；有再生时 $Q_{\mathrm{out}}^{2\to3}$ 被内部回收，只需补足剩下的亏缺 $Q_{\rm mis}$。因此 $Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}$ 小于 $Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}$（因 $Q_{\mathrm{out}}^{2\to3}>0$）；净功相同故再生提高效率。
-     > 原文："The comparison with the non-regenerative Stirling cycle follows directly from the external heat balance. Both cycles follow the same path in the $P$-$V$ plane and therefore perform the same net work. Without regeneration, the full isochoric heat input"；"must be supplied externally. With regeneration, $Q_{\mathrm{out}}^{2\to3}$ is recycled internally, so only the remaining deficit $Q_{\mathrm{mis}}$ must be supplied externally. Hence $Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}$ is smaller than $Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}$, since $Q_{\mathrm{out}}^{2\to3}>0$. Because the net work is the same, regeneration therefore increases the efficiency."
+112. **再生 vs. 非再生**：与非再生 Stirling 的比较直接来自外部热平衡——两循环在 $P$–$V$ 平面上路径相同，因而净功相同；无再生时，全部等容吸热
+
+     $$
+     Q_{\mathrm{in}}^{4\to1}=Q_{\mathrm{out}}^{2\to3}+Q_{\mathrm{mis}}
+     $$
+
+ 都须外部提供；有再生时 $Q_{\mathrm{out}}^{2\to3}$ 被内部回收，只需补足剩下的亏缺 $Q_{\rm mis}$。因此
+
+     $$
+     Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
+     $$
+
+     小于 $Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}$（因 $Q_{\mathrm{out}}^{2\to3}>0$）；净功相同故再生提高效率。
+     > 原文："The comparison with the non-regenerative Stirling cycle follows directly from the external heat balance. Both cycles follow the same path in the $P$-$V$ plane and therefore perform the same net work. Without regeneration, the full isochoric heat input"；"must be supplied externally. With regeneration, $Q_{\mathrm{out}}^{2\to3}$ is recycled internally, so only the remaining deficit $Q_{\mathrm{mis}}$ must be supplied externally. Hence
+
+$$
+Q_{\mathrm{in}}^{\mathrm{reg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{mis}}
+$$
+
+ is smaller than
+
+$$
+Q_{\mathrm{in}}^{\mathrm{nonreg}}=Q_{\mathrm{in}}^{1\to2}+Q_{\mathrm{in}}^{4\to1}
+$$
+
+, since $Q_{\mathrm{out}}^{2\to3}>0$. Because the net work is the same, regeneration therefore increases the efficiency."
 
 113. **Stirling 效率层级**：结合亚 Carnot 结果，对每个满足 $T_{\rm h}>T_{\rm c}$、$V_2>V_1$ 的大分支循环
 
@@ -509,7 +616,13 @@ folder: "文章整理/arXiv-2607.03749v2"
 
      > 原文："Combining this with the sub-Carnot result \eqref{inequalitysubcarnot} gives"；"for every large branch cycle with $T_{\rm h}>T_{\rm c}$ and $V_2>V_1$."
 
-114. **高温极限**：固定 $T_{\rm c}$、$V_1$、$V_2$ 时，两个 Stirling 效率都从下方趋近 Carnot 效率，$\lim_{T_{\rm h}\to\infty}\eta_{\rm Stirling}^{\rm nonreg}=\lim_{T_{\rm h}\to\infty}\eta_{\rm Stirling}^{\rm reg}=\lim_{T_{\rm h}\to\infty}\eta_{\rm Carnot}=1$；式 (36) 的不等式在每个有限 $T_{\rm h}$ 下都保持严格。
+114. **高温极限**：固定 $T_{\rm c}$、$V_1$、$V_2$ 时，两个 Stirling 效率都从下方趋近 Carnot 效率，
+
+     $$
+     \lim_{T_{\rm h}\to\infty}\eta_{\rm Stirling}^{\rm nonreg}=\lim_{T_{\rm h}\to\infty}\eta_{\rm Stirling}^{\rm reg}=\lim_{T_{\rm h}\to\infty}\eta_{\rm Carnot}=1;
+     $$
+
+     式 (36) 的不等式在每个有限 $T_{\rm h}$ 下都保持严格。
      > 原文："At fixed $T_{\rm c}$, $V_1$, and $V_2$, both Stirling efficiencies approach the Carnot efficiency from below as $T_{\rm h}\to\infty$,"；"The inequalities in \eqref{eq:stirling-hierarchy} remain strict at every finite $T_{\rm h}$."
 
 115. **图 3、图 4 中的表现**：层级关系在图 3、图 4 中可见——再生曲线位于非再生曲线之上，并在整个展示参数范围内都靠近 Carnot 界；在图 3 中，固定 $T_{\rm c}$ 增大 $T_{\rm h}$ 使两个 Stirling 效率从下方趋近 Carnot 界，而循环不塌缩、功输出不消失；在图 4 中，三条曲线在 $T_{\rm c}\to T_{\rm h}^{-}$ 时都趋于零——当 $T_{\rm c}=T_{\rm h}$ 两热库温度相同、Stirling 循环退化，净功与吸热都消失。
@@ -531,8 +644,20 @@ folder: "文章整理/arXiv-2607.03749v2"
 119. **Stirling 的两种分支行为**：Stirling 热机的大、小两分支在高温行为上定性不同——大分支上再生与非再生效率都趋近 Carnot 值，且再生减小了领头阶偏差；小分支上热等温吸热在高温时反而消失，再生式效率与 Carnot 界保持有限距离。
      > 原文："For the Stirling engine, the two branches (large and small black hole) have qualitatively different high-temperature behavior. On the large branch, both the regenerative and non-regenerative efficiencies approach the Carnot value, with regeneration reducing the leading deviation. On the small branch, the hot-isothermal heat input instead vanishes at high temperature, and the regenerative efficiency remains a finite distance below the Carnot bound."
 
-120. **关于效率排序的谨慎结论**：在按体积比较的图（$V_{\max}$、$V_{\min}$）中，展示的各效率在全参数范围内并不呈现固定层级；相反，在固定熵端点与固定控制参数的图中，效率在其公共定义域上满足 $\eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}$。由于各循环使用的体积与压强约束不同，这些排序是所选循环族的特征，而非普适排名。
-     > 原文："The volume-dependent comparisons in Figures~\ref{fig:eff_vmax} and~\ref{fig:eff_vmin} do not exhibit a fixed hierarchy among the displayed efficiencies over their full parameter ranges. By contrast, for the common entropy endpoints and fixed control parameters used in Figures~\ref{fig:eff_smax} and~\ref{fig:eff_smin}, the efficiencies satisfy $\eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}$ throughout their common domain. Since the cycles use different volume and pressure constraints, these orderings are features of the chosen cycle families rather than universal rankings."
+120. **关于效率排序的谨慎结论**：在按体积比较的图（$V_{\max}$、$V_{\min}$）中，展示的各效率在全参数范围内并不呈现固定层级；相反，在固定熵端点与固定控制参数的图中，效率在其公共定义域上满足
+
+     $$
+     \eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}.
+     $$
+
+     由于各循环使用的体积与压强约束不同，这些排序是所选循环族的特征，而非普适排名。
+     > 原文："The volume-dependent comparisons in Figures~\ref{fig:eff_vmax} and~\ref{fig:eff_vmin} do not exhibit a fixed hierarchy among the displayed efficiencies over their full parameter ranges. By contrast, for the common entropy endpoints and fixed control parameters used in Figures~\ref{fig:eff_smax} and~\ref{fig:eff_smin}, the efficiencies satisfy
+
+$$
+\eta_{\rm Otto}>\eta_{\rm Diesel}>\eta_{\rm Brayton}
+$$
+
+throughout their common domain. Since the cycles use different volume and pressure constraints, these orderings are features of the chosen cycle families rather than universal rankings."
 
 121. **可推广的方向**：同样的准局部构造可用于带电或转动黑洞、带有限类时边界的 de Sitter / anti-de Sitter 背景中的黑洞、高维解，以及高阶曲率理论中的黑洞。
      > 原文："Several extensions are natural. The same quasi-local construction can be applied to charged or rotating black holes, black holes in de Sitter or anti-de Sitter backgrounds with a finite timelike boundary, higher-dimensional solutions, and black holes in higher-curvature theories."
@@ -582,4 +707,11 @@ folder: "文章整理/arXiv-2607.03749v2"
 
 - 在**渐近平坦**时空中，用腔壁上的准局部/全息热系统作工作物质，可构造**耦合常数固定**的可逆黑洞热机（第 15–17、116–117 条）。
 - Carnot 效率仍是普适的 $1-T_{\rm c}/T_{\rm h}$；其余四种循环的精确效率由 Schwarzschild 腔的具体物态方程决定，因而可用作准局部引力热力学的诊断量（第 65、118 条）。
-- Stirling：因大分支上 $C_V$ 随 $V$ 单调减小，回热器存在固定符号的热亏缺，故 $\eta^{\rm nonreg}_{\rm Stirling}<\eta^{\rm reg}_{\rm Stirling}<\eta_{\rm Carnot}$，且固定 $T_{\rm c},V_1,V_2$ 时二者随 $T_{\rm h}\to\infty$ 从下方趋于 Carnot（第 97–98、109–114 条）。
+- Stirling：因大分支上 $C_V$ 随 $V$ 单调减小，回热器存在固定符号的热亏缺，故
+
+  $$
+  \eta^{\rm nonreg}_{\rm Stirling}<\eta^{\rm reg}_{\rm Stirling}<\eta_{\rm Carnot},
+  $$
+
+  且固定 $T_{\rm c},V_1,V_2$ 时二者随 $T_{\rm h}\to\infty$ 从下方趋于 Carnot（第 97–98、109–114 条）。
+

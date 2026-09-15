@@ -106,7 +106,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 23. **解耦方案**：把 $m_0, q_0$ 固定为纯耦合常数，而用 $m, q_m$ 重新定义真正的黑洞参数。
     > 原文："To resolve this issue, it is necessary to decouple these roles. Here the parameters m0 and q0 are fixed as constants purely associated with the coupling, while the actual black hole parameters are redefined in terms of m and qm."
 
-24. **所得解**：解场方程可得度规函数（原文式 (3)）与规范场（原文式 (4)），黑洞能量与磁荷为 $M=\tfrac12 m,\; Q_m=q_m$（原文式 (5)）。
+24. **所得解**：解场方程可得度规函数（原文式 (3)）与规范场（原文式 (4)），黑洞能量与磁荷为
+
+    $$
+    M=\tfrac12 m,\; Q_m=q_m
+    $$
+
+    （原文式 (5)）。
     > 原文："Solving the field equation corresponding to the action (2), the Bardeen-AdS-class black hole solution can be obtained"（其后为式 (3)、(4)）；"The energy and magnetic charge of black hole are given by"（其后为式 (5)）
 
 25. **退化为 Bardeen-AdS 的条件**：当黑洞参数等于模型参数，即 $m=m_0,\; q_m=q_0$ 时，Bardeen-AdS 类黑洞退化为 Bardeen-AdS 黑洞。
@@ -118,7 +124,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 27. **重要限制：$r_+$ 不能连续取值**。由于黑洞可能拥有多个视界，例如当 $f(r)$ 曲线有两个极值点时，$r_+$ 不可能落在其单调递减区间内；这一点影响热力学势的取值范围。
     > 原文："It should be noted that, since this black hole may possess multiple horizons, r+ cannot always take on a continuous range of values. For example, when the curve of f(r) has two extreme points, it is impossible for r+ to fall within its monotonically decreasing interval. This point affects the range of the thermodynamic potential."
 
-28. **其余热力学量**：熵 $S=\pi r_+^2$（式 (8)）、体积 $V=\tfrac43\pi r_+^3$（式 (9)）以及共轭势 $\Phi_m,\phi_m,\phi_q$（式 (10)–(12)）。
+28. **其余热力学量**：熵 $S=\pi r_+^2$（式 (8)）、体积
+
+    $$
+    V=\tfrac43\pi r_+^3
+    $$
+
+    （式 (9)）以及共轭势 $\Phi_m,\phi_m,\phi_q$（式 (10)–(12)）。
     > 原文："And the other thermodynamical quantities for the Bardeen-AdS-class black holes are described by [20]"（其后为式 (8)–(12)）
 
 29. **推广的第一定律成立**：
@@ -180,7 +192,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 38. **两个温度的物理含义**：Hawking 温度 $T_h$ 是黑洞内部的温度、是熵 $S$ 的函数；等温线温度 $T$ 是离壳温度，代表环境温度，可取任意正值且独立于黑洞状态。
     > 原文："The Hawking temperature Th represents the internal temperature of the black hole, which is a function of the thermodynamic entropy S. In contrast, the isotherm T acts as the off-shell temperature, representing the ambient environment temperature. This T can be arbitrarily assigned any positive value, independent of the black hole's state."
 
-39. **极值条件**：$\dfrac{d\mathcal{U}}{dS}=0 \Rightarrow T = T_h$（原文式 (18)）。
+39. **极值条件**：
+
+    $$
+    \dfrac{d\mathcal{U}}{dS}=0 \Rightarrow T = T_h
+    $$
+
+    （原文式 (18)）。
     > 原文："For generalized free energy (17), we can understand it is constructed under isobaric conditions, starting from the T−S diagram, by relaxing the equilibrium constraint and allowing the relevant parameters to vary independently. This yields an off-shell generalized free energy (i.e., a free energy landscape), whose extremum recovers the physical equilibrium state."
     > 原文式 (18)："d𝒰/dS = d/dS (∫(Th−T)dS) = 0 ⇒ T = Th"
 
@@ -200,7 +218,13 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文式 (19)："𝒰=∫(Th−T)dS = E+PV−TS = M−TS = 𝒢"
     > 原文："Thus, when P is fixed, 𝒰 and 𝒢 are mathematically identical. In this sense, 𝒰 can be viewed as a specific realization of the off-shell Gibbs free energy 𝒢, with the integration path chosen as the deviation from equilibrium."
 
-43. **第三种离壳势（Landau 势）**：$\mathcal{L}=\int F(X,T,P)\,dX$（原文式 (20)），其中 $X$ 是解释为非平衡热力学体积的辅助变量，$F(X,T,P)=P-f(X,T)$，$P=f(V,T)$ 为物态方程；$\mathcal{L}$ 的极值出现在 $X$ 满足物态方程处，即平衡体积 $X=V_{\text{eq}}$。
+43. **第三种离壳势（Landau 势）**：
+
+    $$
+    \mathcal{L}=\int F(X,T,P)\,dX
+    $$
+
+    （原文式 (20)），其中 $X$ 是解释为非平衡热力学体积的辅助变量，$F(X,T,P)=P-f(X,T)$，$P=f(V,T)$ 为物态方程；$\mathcal{L}$ 的极值出现在 $X$ 满足物态方程处，即平衡体积 $X=V_{\text{eq}}$。
     > 原文："Regarding the Landau potential [38]"；"where X is an auxiliary variable interpreted as the non-equilibrium thermodynamic volume, and F(X,T,P)=P−f(X,T) with P=f(V,T) the equation of state. The extremum of ℒ occurs when X satisfies the equation of state, i.e., at the equilibrium volume X=Veq."
 
 44. **三种离壳势的区别**：$\mathcal{U}$（$T$–$S$ 平面）以环境温度作为离壳变量；$\mathcal{G}$（$G$–$T$ 或 $G$–$P$ 平面）通过解除 $T=T_h$ 约束推广 Gibbs 自由能；$\mathcal{L}$（$P$–$V$ 平面）以非平衡体积 $X$ 作为离壳变量。
@@ -246,7 +270,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 
 ### 5.3 MFPT 与 Kramers 逃逸率
 
-55. **MFPT 的定义逻辑**：态在区间 $(r_A,r_m)$ 内被找到的概率为 $\int_{r_A}^{r_m}dr\,\rho(r,t)$；态不在该区间时，可认为它已越过势垒到达另一态。于是该积分可视为"黑洞到时刻 $t$ 尚未发生首次相变"的概率，由此得 MFPT 的分布
+55. **MFPT 的定义逻辑**：态在区间 $(r_A,r_m)$ 内被找到的概率为
+
+    $$
+    \int_{r_A}^{r_m}dr\,\rho(r,t);
+    $$
+
+    态不在该区间时，可认为它已越过势垒到达另一态。于是该积分可视为"黑洞到时刻 $t$ 尚未发生首次相变"的概率，由此得 MFPT 的分布
 
     $$
     F_p(t) = -\frac{d\left(\int_{r_A}^{r_m}dr\,\rho\right)}{dt} \qquad \text{(原文式 (24))}
@@ -254,7 +284,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 
     > 原文："Considering that the probability of finding the state within the interval (rA,rm) is given by ∫rArm dr ρ(r,t), when the state is not in this interval, we can assume that it has crossed the potential barrier and reached the other state. Therefore, we can regard this integral expression as the probability that the black hole has not undergone the first phase transition by time t. This leads directly to the distribution of the MFPT"
 
-56. **MFPT 的定义式**：$\langle t\rangle = \int_0^\infty dt\, t\, F_p(t)$（原文式 (25)）。
+56. **MFPT 的定义式**：
+
+    $$
+    \langle t\rangle = \int_0^\infty dt\, t\, F_p(t)
+    $$
+
+    （原文式 (25)）。
     > 原文："Based on the defining expression of the MFPT"
     > 原文式 (25)："⟨t⟩=∫0∞ dt t Fp(t)"
 
@@ -276,7 +312,13 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："In the derivation of the Kramers escape rate, the current J(r,t) is defined as"
     > 原文："where 𝒰(r) is the potential or the generalized free energy in our work, and D is the diffusion coefficient, which can be considered constant when the system reaches thermal equilibrium, and we assume that at r=A (A is any position greater than rmax), the probability distribution is zero."
 
-59. **阱内概率与逃逸率的关系**：若 $p$ 为态位于阱内/近 $r_{\min}$ 的概率，则 $p = \rho(r_{\min},t)e^{\mathcal{U}(r_{\min})/D}\int_{(r_{\min})}e^{-\mathcal{U}(r)/D}dr$（原文式 (28)）；$p$ 乘以 Kramers 逃逸率 $r_k$ 即为流 $J(r,t)$。
+59. **阱内概率与逃逸率的关系**：若 $p$ 为态位于阱内/近 $r_{\min}$ 的概率，则
+
+    $$
+    p = \rho(r_{\min},t)e^{\mathcal{U}(r_{\min})/D}\int_{(r_{\min})}e^{-\mathcal{U}(r)/D}dr
+    $$
+
+    （原文式 (28)）；$p$ 乘以 Kramers 逃逸率 $r_k$ 即为流 $J(r,t)$。
     > 原文："If we define p as the probability of the state being inside the well or near rmin, then we can find"
     > 原文："The probability p times the Kramers escape rate rk is just the current J(r,t), hence we can obtain the escape rate [36, 37]"
 
@@ -385,7 +427,13 @@ folder: "文章整理/arXiv-2604.25791v1"
 87. **原因**：MFPT 用精确积分公式，而 Kramers 速率是用势 $\mathcal{U}$ 在局部极大/极小处的二阶 Taylor 展开得到的近似代数式；因此反比关系只在势阱与势垒接近二次函数时成立。
     > 原文："While we employ an exact integral formula for the MFPT, the Kramers rate is derived using a second-order Taylor expansion at the local maxima and minima of the potential 𝒰 to obtain an approximate algebraic expression. Consequently, the inverse proportionality holds only when the potential wells and barriers deviate minimally from a quadratic function."
 
-88. **所需条件（深阱条件）**：一般要求热势满足 $\Delta\mathcal{U}=\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})\gg D$；在此区间内即使势整体非线性，由于指数因子 $e^{-\Delta\mathcal{U}/D}$ 的快速衰减，积分也只对极值附近的二阶轮廓敏感。
+88. **所需条件（深阱条件）**：一般要求热势满足
+
+    $$
+    \Delta\mathcal{U}=\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})\gg D;
+    $$
+
+    在此区间内即使势整体非线性，由于指数因子 $e^{-\Delta\mathcal{U}/D}$ 的快速衰减，积分也只对极值附近的二阶轮廓敏感。
     > 原文："In general, this requires the thermal potential to satisfy the deep well condition, namely Δ𝒰=𝒰(rmax)−𝒰(rmin)≫D. In this regime, even if the potential is globally non-linear, the integral remains sensitive only to the second-order profile near the extrema due to the rapid decay of the exponential factor e−Δ𝒰/D."
 
 89. **本文不满足该条件**：如图 2 所示，本文所选的势 $\mathcal{U}$ 不满足深阱条件，故出现上述偏差。
@@ -503,7 +551,13 @@ folder: "文章整理/arXiv-2604.25791v1"
   并指出"如果黑洞热力学第一定律总是成立，两个温度 $T_h$ 与 $T_H$ 就应当相同"。
   [引·[17] §II："the temperature of the above black hole can be expressed as"（式(5)）；"From Eq.(1), it seems that the temperature of a black hole can also be derived according to the entropy"（式(6)）；"If the first law of black hole thermodynamics is always satisfied, the two temperatures $T_h$ and $T_H$ should be the same."]
 
-- 该文随即用三个例子演示矛盾，第一个就是 Bardeen 黑洞：$f(r)=1-\frac{2Mr^2}{(r^2+g^2)^{3/2}}$，$M=\frac{(g^2+r_h^2)^{3/2}}{2r_h^2}=\frac{\pi(S/\pi+g^2)^{3/2}}{2S}$（$S=\pi r_h^2$）。
+- 该文随即用三个例子演示矛盾，第一个就是 Bardeen 黑洞：
+
+  $$
+  f(r)=1-\frac{2Mr^2}{(r^2+g^2)^{3/2}},
+  $$
+
+  $M=\frac{(g^2+r_h^2)^{3/2}}{2r_h^2}=\frac{\pi(S/\pi+g^2)^{3/2}}{2S}$（$S=\pi r_h^2$）。
   [引·[17] §II 式(8)(9)："Bardeen black hole. For this black hole, the function $f(r)$ is"（式(8)）；式(9)]
 
 - 两种算法给出
@@ -522,19 +576,49 @@ folder: "文章整理/arXiv-2604.25791v1"
 - [17] 对这两式的判词：> 原文："Obviously, the two temperatures are different generally, which means the inconsistency between the area law and the first law of black hole thermodynamics. When $g=0$, they will coincide and agree with the temperature of Schwarzschild black hole."
   [引·[17] §II 式(11) 之后]
 
-- **本文独立复算（[算·Q1–Q6]，脚本见本节末）**：由 $f(r)=1-2Mr^2/(r^2+g^2)^{3/2}$ 与视界条件解出 $M=\frac{(g^2+r_h^2)^{3/2}}{2r_h^2}$（与式(9) 之差为 0）；由 $T_H=\frac{1}{2\pi r_h}\frac{dM}{dr_h}$ 得 $T_H=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}$（与式(10) 之差为 0）；由 $T_h=\frac{f'(r_h)}{4\pi}$ 得 $T_h=\frac{r_h^2-2g^2}{4\pi r_h(g^2+r_h^2)}$（与式(11) 之差为 0）。取 $g\to0$，两者同时趋于 $1/(4\pi r_h)$；取 $g=0.3,\ r_h=1$ 得 $T_h=0.0598656$、$T_H=0.0681267$，比值 $0.87874$。
+- **本文独立复算（[算·Q1–Q6]，脚本见本节末）**：由 $f(r)=1-2Mr^2/(r^2+g^2)^{3/2}$ 与视界条件解出
+
+  $$
+  M=\frac{(g^2+r_h^2)^{3/2}}{2r_h^2}
+  $$
+
+（与式(9) 之差为 0）；由
+
+  $$
+  T_H=\frac{1}{2\pi r_h}\frac{dM}{dr_h}
+  $$
+
+ 得 $T_H=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}$（与式(10) 之差为 0）；由
+
+  $$
+  T_h=\frac{f'(r_h)}{4\pi}
+  $$
+
+  得 $T_h=\frac{r_h^2-2g^2}{4\pi r_h(g^2+r_h^2)}$（与式(11) 之差为 0）。取 $g\to0$，两者同时趋于 $1/(4\pi r_h)$；取 $g=0.3,\ r_h=1$ 得 $T_h=0.0598656$、$T_H=0.0681267$，比值 $0.87874$。
   [算·Q1–Q6]
 
 - [17] 指出这导致二者只能取其一：> 原文："If choosing to believe in the Bekenstein-Hawking area law, we have to abandon the first law of black hole thermodynamics due to the wrong temperature derive from Eq.(6). On the other hand, if we require that the first law is satisfied with the regular black holes, the entropy is no longer the Bekenstein-Hawking one."
   [引·[17] §II："One can see from the above examples that there are two temperatures or two entropies."及其后]
 
-- 已有作者选择了"保第一定律、弃面积律"这条路：从式(11) 的 Hawking 温度出发、用 $S=\int dM/T_H$ 反解熵，得到 $$S=\pi r_h\frac{r_h^2-2g^2}{\sqrt{r_h^2+g^2}}+3\pi g^2\ln\!\left(r_h+\sqrt{r_h^2+g^2}\right)\qquad\text{（原文式 (12)）}$$
+- 已有作者选择了"保第一定律、弃面积律"这条路：从式(11) 的 Hawking 温度出发、用
+
+  $$
+  S=\int dM/T_H
+  $$
+
+  反解熵，得到 $$S=\pi r_h\frac{r_h^2-2g^2}{\sqrt{r_h^2+g^2}}+3\pi g^2\ln\!\left(r_h+\sqrt{r_h^2+g^2}\right)\qquad\text{（原文式 (12)）}$$
   [引·[17] §II 式(12)："Some authors choose to start with the Hawking temperature, Eq.(11), and employ Eq.(7) to derive the entropy [Cheng; Sharif]. The result is"]
 
 - [17] 对那个熵的评价是：> 原文："Although this entropy fulfills the firs law, it lacks a reasonable explanation. In fact, the result does not only violate Wald's formula, Eq.(3), but also Visser's result."
   [引·[17] §II 式(12) 之后]
 
-- [17] 给出的根源与修正：关键在于物质场的能量—动量张量里含有黑洞质量 $M$ 本身。设 $f(r)=1-2m(r)/r$，由爱因斯坦方程得 $m(r)=M+4\pi\int_r^\infty r^2T^0{}_0\,dr$，取变分后有
+- [17] 给出的根源与修正：关键在于物质场的能量—动量张量里含有黑洞质量 $M$ 本身。设 $f(r)=1-2m(r)/r$，由爱因斯坦方程得
+
+  $$
+  m(r)=M+4\pi\int_r^\infty r^2T^0{}_0\,dr,
+  $$
+
+  取变分后有
 
   $$
   \left(1+4\pi\int_{r_h}^{\infty}r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\delta M=\left(\frac{1}{4\pi r_h}+2r_hT^0{}_0\right)\frac{\delta A}{4},\qquad\text{即}\qquad C(M,r_h)\,\delta M=T_h\,\frac{\delta A}{4}\qquad\text{（原文式 (32)）}
@@ -542,18 +626,54 @@ folder: "文章整理/arXiv-2604.25791v1"
 
   [引·[17] §III 式(28)(30)(31)(32)：式(32) 后紧接 "In fact, this should be the first law of black hole mechanics. Due to the above equation, if the Bekenstein-Hawking area law, namely $S=A/4$, is satisfied, the conventional first law of thermodynamics must be violated for the regular black holes we studied."]
 
-- 于是两个温度的关系是 $T_h=C(M,r_h)\,\partial M/\partial S=C(M,r_h)\,T_H$（原文式 (33)）。
-  [引·[17] §III："Therefore, if the entropy of the regular black holes satisfy the area law, the temperature should be $T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H$"（式(33)）]
+- 于是两个温度的关系是
 
-- 由此产生两种"记账方式"：> 原文："We have two choices to connect Eq.(32) with the first law of thermodynamics, $\delta E=T\delta S$. The first one is $E\leftrightarrow M,\ \delta S\leftrightarrow\delta A/4/C(M,r_h),\ T\leftrightarrow T_h$; The second one is $S\leftrightarrow A/4,\ \delta E\leftrightarrow C(M,r_h)\delta M,\ T\leftrightarrow T_h$. We tend to believe the latter one."
+  $$
+  T_h=C(M,r_h)\,\partial M/\partial S=C(M,r_h)\,T_H
+  $$
+
+  （原文式 (33)）。
+  [引·[17] §III："Therefore, if the entropy of the regular black holes satisfy the area law, the temperature should be
+
+$$
+T_h=\left(1+4\pi\int_{r_h}^\infty r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\frac{\partial M}{\partial S}=C(M,r_h)\frac{\partial M}{\partial S}=C(M,r_h)T_H
+$$
+
+"（式(33)）]
+
+- 由此产生两种"记账方式"：> 原文："We have two choices to connect Eq.(32) with the first law of thermodynamics, $\delta E=T\delta S$. The first one is
+
+  $$
+  E\leftrightarrow M,\ \delta S\leftrightarrow\delta A/4/C(M,r_h),\ T\leftrightarrow T_h
+  $$
+
+; The second one is
+
+  $$
+  S\leftrightarrow A/4,\ \delta E\leftrightarrow C(M,r_h)\delta M,\ T\leftrightarrow T_h
+  $$
+
+  . We tend to believe the latter one."
   [引·[17] §III 式(32) 之后]
 - 其直接结论是：> 原文："Thus the black hole mass $M$ cannot be considered as the internal energy $E$ of the black hole system generally."
   [引·[17] §III；同文摘要亦云："In this case, the black hole mass $M$ can no longer be considered as the internal energy of the regular black holes."]
 
-- Bardeen 黑洞的修正因子有闭式：$C(M,g,r_h)=1-3g^2\int_{r_h}^{\infty}\frac{r^2}{(r^2+g^2)^{5/2}}dr=\frac{m(r_h)}{M}$（原文式 (37)）。
+- Bardeen 黑洞的修正因子有闭式：
+
+  $$
+  C(M,g,r_h)=1-3g^2\int_{r_h}^{\infty}\frac{r^2}{(r^2+g^2)^{5/2}}dr=\frac{m(r_h)}{M}
+  $$
+
+  （原文式 (37)）。
   [引·[17] §III 式(37)；其中 $m(r_h)=r_h/2$（由 $f(r_h)=0$、$f=1-2m(r)/r$）]
 
-- **本文独立复算**：$T_h/T_H$ 的符号化简结果恰好等于 $\dfrac{r_h^3}{(r_h^2+g^2)^{3/2}}=\dfrac{m(r_h)}{M}$，与式(37) 完全一致（差为 0）。
+- **本文独立复算**：$T_h/T_H$ 的符号化简结果恰好等于
+
+  $$
+  \dfrac{r_h^3}{(r_h^2+g^2)^{3/2}}=\dfrac{m(r_h)}{M},
+  $$
+
+  与式(37) 完全一致（差为 0）。
   [算·Q3']
 
 ### Q3. [18][19] 的意见：不应放弃面积律
@@ -572,10 +692,21 @@ folder: "文章整理/arXiv-2604.25791v1"
 
 ### Q4. "电磁势也需要重新定义"指什么
 
-- [17] 把结论推广到带电情形：$$C(M,Q,r_h)\,\delta M=T_h\,\delta S+\Phi_h\,\delta Q\qquad\text{（原文式 (34)）}$$ 其中 $C(M,Q,r_h)=1+4\pi\int_{r_h}^{\infty}r^2\frac{\partial T^0{}_0}{\partial M}\big|_Q dr$。
+- [17] 把结论推广到带电情形：$$C(M,Q,r_h)\,\delta M=T_h\,\delta S+\Phi_h\,\delta Q\qquad\text{（原文式 (34)）}$$ 其中
+
+  $$
+  C(M,Q,r_h)=1+4\pi\int_{r_h}^{\infty}r^2\frac{\partial T^0{}_0}{\partial M}\big|_Q dr.
+  $$
+
   [引·[17] §III 式(34) 及其后]
 
-- 关键是电荷的共轭势要由电场重新算出，而不是照搬朴素的 $Q/r_h$：> 原文："the electric potential on the horizon can be calculated according to electric field, $\Phi_h=\int_{r_h}^{\infty}E\,dr$."
+- 关键是电荷的共轭势要由电场重新算出，而不是照搬朴素的 $Q/r_h$：> 原文："the electric potential on the horizon can be calculated according to electric field,
+
+  $$
+  \Phi_h=\int_{r_h}^{\infty}E\,dr
+  $$
+
+  ."
   [引·[17] §III 式(34) 之后]
 
 - [17] 还强调这个问题的触发条件正是 $T^\mu{}_\nu$ 含 $M$：> 原文："When this is applied to the case of linear or nonlinear electrodynamics, even with scalar fields, the first law also holds true and the first term on the right hand side will be replaced with $\Phi\delta Q+\dots$ [Rasheed; Gibbons]. But, if the energy-momentum tensor $T_{\mu\nu}$ includes the black hole mass $M$, the situation will be very different."
@@ -587,15 +718,33 @@ folder: "文章整理/arXiv-2604.25791v1"
 - **未验证项**：[25791] 把"电磁势需要重新定义"这一条归给 [19]；本文档只取得 [19] 的标题与摘要（摘要仅陈述熵—面积律），其全文未能获取，故"重新定义"在 [19] 中的确切措辞与公式**未经验证**，上一条的解释是依据 [17] 的同类论述给出的。
   [算·无；引·[19] 摘要（见 Q3）]
 
-- 一个同构的旁证（属本文档独立计算，非 [19] 内容）：在"RN 黑洞 + 腔壁"的情形，电荷共轭势同样不等于朴素的 $Q/r_h$——本工作区另一份笔记算出 $\Phi=\dfrac{q(1-x)}{Gxy}$，即标准电势差 $q(1-x)/x$ 再除以红移因子 $y$。
+- 一个同构的旁证（属本文档独立计算，非 [19] 内容）：在"RN 黑洞 + 腔壁"的情形，电荷共轭势同样不等于朴素的 $Q/r_h$——本工作区另一份笔记算出
+
+  $$
+  \Phi=\dfrac{q(1-x)}{Gxy},
+  $$
+
+  即标准电势差 $q(1-x)/x$ 再除以红移因子 $y$。
   [引·本工作区 `RN腔版-从RN-AdS移植的完整计算.md` 第 36 条："标准的视界—腔壁电势差为 $Q/r_h-Q/r_B=q(1-x)/x$；本条结果等于它再除以红移因子 $y$，即腔壁上实测的红移电势。"]
 
 ### Q5. 这与 [25791] 自己的做法是什么关系
 
-- [25791] 走的是**第三条路**：把 $m_0,q_0$ 固定为纯耦合常数、把 $m,q_m$ 当作独立积分常数（第 23 条），代价是第一定律与 Smarr 关系多出物质/耦合项：$dM=T_hdS+VdP+\Phi_mdQ_m+\phi_mdm_0+\phi_qdq_0$ 与 $M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0$（第 29、31 条）。
+- [25791] 走的是**第三条路**：把 $m_0,q_0$ 固定为纯耦合常数、把 $m,q_m$ 当作独立积分常数（第 23 条），代价是第一定律与 Smarr 关系多出物质/耦合项：
+
+  $$
+  dM=T_hdS+VdP+\Phi_mdQ_m+\phi_mdm_0+\phi_qdq_0
+  $$
+
+  与 $M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0$（第 29、31 条）。
   [引·[25791] 式(13)(15)（第 29、31 条已引）]
 
-- 它与 [17] 的 $\big(C\delta M=T_h\delta S+\Phi_h\delta Q\big)$ 是同一物理问题的两种记账方式：要么在左端乘修正因子 $C$ 并承认 $M$ 不等于内能（[17] 的选择），要么保留 $M$ 而把修正挪到右端成为额外的共轭势项（[25791] 的选择）。
+- 它与 [17] 的
+
+  $$
+  \big(C\delta M=T_h\delta S+\Phi_h\delta Q\big)
+  $$
+
+  是同一物理问题的两种记账方式：要么在左端乘修正因子 $C$ 并承认 $M$ 不等于内能（[17] 的选择），要么保留 $M$ 而把修正挪到右端成为额外的共轭势项（[25791] 的选择）。
   [推·对照 [17] 式(34) 与 [25791] 式(13)]
 
 - 这也解释了 [25791] 为何要专门强调 Smarr 关系被"一致验证"（第 32 条）：> 原文："Substituting the explicit expressions of thermodynamic variables into the Smarr relation leads to its consistent verification. It follows that this thermodynamic construction, which separates the integration constants from the coupling parameters, is self-consistent."
@@ -639,3 +788,4 @@ Simplify[Th/TH - (rh/2)/Mh]                                  (* 0 *)
 - `总结-平均首通时间与Kramers逃逸率.md`：本文件
 - 本目录从未保存 LaTeX 源（原本只有 PDF 与笔记），无需清理
   [引·本节 Q2–Q4；[25791] §I 与 References 条目 [17][18][19]]
+

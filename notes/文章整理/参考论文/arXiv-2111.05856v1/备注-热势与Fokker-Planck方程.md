@@ -9,7 +9,13 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 >
 > **原文来源**：https://arxiv.org/abs/2111.05856 ｜ 全文：https://arxiv.org/html/2111.05856v1 ｜ 本目录 PDF：[`2111.05856v1.pdf`](/notes/文章整理/参考论文/arXiv-2111.05856v1/2111.05856v1.pdf)
 >
-> **与其它笔记的关系**：本篇是 `arXiv-2211.03512v2/总结-电荷AdS黑洞相变速率.md` 参考文献 **[40]** 的原文；2211 的 (7) 式 $f(x)=\int(T_h-T)\,\mathrm{d}S$ 即取自本文 (1) 式。
+> **与其它笔记的关系**：本篇是 `arXiv-2211.03512v2/总结-电荷AdS黑洞相变速率.md` 参考文献 **[40]** 的原文；2211 的 (7) 式
+
+$$
+f(x)=\int(T_h-T)\,\mathrm{d}S
+$$
+
+即取自本文 (1) 式。
 
 ---
 
@@ -69,7 +75,13 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
     U=\int(T_h-T)\,\mathrm{d}S\qquad\text{(原文式 (1))}
     $$
 
-    > 原文："For a specific black hole thermodynamic system, we can construct the thermal potential"；"$U=\int(T_h-T)\,\mathrm{d}S$"
+    > 原文："For a specific black hole thermodynamic system, we can construct the thermal potential"；"
+
+$$
+U=\int(T_h-T)\,\mathrm{d}S
+$$
+
+"
 
 12. **积分变量与状态方程**：熵 $S$ 视为变量；$T_h=t(S,Y)$ 是熵与其它参数（AdS 半径 $l$、电荷 $Q$、角动量 $J$ 等）满足的关系；系综温度 $T$ 是独立常数，可取任意正值。
     > 原文："where the thermodynamic entropy $S$ of the black hole is seen as a variable. For black holes, we know $T_h=t(S,Y)$, where the function $t(S,Y)$ is the relation satisfied by thermodynamic entropy $S$ and other parameters $Y$ of the black hole, like the AdS radius $l$, charge $Q$, angular momentum $J$, etc. The ensemble temperature $T$ now here is treated as an independent constant, which can take any positive value in any way."
@@ -77,14 +89,43 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 13. **物理含义**：被积函数 $(T_h-T)$ 可理解为系综中所有可能态偏离真实黑洞态（平衡态）的程度。
     > 原文："The integrand in the above definition (1) of thermal potential can be understood as the deviation of all possible states in the canonical ensemble from the real black hole state (or the equilibrium state)."
 
-14. **极值条件**：平衡态对应热势的极值，即 $\mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h$。
-    > 原文："in the equilibrium state, the thermal potential will show extreme behavior, i.e.,"；"$\mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h$"（原文式 (2)）
+14. **极值条件**：平衡态对应热势的极值，即
+
+    $$
+    \mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h.
+    $$
+
+    > 原文："in the equilibrium state, the thermal potential will show extreme behavior, i.e.,"；"
+
+$$
+\mathrm{d}U/\mathrm{d}S=0\Rightarrow T=T_h
+$$
+
+"（原文式 (2)）
 
 15. **稳定性判据**：极值点的凹凸性与热力学稳定性相关；$\partial t(S,Y)/\partial S>0$ 稳定，$<0$ 不稳定。
     > 原文："the concavity and convexity at the extreme point are related to the stability of the thermodynamic system"；"When $\partial t(S,Y)/\partial S>0$, the thermodynamic system is in a stable state, while $\partial t(S,Y)/\partial S<0$ corresponds to an unstable state."（原文式 (3) 后）
 
-16. **与第一定律的关系**：由 $\mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V$ 可得热势等于 $E+PV-TS$。
-    > 原文："according to the first law of thermodynamics $\mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V$, where $E$ is the internal energy, $P$ is the pressure, and $V$ is the thermodynamic volume of the system, we have"；"$U=\int(T_h-T)\,\mathrm{d}S=E+PV-TS$"（原文式 (4)）
+16. **与第一定律的关系**：由
+
+    $$
+    \mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V
+    $$
+
+    可得热势等于 $E+PV-TS$。
+    > 原文："according to the first law of thermodynamics
+
+$$
+\mathrm{d}E=T_h\,\mathrm{d}S-P\,\mathrm{d}V
+$$
+
+, where $E$ is the internal energy, $P$ is the pressure, and $V$ is the thermodynamic volume of the system, we have"；"
+
+$$
+U=\int(T_h-T)\,\mathrm{d}S=E+PV-TS
+$$
+
+"（原文式 (4)）
 
 17. **与自由能图景的关系**：形式上，本文构造的热势等价于自由能图景中的 off-shell 自由能。
     > 原文："Formally, we can see that the thermal potential constructed in this paper is equivalent to the off-shell free energy in the free energy landscape [Li2020]."
@@ -107,11 +148,35 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 20. **本征值问题**：分离变量 $W=\varphi(x)e^{-\varepsilon t}$ 得 $L_{\rm FP}\varphi=-\varepsilon\varphi$（原文式 (6)）。
     > 原文："A separation ansatz for probability density $W(x,t)=\varphi(x)e^{-\varepsilon t}$ leads to the eigenvalue equation for the Fokker-Planck equation with appropriate boundary conditions"
 
-21. **Hermitian 化**：引入 $\Phi(x)=f(x)/D$，$L_{\rm FP}=\partial_x D e^{-\Phi}\partial_x e^{\Phi}$（原文式 (7)），并构造 Hermitian 算子 $L=-e^{\Phi/2}L_{\rm FP}e^{-\Phi/2}$，本征方程 $L\psi=\varepsilon\psi$（原文式 (8)）。
-    > 原文："For convenience, we introduce $\Phi(x)=f(x)/D$ resulting that the Fokker-Planck operator $L_{\rm FP}$ can be written as"；"Easily, we can obtain an Hermitian operator $L:=-e^{\Phi(x)/2}L_{\rm FP}e^{-\Phi(x)/2}$ and the eigenvalue equation (6) becomes"
+21. **Hermitian 化**：引入 $\Phi(x)=f(x)/D$，
 
-22. **等效量子力学形式**：$L=-D\partial_x^2+V_s(x)$，其中 $V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)$（原文式 (9)）。
-    > 原文："the Hermitian operator $L$ has the same form as the single-particle Hamilton operator in quantum mechanics,"；"$L=-D\partial_x^2+V_s(x),\;V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)$"
+    $$
+    L_{\rm FP}=\partial_x D e^{-\Phi}\partial_x e^{\Phi}
+    $$
+
+    （原文式 (7)），并构造 Hermitian 算子 $L=-e^{\Phi/2}L_{\rm FP}e^{-\Phi/2}$，本征方程 $L\psi=\varepsilon\psi$（原文式 (8)）。
+    > 原文："For convenience, we introduce $\Phi(x)=f(x)/D$ resulting that the Fokker-Planck operator $L_{\rm FP}$ can be written as"；"Easily, we can obtain an Hermitian operator
+
+$$
+L:=-e^{\Phi(x)/2}L_{\rm FP}e^{-\Phi(x)/2}
+$$
+
+and the eigenvalue equation (6) becomes"
+
+22. **等效量子力学形式**：$L=-D\partial_x^2+V_s(x)$，其中
+
+    $$
+    V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)
+    $$
+
+    （原文式 (9)）。
+    > 原文："the Hermitian operator $L$ has the same form as the single-particle Hamilton operator in quantum mechanics,"；"
+
+$$
+L=-D\partial_x^2+V_s(x),\;V_s(x)=\frac{1}{4D}[f'(x)]^2-\frac{1}{2}f''(x)
+$$
+
+"
 
 23. **边界条件**：反射边界（RBC）、吸收边界（ABC）、自然边界（NBC）三种。
     > 原文："Reflecting boundary condition (RBC): in the region $x>x_{\max}$ or $x<x_{\min}$, the potential $\Phi(x)$ tends to an infinite high positive value, which requires $S=0$."；"Absorbing boundary condition (ABC): ... which requires $e^{\Phi}W=0$."；"Natural boundary condition (NBC): for $x_{\max}\to+\infty$ and $x_{\min}\to-\infty$, we have $S=0$ or $e^{\Phi}W=0$."
@@ -120,16 +185,70 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 
 ## 五、两个算例
 
-24. **Schwarzschild 黑洞**：$T_h=\frac{1}{4\pi r_h}$、$S=\pi r_h^2$（原文式 (11)），热势 $U=\frac{1}{2}r_h-\pi T r_h^2$（原文式 (12)），为倒谐振子势（inverted harmonic oscillator potential）。
-    > 原文："$T_h=\frac{1}{4\pi r_h},\;S=\pi r_h^2$"；"In the light of Eq. (1), we can obtain the thermal potential of the Schwarzschild black hole easily"；"$U=\frac{1}{2}r_h-\pi T r_h^2$"；"It is the inverted harmonic oscillator potential or parabolic potential barrier"
+24. **Schwarzschild 黑洞**：
 
-25. **Schwarzschild 能谱**：$\varepsilon_n=2\pi T(n+1)$，$n=0,1,2,\cdots$（原文式 (15)），基态 $\varepsilon_0=2\pi T$（原文式 (17)）；当 $T=T_h=1/(8\pi M)$ 时 $\varepsilon_n=\frac{n+1}{4M}$（原文式 (21)）。
-    > 原文："$\varepsilon_n=2\pi T(n+1),\;n=0,1,2,\cdots$"；"$\varepsilon_0=2\pi T$"；"$\varepsilon_n=\frac{n+1}{4M},\;n=0,1,2,\cdots$"
+    $$
+    T_h=\frac{1}{4\pi r_h}
+    $$
 
-26. **BTZ 黑洞**：$T_h=\frac{r_h}{2\pi l^2}$、$S=\frac{1}{2}\pi r_h$（原文式 (23)），热势 $U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h$（原文式 (24)），为谐振子势（harmonic oscillator potential）。
-    > 原文："$T_h=\frac{r_h}{2\pi l^2},\;S=\frac{1}{2}\pi r_h$"；"With the help of Eq. (1), we can obtain the thermal potential of the BTZ black hole"；"$U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h$"；"Obviously, BTZ black hole is in harmonic oscillator potential"
+、$S=\pi r_h^2$（原文式 (11)），热势
 
-27. **BTZ 能谱**：$\varepsilon_n=\frac{n}{4l^2}$，$n=0,1,2,\cdots$（原文式 (27)），基态 $\varepsilon_0=0$。
+    $$
+    U=\frac{1}{2}r_h-\pi T r_h^2
+    $$
+
+    （原文式 (12)），为倒谐振子势（inverted harmonic oscillator potential）。
+    > 原文："$T_h=\frac{1}{4\pi r_h},\;S=\pi r_h^2$"；"In the light of Eq. (1), we can obtain the thermal potential of the Schwarzschild black hole easily"；"
+
+$$
+U=\frac{1}{2}r_h-\pi T r_h^2
+$$
+
+"；"It is the inverted harmonic oscillator potential or parabolic potential barrier"
+
+25. **Schwarzschild 能谱**：$\varepsilon_n=2\pi T(n+1)$，$n=0,1,2,\cdots$（原文式 (15)），基态 $\varepsilon_0=2\pi T$（原文式 (17)）；当 $T=T_h=1/(8\pi M)$ 时
+
+    $$
+    \varepsilon_n=\frac{n+1}{4M}
+    $$
+
+    （原文式 (21)）。
+    > 原文："$\varepsilon_n=2\pi T(n+1),\;n=0,1,2,\cdots$"；"$\varepsilon_0=2\pi T$"；"
+
+$$
+\varepsilon_n=\frac{n+1}{4M},\;n=0,1,2,\cdots
+$$
+
+"
+
+26. **BTZ 黑洞**：
+
+    $$
+    T_h=\frac{r_h}{2\pi l^2}
+    $$
+
+、$S=\frac{1}{2}\pi r_h$（原文式 (23)），热势
+
+    $$
+    U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h
+    $$
+
+    （原文式 (24)），为谐振子势（harmonic oscillator potential）。
+    > 原文："$T_h=\frac{r_h}{2\pi l^2},\;S=\frac{1}{2}\pi r_h$"；"With the help of Eq. (1), we can obtain the thermal potential of the BTZ black hole"；"
+
+$$
+U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h
+$$
+
+"；"Obviously, BTZ black hole is in harmonic oscillator potential"
+
+27. **BTZ 能谱**：
+
+    $$
+    \varepsilon_n=\frac{n}{4l^2},
+    $$
+
+    $n=0,1,2,\cdots$（原文式 (27)），基态 $\varepsilon_0=0$。
     > 原文："$\varepsilon_n=\frac{n}{4l^2},\;n=0,1,2,\cdots$"；"the ground state is zero, i.e., $\varepsilon_0=0$."
 
 28. **Table 1**：列出若干简单黑洞的热势表达式，含 Schwarzschild-AdS、Reissner–Nordström、**Charged AdS**、Charged BTZ、Rotating BTZ。
@@ -183,7 +302,13 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 
 | 2211.03512 | 本文（arXiv:2111.05856） |
 |---|---|
-| (7) $f(x)=\int(T_h-T)\,\mathrm{d}S$ | (1) $U=\int(T_h-T)\,\mathrm{d}S$ |
+| (7) $f(x)=\int(T_h-T)\,\mathrm{d}S$ | (1)
+
+$$
+U=\int(T_h-T)\,\mathrm{d}S
+$$
+
+|
 
 证据链：
 
@@ -200,7 +325,13 @@ folder: "文章整理/参考论文/arXiv-2111.05856v1"
 
 把 2211 的 (2)(3)(5)(6) 代入 (7) 并积分，确实得到 (8) 式：
 
-**第一步：$\int T_h\,\mathrm{d}S=M$。** 由 $S=\pi r_h^2\Rightarrow \mathrm{d}S=2\pi r_h\,\mathrm{d}r_h$，以及 $T_h=\frac{1}{4\pi r_h}\left(1+8\pi P r_h^2-\frac{Q^2}{r_h^2}\right)$：
+**第一步：$\int T_h\,\mathrm{d}S=M.$** 由
+
+$$
+S=\pi r_h^2\Rightarrow \mathrm{d}S=2\pi r_h\,\mathrm{d}r_h,
+$$
+
+以及 $T_h=\frac{1}{4\pi r_h}\left(1+8\pi P r_h^2-\frac{Q^2}{r_h^2}\right)$：
 
 
 $$
@@ -210,9 +341,20 @@ $$
 
 最后一步正是 2211 的 (1) 式，即第一定律 $\mathrm{d}M=T_h\,\mathrm{d}S$。
 
-**第二步：$\int T\,\mathrm{d}S=TS$。** 因为系综温度 $T$ 是独立常数（第 12 条），可提出积分号：$\int T\,\mathrm{d}S=TS=T\pi r_h^2$。
+**第二步：$\int T\,\mathrm{d}S=TS.$** 因为系综温度 $T$ 是独立常数（第 12 条），可提出积分号：
 
-**第三步：合起来即 off-shell 自由能。** $f=\int(T_h-T)\,\mathrm{d}S=M-TS$，与本文 (4) 式 $U=E+PV-TS$ 一致（对带电 AdS 黑洞 $E+PV=M$，即焓），也与 2211 的 (4) 式 $G=M-T_hS$ 在 $T\to T_h$ 时吻合。
+$$
+\int T\,\mathrm{d}S=TS=T\pi r_h^2.
+$$
+
+
+**第三步：合起来即 off-shell 自由能。**
+
+$$
+f=\int(T_h-T)\,\mathrm{d}S=M-TS,
+$$
+
+与本文 (4) 式 $U=E+PV-TS$ 一致（对带电 AdS 黑洞 $E+PV=M$，即焓），也与 2211 的 (4) 式 $G=M-T_hS$ 在 $T\to T_h$ 时吻合。
 
 **第四步：无量纲化得 (8) 式。** 用 $r_h=x\sqrt6 Q$、$P=p/(96\pi Q^2)$、$T=t\sqrt6/(18\pi Q)$：
 
@@ -252,11 +394,23 @@ $$
 | | 势 | 形状 | 顶点 |
 | --- | --- | --- | --- |
 | 谐振子 | $V=\tfrac12 m\omega^2x^2$ | 开口向上 | 极小（稳定） |
-| **倒谐振子** | $V=-\tfrac12 m\omega^2x^2$ | **开口向下** | **极大（不稳定）** |
+| **倒谐振子** |
+
+$$
+V=-\tfrac12 m\omega^2x^2
+$$
+
+| **开口向下** | **极大（不稳定）** |
 
 #### 2. 物理含义
 
-**经典力学**：回复力 $F=-V'=-m\omega^2x$ 变成"反回复力" $F=+m\omega^2x$——离顶点越远，力越大且方向朝外。解为 $x(t)=x_0\cosh(\omega t)+\frac{v_0}{\omega}\sinh(\omega t)$，任何扰动都**指数发散**，$\omega$ 即 Lyapunov 指数。普通谐振子是稳定振荡，倒谐振子是"越偏越跑"。
+**经典力学**：回复力 $F=-V'=-m\omega^2x$ 变成"反回复力" $F=+m\omega^2x$——离顶点越远，力越大且方向朝外。解为
+
+$$
+x(t)=x_0\cosh(\omega t)+\frac{v_0}{\omega}\sinh(\omega t),
+$$
+
+任何扰动都**指数发散**，$\omega$ 即 Lyapunov 指数。普通谐振子是稳定振荡，倒谐振子是"越偏越跑"。
 
 **量子力学**：抛物势垒没有束缚态、只有连续谱的散射态；它是量子隧穿、量子混沌（Maldacena 混沌界）、视界附近不稳定性的标准玩具模型。
 
@@ -268,11 +422,29 @@ $$
 
 **Wolfram 核验（3 条）**：
 
-1. **$f''<0$ → 开口向下**：$f=\frac{r_h}{2}-\pi Tr_h^2$，$f''=-2\pi T<0$ ✓
-2. **顶点恰是平衡点**：$f'=0\Rightarrow r_h=\frac{1}{4\pi T}$，代回 $T_h=\frac{1}{4\pi r_h}=T$ ✓ 正是式 (2) 的极值条件 $T=T_h$
+1. **$f''<0$ → 开口向下**：
+
+   $$
+   f=\frac{r_h}{2}-\pi Tr_h^2,
+   $$
+
+   $f''=-2\pi T<0$ ✓
+2. **顶点恰是平衡点**：
+
+   $$
+   f'=0\Rightarrow r_h=\frac{1}{4\pi T},
+   $$
+
+   代回 $T_h=\frac{1}{4\pi r_h}=T$ ✓ 正是式 (2) 的极值条件 $T=T_h$
 3. **顶点是极大 → 不稳定**，与第 15 条判据 $\partial T_h/\partial S<0\Rightarrow$ unstable 一致
 
-**与 BTZ 对比（式 (24)，本笔记第 26 条）**：$U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h$，二次项系数 $+\frac{1}{8l^2}>0$ → 开口向上 → 谐振子势 → 稳定。顶点 $r_h=2\pi Tl^2$ 同样给出 $T_h=T$ ✓
+**与 BTZ 对比（式 (24)，本笔记第 26 条）**：
+
+$$
+U=\frac{r_h^2}{8l^2}-\frac{\pi T}{2}r_h,
+$$
+
+二次项系数 $+\frac{1}{8l^2}>0$ → 开口向上 → 谐振子势 → 稳定。顶点 $r_h=2\pi Tl^2$ 同样给出 $T_h=T$ ✓
 
 **判据**：看 $f''$ 的符号。$f''<0$ → 倒谐振子 → 不稳定（Schwarzschild，负比热）；$f''>0$ → 谐振子 → 稳定（BTZ）。摘要那句 "reflects the difference between three-dimensional gravity and four-dimensional gravity" 讲的就是这件事（本笔记第 7 条）。
 
@@ -286,7 +458,13 @@ V_s=\frac{1}{4D}(f')^2-\frac{1}{2}f''
 $$
 
 
-抛物情形下 $(f')^2\propto z^2$ 永远压过 $-\frac{f''}{2}$（常数）。Wolfram 核验得
+抛物情形下 $(f')^2\propto z^2$ 永远压过
+
+$$
+-\frac{f''}{2}
+$$
+
+（常数）。Wolfram 核验得
 
 
 $$
@@ -296,7 +474,13 @@ $$
 
 ——**开口向上**。所以"势垒"体现在 $f$ 上，"势阱"体现在 $V_s$ 上。
 
-顺带：井底被抬高 $\pi T=-\frac{f''}{2}$，正因为 $f''<0$（倒谐振子），这个抬升才为正，于是
+顺带：井底被抬高
+
+$$
+\pi T=-\frac{f''}{2},
+$$
+
+正因为 $f''<0$（倒谐振子），这个抬升才为正，于是
 
 > "The system has non-zero ground state, which is the characteristic of the inverted harmonic oscillator potential."（Sec. III.1 bullet）
 
@@ -331,9 +515,21 @@ $$
 #### 7. 小结
 
 - 倒谐振子势 = 开口向下的抛物线（抛物势垒），顶点为极大、不稳定；
-- 本文里它指热势 $f$（式 (12)）的形状：$f''=-2\pi T<0$，极大点 $r_h=\frac{1}{4\pi T}$ 恰给出 $T_h=T$；
+- 本文里它指热势 $f$（式 (12)）的形状：$f''=-2\pi T<0$，极大点
+
+  $$
+  r_h=\frac{1}{4\pi T}
+  $$
+
+  恰给出 $T_h=T$；
 - 与 BTZ 的谐振子势（式 (24)，$f''>0$）形成对比，对应四维黑洞不稳定、三维黑洞稳定；
-- Hermitian 化后的 $V_s$ 反而是谐振子井，但井底被抬高 $-\frac{f''}{2}>0$，导致基态非零。
+- Hermitian 化后的 $V_s$ 反而是谐振子井，但井底被抬高
+
+  $$
+  -\frac{f''}{2}>0,
+  $$
+
+  导致基态非零。
 
 ---
 
@@ -396,15 +592,38 @@ $$
 $$
 
 
-对照一般形式可知 **$f$ 就是布朗粒子感受到的势**（$v=-f'$），$S(x,t)$ 为概率流。原文："where $S(x,t)$ is the probability current, the potential $f(x)=-\int^x D^{(1)}(y)dy$ and $f'(x):=\mathrm{d}f(x)/\mathrm{d}x$."
+对照一般形式可知 **$f$ 就是布朗粒子感受到的势**（$v=-f'$），$S(x,t)$ 为概率流。原文："where $S(x,t)$ is the probability current, the potential
 
-**Wolfram 核验**：式 (7) 的算子恒等式 $L_{\rm FP}=\partial_x D e^{-\Phi}\partial_x e^{\Phi}$（其中 $\Phi=f/D$）残差为 **0** ✓（即与 $D\partial_x^2+\partial_x f'$ 完全等价）。
+$$
+f(x)=-\int^x D^{(1)}(y)dy
+$$
+
+and $f'(x):=\mathrm{d}f(x)/\mathrm{d}x$."
+
+**Wolfram 核验**：式 (7) 的算子恒等式
+
+$$
+L_{\rm FP}=\partial_x D e^{-\Phi}\partial_x e^{\Phi}
+$$
+
+（其中 $\Phi=f/D$）残差为 **0** ✓（即与 $D\partial_x^2+\partial_x f'$ 完全等价）。
 
 #### 5. 稳态解 = Boltzmann 分布
 
-令 $\partial_tW=0$ 且反射边界（净流为零）：$f'W+DW'=0\Rightarrow W_{\rm eq}\propto e^{-f(x)/D}=e^{-\Phi(x)}$。
+令 $\partial_tW=0$ 且反射边界（净流为零）：
 
-**Wolfram 核验**：`DSolve` 通解为 $W(x)=\big(C_2+\int e^{f(\xi)/D}C_1\,\mathrm{d}\xi\big)\big/e^{f(x)/D}$，确实含 $e^{-f/D}$ 这一支 ✓。
+$$
+f'W+DW'=0\Rightarrow W_{\rm eq}\propto e^{-f(x)/D}=e^{-\Phi(x)}.
+$$
+
+
+**Wolfram 核验**：`DSolve` 通解为
+
+$$
+W(x)=\big(C_2+\int e^{f(\xi)/D}C_1\,\mathrm{d}\xi\big)\big/e^{f(x)/D},
+$$
+
+确实含 $e^{-f/D}$ 这一支 ✓。
 
 物理含义：这正是 **Boltzmann 分布**，$D$ 扮演 $k_BT$ 的角色（Einstein 关系 $D=k_BT/\gamma$），于是 $e^{-\Delta f/D}$ 就是 Arrhenius/Boltzmann 因子。
 
@@ -424,7 +643,25 @@ $$
 
 **Wolfram 核验**：式 (9) 恒等式残差为 **0** ✓。于是"解 FP 方程"变成"解一维定态薛定谔方程"。
 
-**对 Schwarzschild**：$f=\frac{x}{2}-\pi Tx^2$，核验得 $V_s=\pi T+\frac{\pi^2T^2}{D}z^2$（$z=x-\frac{1}{4\pi T}$），是开口向上的谐振子井，故有离散谱 $\varepsilon_n=2\pi T(n+1)$。井底抬高 $\pi T$ 即 $-\frac{f''}{2}>0$，与 Q2 第 4 点的讨论一致。
+**对 Schwarzschild**：
+
+$$
+f=\frac{x}{2}-\pi Tx^2,
+$$
+
+核验得 $V_s=\pi T+\frac{\pi^2T^2}{D}z^2$（
+
+$$
+z=x-\frac{1}{4\pi T}
+$$
+
+），是开口向上的谐振子井，故有离散谱 $\varepsilon_n=2\pi T(n+1)$。井底抬高 $\pi T$ 即
+
+$$
+-\frac{f''}{2}>0,
+$$
+
+与 Q2 第 4 点的讨论一致。
 
 #### 7. 边界条件（式 (5) 后）
 
@@ -457,3 +694,4 @@ $$
 - 本文式 (5) $L_{\rm FP}=\partial_x f'+D\partial_x^2$，$f$ 即热势；稳态解 $W\propto e^{-f/D}$ 为 Boltzmann 分布，$D$ 相当于 $k_BT$；
 - 解析求解的核心技巧是 Hermitian 化 → 薛定谔算子 $-D\partial_x^2+V_s$（式 (6)–(9)，均经 Wolfram 验证）；
 - 其高势垒极限给出 Kramers 逃逸率（2211 式 (10)），是 2211 全篇的基础。
+

@@ -117,25 +117,55 @@ folder: "文章整理/arXiv-2211.03512v2"
     其中 $Q$ 为总电荷，$P$ 为由 $P=3/(8\pi l^2)$ 定义的热力学压强，$l$ 为 AdS 半径。
     > 原文："We briefly review the thermodynamic behavior of the charged AdS black hole [12]. The mass of the black hole in terms of the radius of the event horizon $r_h$ is"；"where $Q$ is the total charge of the black hole, $P$ is the thermodynamic pressure defined by $P=3/(8\pi l^2)$, and $l$ is the AdS radius."
 
-25. **温度**：$T_h=\frac{1}{4\pi r_h}\left(1+8\pi Pr_h^2-\frac{Q^2}{r_h^2}\right)$（原文式 (2)）。
+25. **温度**：
+
+    $$
+    T_h=\frac{1}{4\pi r_h}\left(1+8\pi Pr_h^2-\frac{Q^2}{r_h^2}\right)
+    $$
+
+    （原文式 (2)）。
     > 原文："The temperature of the charged AdS black hole is"
 
 26. **熵**：$S=\pi r_h^2$（原文式 (3)）。
     > 原文："and the entropy conjugated with the temperature is"
 
-27. **Gibbs 自由能**：$G\equiv M-T_hS=\frac{1}{4}\left(r_h-\frac{8\pi}{3}Pr_h^3+\frac{3Q^2}{r_h}\right)$（原文式 (4)）。
+27. **Gibbs 自由能**：
+
+    $$
+    G\equiv M-T_hS=\frac{1}{4}\left(r_h-\frac{8\pi}{3}Pr_h^3+\frac{3Q^2}{r_h}\right)
+    $$
+
+    （原文式 (4)）。
     > 原文："Gibbs free energy plays a key role in the phase transition of a thermodynamic system. For the charged AdS black hole, it is"
 
 28. **与 vdW 流体的类比**：多项研究表明带电 AdS 黑洞的热力学行为类似于 van der Waals 流体；vdW 流体经历气—液相变，而带电 AdS 黑洞对应的是大—小黑洞相变。
     > 原文："Several studies have shown that the thermodynamic behavior of a charged AdS black hole is similar to that of van der Waals fluid. For van der Waals fluid, it undergoes the gas–liquid phase transition, and for the charged AdS black hole, it is called the large–small black hole phase transition."
 
-29. **临界值**：$r_c=\sqrt6Q$、$T_c=\frac{\sqrt6}{18\pi Q}$、$P_c=\frac{1}{96\pi Q^2}$、$G_c=\frac{\sqrt6Q}{3}$（原文式 (5)）。
+29. **临界值**：$r_c=\sqrt6Q$、
+
+    $$
+    T_c=\frac{\sqrt6}{18\pi Q}
+    $$
+
+、$P_c=\frac{1}{96\pi Q^2}$、
+
+    $$
+    G_c=\frac{\sqrt6Q}{3}
+    $$
+
+    （原文式 (5)）。
     > 原文："The critical values for the black hole are [12]"
 
 30. **无量纲量**：$t_h:=T_h/T_c$、$p:=P/P_c$、$x:=r_h/r_c$、$g:=G/G_c$（原文式 (6)）。（$x$ 到底代表什么量？它同时是半径/熵开方/体积立方根的三种等价读法，见 Q5）
     > 原文："For the convenience of discussion, we now introduce dimensionless thermodynamic quantities, which are respectively defined as follows:"
 
-31. **热势的定义**：$f(x)=\int(T_h-T)\,dS$（原文式 (7)）。
+31. **热势的定义**：
+
+    $$
+    f(x)=\int(T_h-T)\,dS
+    $$
+
+    （原文式 (7)）。
     > 原文："In our previous work [40], we consider a canonical ensemble composed of a large number of states (on-shell black hole states and off-shell other unknown states) and construct the thermal potential:"
 
 32. **系综图像**：当系综温度 $T$ 等于 Hawking 温度 $T_h$ 时，系综由在壳黑洞态构成并处于平衡；当 $T\neq T_h$ 时，正则系综中所有可能态都偏离在壳黑洞态。
@@ -159,7 +189,13 @@ folder: "文章整理/arXiv-2211.03512v2"
     f(x)=\frac{\sqrt6Q}{3}\psi(x)=\frac{\sqrt6Q}{3}\left(\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2\right)\qquad\text{(原文式 (8))}
     $$
 
-    其中用 $t:=T/T_c$ 把系综温度 $T$ 替换为无量纲版本。（2026-09-14 修正：原抄为 $\sqrt6Q^3$ 与 $3x^2$，已按官方 PDF 与独立复算更正为 $\frac{\sqrt6Q}{3}$、$\frac{3x}{2}$。）
+    其中用 $t:=T/T_c$ 把系综温度 $T$ 替换为无量纲版本。（2026-09-14 修正：原抄为 $\sqrt6Q^3$ 与 $3x^2$，已按官方 PDF 与独立复算更正为
+
+$$
+\frac{\sqrt6Q}{3}
+$$
+
+、$\frac{3x}{2}.$）
     > 原文："Substituting Eqs. (2), (3), (5) and (6) into Eq. (7) and completing the integration, we can obtain the expression of the thermal potential for the charged AdS black hole:"；"where we replace the ensemble temperature $T$ with its dimensionless version $t$ via $t:=T/T_c$."
     > ⚠️ **该式在 arXiv HTML 中的渲染有损**（根号丢失、分母丢失），本文档第十节给出了独立复算的等价形式与验证方法。
 
@@ -182,12 +218,24 @@ folder: "文章整理/arXiv-2211.03512v2"
 42. **分子图像**：基于黑洞分子假设，大—小黑洞相变是热势中黑洞分子因热涨落而发生的重排；图 1(c) 可以描述这种分子重排。
     > 原文："Based on the black hole molecular hypothesis [14], the large–small black hole phase transition is the rearrangement of black hole molecules due to thermal fluctuations in the thermal potential. Diagram (c) in FIG. 1 might describe a molecular rearrangement."
 
-    > **算·双阱结构**：$p=0.5$、$t=t_2=0.7571151$ 时极值方程的三个正根为 $x_1,x_2,x_3=0.5768511,\;1.3568998,\;2.4516094$，对应 $\psi=1.0707225,\;1.1378968,\;1.0707225$、$\psi''=+1.52323,\;-0.29642,\;+0.35841$——正是"两极小 + 一极大"，即图 1(c) 的两个阱底 $A,C$ 与垒顶 $B$（第十二节 12.1 给全部记号与归一化）。
+    > **算·双阱结构**：$p=0.5$、$t=t_2=0.7571151$ 时极值方程的三个正根为
+
+$$
+x_1,x_2,x_3=0.5768511,\;1.3568998,\;2.4516094,
+$$
+
+对应 $\psi=1.0707225,\;1.1378968,\;1.0707225$、$\psi''=+1.52323,\;-0.29642,\;+0.35841$——正是"两极小 + 一极大"，即图 1(c) 的两个阱底 $A,C$ 与垒顶 $B$（第十二节 12.1 给全部记号与归一化）。
 
 43. **高垒假设**：假设系综温度（乘 Boltzmann 因子）远低于势垒高度。
     > 原文："We assume that the ensemble temperature (multiplied by the Boltzmann factor) is much lower than the barrier height."
 
-    > **算·量级核对**：按图 3 参数（$p=0.5$、$Q=\sqrt{10/6}$）有 $T_c=0.0335528$、$t_2T_c=0.0254033$，而 $\Delta\psi=0.0671744$、$\Delta f=\frac{\sqrt6Q}{3}\Delta\psi=0.0708080$，故 $t_2T_c/\Delta f=0.3588$——只是"同量级"，并非 $\ll1$。而 Kramers 高垒近似真正需要的是 $\Delta f\gg D$：按 $D=10$ 只有 $\Delta f/D=7.08\times10^{-3}$（$e^{-\Delta f/D}=0.9929$）。见 12.2、12.5。
+    > **算·量级核对**：按图 3 参数（$p=0.5$、$Q=\sqrt{10/6}$）有 $T_c=0.0335528$、$t_2T_c=0.0254033$，而 $\Delta\psi=0.0671744$、
+
+$$
+\Delta f=\frac{\sqrt6Q}{3}\Delta\psi=0.0708080,
+$$
+
+故 $t_2T_c/\Delta f=0.3588$——只是"同量级"，并非 $\ll1$。而 Kramers 高垒近似真正需要的是 $\Delta f\gg D$：按 $D=10$ 只有 $\Delta f/D=7.08\times10^{-3}$（$e^{-\Delta f/D}=0.9929$）。见 12.2、12.5。
 
 44. **过垒过程**：分子会在势极小（点 $A$）附近停留很久，只有极少情况下 Brownian 运动把它们带到垒顶（点 $B$）；一旦到达垒顶，它们可能等概率地落向两侧；若落向右侧，会迅速落到另一个极小（点 $C$）、停留一段时间，之后再可能穿回原来的极小（点 $A$）。
     > 原文："Molecules will spend a lot of time near the potential minimum (point $A$), and only rarely will Brownian motion take them to the top of the barrier (point $B$). Once the molecule reaches the top of the barrier, it is likely to fall equally to either side of the barrier. If it moves to the right-hand side, it will rapidly fall to the other minimum (point $C$), stay there for a while, and then perhaps cross back to the original minimum (point $A$)."
@@ -197,7 +245,19 @@ folder: "文章整理/arXiv-2211.03512v2"
 45. **动力学方程**：这里运动是纯扩散的，由 Smoluchowski 方程支配，且势垒高（或温度低），因此很容易求出穿越率，即 Kramers 率。
     > 原文："Here, the motion is purely diffusive, governed by a Smoluchowski equation, and the barrier is high (or the temperature is low). Hence, it is quite easy to find a crossing rate, which is the Kramer's rate [38, 39]."
 
-    > **算·公式复现**：对 Smoluchowski 方程 $\partial_t\rho=\partial_x\!\left[D\,\partial_x\rho+\rho\,\partial_x f\right]$，静止通量与阱内布居之比给出 $r_k=\frac{1}{2\pi}\sqrt{\lvert f''(x_{\min})f''(x_{\max})\rvert}\,e^{-\Delta f/D}$，即原文 (10) 式。本文用两条独立途径复核（12.2）：① Laplace 近似链逐项相乘；② 直接数值积分静止 Fokker–Planck 通量——数值值/公式值随 $D\to0$ 趋于 $1$（$D=1/50,1/200,1/1000$ → $0.823,\,0.964,\,0.993$）。
+    > **算·公式复现**：对 Smoluchowski 方程
+
+$$
+\partial_t\rho=\partial_x\!\left[D\,\partial_x\rho+\rho\,\partial_x f\right],
+$$
+
+静止通量与阱内布居之比给出
+
+$$
+r_k=\frac{1}{2\pi}\sqrt{\lvert f''(x_{\min})f''(x_{\max})\rvert}\,e^{-\Delta f/D},
+$$
+
+即原文 (10) 式。本文用两条独立途径复核（12.2）：① Laplace 近似链逐项相乘；② 直接数值积分静止 Fokker–Planck 通量——数值值/公式值随 $D\to0$ 趋于 $1$（$D=1/50,1/200,1/1000$ → $0.823,\,0.964,\,0.993$）。
 
 46. **Kramers 率公式**：
 
@@ -213,7 +273,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 47. **极值方程**：带电 AdS 黑洞热势的极值点位置由方程 $3px^4-8tx^3+6x^2-1=0$ 决定。**注意此式在原文中没有公式编号**（它是 (10) 式之后段落里的行内公式；详见第十节第 88 条的编号对照表）。
     > 原文："For the charged AdS black hole, the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$."
 
-    > **算·恒等式**（Wolfram 残差 $0$）：$3px^4-8tx^3+6x^2-1=4x^2\psi'(x)=8x^3\left[t_h(x)-t\right]$，故"极值点"$\iff$"在壳温度等于系综温度"（$t_h(x)=t$），与第 48 条原文一致。
+    > **算·恒等式**（Wolfram 残差 $0$）：
+
+$$
+3px^4-8tx^3+6x^2-1=4x^2\psi'(x)=8x^3\left[t_h(x)-t\right],
+$$
+
+故"极值点"$\iff$"在壳温度等于系综温度"（$t_h(x)=t$），与第 48 条原文一致。
 
 48. **三根条件**：当 $0<p<1$ 且 $t\in(t_1,t_3)$ 时，该方程有三个实的正根，从小到大记为 $x_1$、$x_2$、$x_3$；按式(7)，这些位置本质上是 $T_h=T$（即 $t_h=t$）的解。
     > 原文："When $0<p<1$ and $t\in(t_1,t_3)$, this equation has three real positive roots. From small to large, we mark them as $x_1$, $x_2$, and $x_3$. According to Eq. (7), these positions, in essence, are the solutions of $T_h=T$ or $t_h=t$."
@@ -240,16 +306,40 @@ folder: "文章整理/arXiv-2211.03512v2"
 
     > **算·谁是小黑洞**：$x=r_h/r_c$，故 $x_1=0.5769<1<x_3=2.4516$：$x_1$ 是小黑洞、$x_3$ 是黑洞，$r_{k1}$（自 $x_1$ 阱逃出）正是"小→大"✓。热力学偏好也可核验（$\mathrm{d}g/\mathrm{d}t=-x_i^2$）：$t=0.74<t_2$ 时 $g(x_1)=1.07630<1.16291=g(x_3)$，$t=0.80>t_2$ 时 $1.05550>0.75662$——低温偏好小黑洞 ✓。
 
-52. **式(10) 的适用条件（深阱条件）**：使用式(10) 分析转变速率时，假设系综温度远低于势垒高度，$tT_c\ll\Delta f$，其中 $\Delta f$ 为势垒高度，即 $\frac{\sqrt6}{18\pi Q}t\ll\frac{\sqrt6Q}{3}\Delta\psi$（原文式 (13)）。
+52. **式(10) 的适用条件（深阱条件）**：使用式(10) 分析转变速率时，假设系综温度远低于势垒高度，$tT_c\ll\Delta f$，其中 $\Delta f$ 为势垒高度，即
+
+    $$
+    \frac{\sqrt6}{18\pi Q}t\ll\frac{\sqrt6Q}{3}\Delta\psi
+    $$
+
+    （原文式 (13)）。
     > 原文："Here, when using Eq. (10) to analyze the transition rate, we assume that the ensemble temperature is much lower than the barrier height, $tT_c\ll\Delta f$, where $\Delta f$ is the barrier height, i.e.,"（式(13)）
 
-    > **算·(13) 式的两个因子**：$tT_c=\frac{\sqrt6}{18\pi Q}t$（由 (5)(6) 式）、$\Delta f=\frac{\sqrt6Q}{3}\Delta\psi$（由 (8) 式）都是直接读出；在 $t_2$、$Q=\sqrt{10/6}$ 下 $t_2T_c/\Delta f=0.3588$。
+    > **算·(13) 式的两个因子**：
+
+$$
+tT_c=\frac{\sqrt6}{18\pi Q}t
+$$
+
+（由 (5)(6) 式）、
+
+$$
+\Delta f=\frac{\sqrt6Q}{3}\Delta\psi
+$$
+
+（由 (8) 式）都是直接读出；在 $t_2$、$Q=\sqrt{10/6}$ 下 $t_2T_c/\Delta f=0.3588$。
     > ⚠️ **本条早先把 (13) 式右端抄作 $\sqrt6Q^3\Delta\psi$，系误读**（HTML 正文渲染丢根号；其 TeX 源为 `\frac{\sqrt{6}Q}{3}\Delta\psi`），2026-09-15 已更正。
 
 53. **条件的可实现性**：因此总能找到合适的 $Q$ 值使上述条件成立。
     > 原文："Therefore, we can always find the appropriate value of $Q$ to make the above condition meet."
 
-    > **算·单调性与阈值**：$tT_c/\Delta f=\frac{t}{6\pi Q^2\Delta\psi}\propto Q^{-2}$ 严格单调递减，故"总能找到合适的 $Q$"成立；解 $t_2T_c/\Delta f<0.1$ 得 $Q>2.445$，解 $\Delta f/D=1$（$D=10$）得 $Q=182.3$。
+    > **算·单调性与阈值**：
+
+$$
+tT_c/\Delta f=\frac{t}{6\pi Q^2\Delta\psi}\propto Q^{-2}
+$$
+
+严格单调递减，故"总能找到合适的 $Q$"成立；解 $t_2T_c/\Delta f<0.1$ 得 $Q>2.445$，解 $\Delta f/D=1$（$D=10$）得 $Q=182.3$。
 
 54. **数值参数**：图 3 中取 $p=0.5$、电荷 $Q=10/6$、常数扩散系数 $D=10$。
     > 原文（图 3 题注）："Transition rate $r_k$ with respect to the ensemble temperature $t$ at the pressure $p=0.5$ for the charged AdS black hole. Here without losing generality, we set the charge $Q=10/6$ and constant diffusion coefficient $D=10$."
@@ -263,12 +353,36 @@ folder: "文章整理/arXiv-2211.03512v2"
 55. **两个端点**：在 $t_1$ 与 $t_3$ 处转变速率为零，意味着不发生相变。
     > 原文："At $t_1$ and $t_3$, the transition rate is zero, which means that no phase transition occurs."
 
-    > **算·端点为零的机理与幂律**：$t=t_1$ 时 $x_2,x_3$ 合并于 spinodal 点，而在壳恒等式 $\psi''=\frac{3(px^4-2x^2+1)}{4x^3}$ 的零点条件恰是合并条件 $px^4-2x^2+1=0$，故 $\psi''\to0$ ⇒ 前因子 $\to0$；$t_3$ 端 $x_1,x_2$ 合并同理。数值（$D=10$）：$r_{k1}(t_1+\varepsilon)=0.03247,\;0.01030,\;0.003256,\;0.001030$（$\varepsilon=10^{-4},10^{-6},10^{-8},10^{-10}$）⇒ $r_{k1}\propto(t-t_1)^{1/4}$；同端 $r_{k2}\propto(t-t_1)^{1/2}$；$t_3$ 端两者对调。两个速率在两端都 $\to0$ ✓（12.3）。
+    > **算·端点为零的机理与幂律**：$t=t_1$ 时 $x_2,x_3$ 合并于 spinodal 点，而在壳恒等式
+
+$$
+\psi''=\frac{3(px^4-2x^2+1)}{4x^3}
+$$
+
+ 的零点条件恰是合并条件 $px^4-2x^2+1=0$，故 $\psi''\to0$ ⇒ 前因子 $\to0$；$t_3$ 端 $x_1,x_2$ 合并同理。数值（$D=10$）：
+
+$$
+r_{k1}(t_1+\varepsilon)=0.03247,\;0.01030,\;0.003256,\;0.001030
+$$
+
+（$\varepsilon=10^{-4},10^{-6},10^{-8},10^{-10}$）⇒ $r_{k1}\propto(t-t_1)^{1/4}$；同端 $r_{k2}\propto(t-t_1)^{1/2}$；$t_3$ 端两者对调。两个速率在两端都 $\to0$ ✓（12.3）。
 
 56. **整体趋势**：当系综温度 $t$ 从 $t_1$ 升高到 $t_3$ 时，两个速率都呈先增后减的趋势。
     > 原文："As the ensemble temperature $t$ increases from $t_1$ to $t_3$, the two rates show a trend of increasing first and then decreasing."
 
-    > **算·逐点数值**（$p=0.5,D=10$）：$t=0.735\to0.795$ 时 $r_{k1}=0.07102,\;0.10092,\;0.11076,\;0.11448,\;0.11457,\;0.11190,\;0.10677$，峰在 $0.7702$；同段 $r_{k2}=0.01779,\;0.03948,\;0.05212,\;0.06139,\;0.06852,\;0.07397,\;0.07788$，峰在 $0.8121$——都先增后减 ✓（全表见 12.4）。
+    > **算·逐点数值**（$p=0.5,D=10$）：$t=0.735\to0.795$ 时
+
+$$
+r_{k1}=0.07102,\;0.10092,\;0.11076,\;0.11448,\;0.11457,\;0.11190,\;0.10677,
+$$
+
+峰在 $0.7702$；同段
+
+$$
+r_{k2}=0.01779,\;0.03948,\;0.05212,\;0.06139,\;0.06852,\;0.07397,\;0.07788,
+$$
+
+峰在 $0.8121$——都先增后减 ✓（全表见 12.4）。
 
 57. **核心结果（非对称）**：在 $t_2$ 处，热势的两个全局极小相等，但两个速率并不相等；$r_{k1}$ 远大于 $r_{k2}$，说明"小→大"的过程与"大→小"的过程相差甚远。
     > 原文："At $t_2$, according to the diagram (b) in FIG. 1, the two global minima in the thermal potential are equal, but the transition rates $r_{k1}$ and $r_{k2}$ are not equal. The rate $r_{k1}$ is much larger than the rate $r_{k2}$, indicating that the transition process from the small black hole to the large black hole is far from that of the transition from the large black hole to the small black hole."
@@ -285,7 +399,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 59. **净速率**：在 $t^*$ 之前，两相之间的净转变速率 $\Delta r_k=r_{k1}-r_{k2}$ 呈先增后减，且"小→大"的速率占主导；同时净速率在 $t_1$ 与 $t_2$ 之间达到极大值。
     > 原文："Before $t^*$, the net rate of the transition ($\Delta r_k=r_{k1}-r_{k2}$) between the two phases shows a trend of increasing first and then decreasing, and the rate of the transition $r_{k1}$ from the small black hole to the large black hole is dominant. At the same time, the net rate reaches the maximum value between $t_1$ and $t_2$."
 
-    > **算·净速率**：$t_{\max}(\Delta r_k)=0.744583\in(t_1,t_2)=(0.7325378,0.7571151)$ ✓；$t<t^*$ 段 $\Delta r_k>0$（$t=0.755$ 为 $0.05865$、$t=0.815$ 为 $0.00804$）✓。
+    > **算·净速率**：
+
+$$
+t_{\max}(\Delta r_k)=0.744583\in(t_1,t_2)=(0.7325378,0.7571151)
+$$
+
+✓；$t<t^*$ 段 $\Delta r_k>0$（$t=0.755$ 为 $0.05865$、$t=0.815$ 为 $0.00804$）✓。
 
 60. **动力学平衡温度 $t^*$**：在 $t^*$ 处两个速率相等、净速率为零，即两相之间的转变达到动态平衡。
     > 原文："At $t^*$, the transition rates $r_{k1}$ and $r_{k2}$ are equal, and the net rate is zero, which means that the transition between the two phases reaches dynamic equilibrium."
@@ -295,12 +415,24 @@ folder: "文章整理/arXiv-2211.03512v2"
 61. **温度过高后的反转**：一旦系综温度 $t$ 超过 $t^*$ 就发生反转——此时"大→小"的过程占主导，并且同样先增后减。
     > 原文："Once the ensemble temperature $t$ exceeds $t^*$, there will be a reversal. That is, at this time, the process of the transition from the large black hole to the small black hole will dominate, and it also shows a trend of first increasing and then decreasing."
 
-    > **算·反转**：$t=0.825$ 时 $\Delta r_k=0.074373-0.078369=-0.003996<0$；$t=0.835$ 时 $-0.017310$；同时 $r_{k2}$ 已过峰（峰值 $0.08074$ 在 $t=0.8121$，$t=0.835$ 时 $0.07082$），即"大→小"同样先增后减 ✓。
+    > **算·反转**：$t=0.825$ 时
+
+$$
+\Delta r_k=0.074373-0.078369=-0.003996<0;
+$$
+
+$t=0.835$ 时 $-0.017310$；同时 $r_{k2}$ 已过峰（峰值 $0.08074$ 在 $t=0.8121$，$t=0.835$ 时 $0.07082$），即"大→小"同样先增后减 ✓。
 
 62. **上端点**：当系综温度达到 $t_3$ 时两个速率都为零，表明不发生相变。
     > 原文："When the ensemble temperature reaches $t_3$, both rates are zero, indicating that there is no phase transition."
 
-    > **算·**：同第 55 条：$t_3$ 端 $x_1,x_2$ 合并 ⇒ $\psi''\to0$ ⇒ $r_{k1}\propto(t_3-t)^{1/2}$、$r_{k2}\propto(t_3-t)^{1/4}$，两者都 $\to0$ ✓。数值：$r_{k1}(t_3-\varepsilon)=0.0055846,\;0.00055859,\;0.000055859$、$r_{k2}(t_3-\varepsilon)=0.025330,\;0.0080822,\;0.0025580$（$\varepsilon=10^{-4},10^{-6},10^{-8}$，相邻比 $10$ 与 $3.13$）✓。
+    > **算·**：同第 55 条：$t_3$ 端 $x_1,x_2$ 合并 ⇒ $\psi''\to0$ ⇒ $r_{k1}\propto(t_3-t)^{1/2}$、$r_{k2}\propto(t_3-t)^{1/4}$，两者都 $\to0$ ✓。数值：
+
+$$
+r_{k1}(t_3-\varepsilon)=0.0055846,\;0.00055859,\;0.000055859
+$$
+
+、$r_{k2}(t_3-\varepsilon)=0.025330,\;0.0080822,\;0.0025580$（$\varepsilon=10^{-4},10^{-6},10^{-8}$，相邻比 $10$ 与 $3.13$）✓。
 
 63. **小结**：总之，小/大黑洞之间的相变呈现非常明显的非对称特征，整体过程由"小→大"主导。
     > 原文："In short, the phase transition between small and large black holes presents very asymmetric features, and the overall process is dominated by the transition from a small black hole to a large black hole."
@@ -314,7 +446,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 64. **工作回顾**：本文利用黑洞在热势中的几何行为，采用描述外场中粒子 Brownian 运动的 Kramers 逃逸率方法，研究了带电 AdS 黑洞一级相变的动力学过程。
     > 原文："In this study, we used the geometric behavior of a black hole in the thermal potential and adopted the Kramer's escape rate method of describing the Brownian motion of particles in an external field to study the dynamic process of the first-order phase transition for a charged AdS black hole."
 
-    > **算·方法链**：$f=\frac{\sqrt6Q}{3}\psi$（由 (2)(3)(5)(6) 式直接积分，残差 $0$，见 12.1）→ 极值方程恒等式（第 47 条）→ (10) 式（第 45、46 条 / 12.2），链条每一环都做过独立核验。
+    > **算·方法链**：
+
+$$
+f=\frac{\sqrt6Q}{3}\psi
+$$
+
+（由 (2)(3)(5)(6) 式直接积分，残差 $0$，见 12.1）→ 极值方程恒等式（第 47 条）→ (10) 式（第 45、46 条 / 12.2），链条每一环都做过独立核验。
 
 65. **与 Gibbs 分析的对比**：此前用 Gibbs 自由能分析黑洞相变行为时，无法提取从一个态到另一个态的转变强度信息；借助随机过程，现在得到了带电 AdS 黑洞小/大黑洞相变的速率行为。
     > 原文："In the previous process of analyzing the phase transition behavior of black holes using Gibbs free energy, we cannot extract information on the transition intensity from one state to another. By means of a stochastic process, at present, we have obtained the rate behavior of the phase transition between small and large black holes for the charged AdS black hole."
@@ -344,7 +482,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 70. **这正是本文的价值所在**：这是从 Gibbs 自由能分析中无法获得的重要信息。
     > 原文："This is the important information about the phase transition of black holes that we cannot get in the analysis of Gibbs free energy."
 
-    > **算·"给不出的信息"具体是什么**：就是前因子之比 $\sqrt{\lvert\psi''(x_1)/\psi''(x_3)\rvert}$（第 84 条）——它既不在 $g$ 的水平（数值）里，也不在 $g$ 的斜率（$=-x_i^2$）里 ✓。
+    > **算·"给不出的信息"具体是什么**：就是前因子之比
+
+$$
+\sqrt{\lvert\psi''(x_1)/\psi''(x_3)\rvert}
+$$
+
+（第 84 条）——它既不在 $g$ 的水平（数值）里，也不在 $g$ 的斜率（$=-x_i^2$）里 ✓。
 
 71. **真正的动力学平衡温度**：只有当系综温度 $t=t^*$（$t^*\in(t_2,t_3)$）时两个速率才相等，表明相变达到动态平衡。
     > 原文："Only when the ensemble temperature $t=t^*$, where $t^*\in(t_2,t_3)$, can the two rates be equal, indicating that the phase transition reaches a dynamic equilibrium."
@@ -354,7 +498,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 72. **对热势本身的约束**：此外，热势不能任意取，它应当满足一些要求——热势的极值对应平衡态，即系综温度 $T$ 等于 Hawking 温度 $T_h$ 的态；热势的凹凸性可与热力学系统的稳定性相关联。
     > 原文："In addition, the thermal potential cannot be arbitrary, and it should meet some requirements. The extreme value of the thermal potential corresponds to the equilibrium state, i.e., the state with the ensemble temperature $T$ equating to the Hawking temperature $T_h$. The concavity and convexity of the thermal potential can be related to the stability of the thermodynamic system."
 
-    > **算·两条约束都可核验**：① 极值 $\iff t_h=t$——由恒等式 $\mathcal P=8x^3(t_h-t)$（第 47 条）直接得到 ✓；② 凹凸性 $\iff$ 稳定性——在壳时有 $\psi''=2x\,t_h'(x)$（Wolfram 残差 $0$），而对数热容 $\propto1/t_h'$，故 $\psi''>0\iff$ 局域稳定；数值（小/中/大）$(\psi'',t_h')=(+1.5232,+1.3203),(-0.2964,-0.1092),(+0.3584,+0.0731)$，符号一一对应 ✓。
+    > **算·两条约束都可核验**：① 极值 $\iff t_h=t$——由恒等式 $\mathcal P=8x^3(t_h-t)$（第 47 条）直接得到 ✓；② 凹凸性 $\iff$ 稳定性——在壳时有 $\psi''=2x\,t_h'(x)$（Wolfram 残差 $0$），而对数热容 $\propto1/t_h'$，故 $\psi''>0\iff$ 局域稳定；数值（小/中/大）
+
+$$
+(\psi'',t_h')=(+1.5232,+1.3203),(-0.2964,-0.1092),(+0.3584,+0.0731),
+$$
+
+符号一一对应 ✓。
 
 73. **热势形式的不唯一性**：在两种条件下的热势，其表达式可能与本工作中构造的不同；同时，对相变速率的分析而言，定性行为是一致的，但数值上存在差异。
     > 原文："For the thermal potential under the two conditions, the expression may not be the same as that constructed in this study. Meanwhile, for the analysis of the phase transition rate, the qualitative behaviors are consistent, but there are differences in the numerical values."
@@ -407,7 +557,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 78. **可核验的抓手**：原文明确给出极值方程为 $3px^4-8tx^3+6x^2-1=0$，这条式子不含根号、无歧义，可作为反推热势的判据。
     [引·原文："the locations of the extreme points of the thermal potential are determined by the equation $3px^4-8tx^3+6x^2-1=0$"]
 
-79. **独立推导的热势**：由 $f(x)=\int(T_h-T)dS$、$T_h$ 取式(2)、并利用式(5)(6) 的无量纲量，可得（差一个整体常系数）
+79. **独立推导的热势**：由
+
+    $$
+    f(x)=\int(T_h-T)dS
+    $$
+
+    、$T_h$ 取式(2)、并利用式(5)(6) 的无量纲量，可得（差一个整体常系数）
 
     $$
     \psi(x)\ \propto\ \frac{3x}{4}+\frac{px^3}{8}+\frac{1}{8x}-\frac{tx^2}{2}.
@@ -421,9 +577,21 @@ folder: "文章整理/arXiv-2211.03512v2"
     t_1=\frac12\sqrt{1+3p-(1-p)^{3/2}},\qquad t_3=\frac12\sqrt{1+3p+(1-p)^{3/2}}.
     $$
 
-    [算·推导：判别式为 $\text{const}\times[16t^4-8(1+3p)t^2+p(3+p)^2]$，解得 $t^2=\frac14[(1+3p)\pm(1-p)^{3/2}]$]
+    [算·推导：判别式为
 
-81. **与原文式(9) 的另一种写法一致**：$t_3$ 亦可写成 $\frac{(2-\sqrt{1-p})\sqrt{1+\sqrt{1-p}}}{2}$，两者平方之差化简为 $0$（即恒等）。
+$$
+\text{const}\times[16t^4-8(1+3p)t^2+p(3+p)^2],
+$$
+
+解得 $t^2=\frac14[(1+3p)\pm(1-p)^{3/2}]$]
+
+81. **与原文式(9) 的另一种写法一致**：$t_3$ 亦可写成
+
+    $$
+    \frac{(2-\sqrt{1-p})\sqrt{1+\sqrt{1-p}}}{2},
+    $$
+
+    两者平方之差化简为 $0$（即恒等）。
     [算·符号验证：`Simplify[t3f[p]^2 - t3a[p]^2]` 输出 `0`]
 
 82. **$t_1,t_3$ 的数值**：$p=0.5$ 时 $t_1=0.73253782$、$t_3=0.84462320$；$p=0.7$ 时 $0.856692$ 与 $0.903371$；$p=0.9$ 时 $0.957650$ 与 $0.965870$。（$p\to1$ 时两者同时趋于 $1$，与临界点一致。）
@@ -439,7 +607,13 @@ folder: "文章整理/arXiv-2211.03512v2"
     $$
 
     这与扩散系数 $D$ 无关。
-    > ⚠️ **2026-09-15 更正**：$\psi''$ 原写作 $\frac{3px}{4}+\frac{1}{4x^3}-t$，那是 $\psi''/2$。因为本式只用到比值，$2$ 是整体因子，原有数值（$2.0616$ 等）**不受影响**；单点数值 $\psi''(x_1)=1.5232348$、$\psi''(x_2)=-0.2964187$、$\psi''(x_3)=0.3584093$ 见 12.6。
+    > ⚠️ **2026-09-15 更正**：$\psi''$ 原写作
+
+$$
+\frac{3px}{4}+\frac{1}{4x^3}-t,
+$$
+
+那是 $\psi''/2$。因为本式只用到比值，$2$ 是整体因子，原有数值（$2.0616$ 等）**不受影响**；单点数值 $\psi''(x_1)=1.5232348$、$\psi''(x_2)=-0.2964187$、$\psi''(x_3)=0.3584093$ 见 12.6。
     [算·推导与数值；对应原文的观察"the two global minima in the thermal potential are equal, but the transition rates $r_{k1}$ and $r_{k2}$ are not equal."]
 
 85. **数值结果汇总**（$t_2$ 处的速率比、"直接差"与"闭式"两种算法给出的势垒高度一致）：
@@ -452,7 +626,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 
     [算·数值；其中 $x_1<x_2<x_3$ 对应原文的"From small to large, we mark them as $x_1$, $x_2$, and $x_3$."]
 
-    > **势垒高度（$t_2$ 处，$\psi$ 归一化）**：$\Delta\psi=0.06717436$（两个方向相等，$p=0.5$）；换算到原文热势单位 $\Delta f=\frac{\sqrt6Q}{3}\Delta\psi$，$Q=\sqrt{10/6}$ 时 $0.0708080$。$\psi''$ 与 $t_h'$ 的三组数值见表 12.6。
+    > **势垒高度（$t_2$ 处，$\psi$ 归一化）**：$\Delta\psi=0.06717436$（两个方向相等，$p=0.5$）；换算到原文热势单位
+
+$$
+\Delta f=\frac{\sqrt6Q}{3}\Delta\psi,
+$$
+
+$Q=\sqrt{10/6}$ 时 $0.0708080$。$\psi''$ 与 $t_h'$ 的三组数值见表 12.6。
 
 86. **与原文结论的一致性**：上表显示在 $t_2$ 处 $r_{k1}/r_{k2}$ 显著大于 $1$ 且随 $p\to1$（趋近临界）而趋于 $1$，与原文"$r_{k1}$ is much larger than the rate $r_{k2}$"以及"At $t_1$ and $t_3$, the transition rate is zero"的定性描述一致。
     [算·数值；引·原文第 55、57 条引文]
@@ -472,8 +652,20 @@ folder: "文章整理/arXiv-2211.03512v2"
     | (4) | Gibbs 自由能 $G$ |
     | (5) | 临界值 $r_c,T_c,P_c,G_c$ |
     | (6) | 无量纲量 $t_h,p,x,g$ |
-    | (7) | 热势定义 $f=\int(T_h-T)\mathrm{d}S$ |
-    | (8) | 热势显式 $f=\frac{\sqrt6Q}{3}\psi(x)$ |
+    | (7) | 热势定义
+
+$$
+f=\int(T_h-T)\mathrm{d}S
+$$
+
+|
+    | (8) | 热势显式
+
+$$
+f=\frac{\sqrt6Q}{3}\psi(x)
+$$
+
+|
     | (9) | 三个关键温度 $t_1,t_2,t_3$ |
     | **(10)** | **Kramers 速率** $r_k$ |
     | (11)(12) | 两个方向的速率 $r_{k1},r_{k2}$ |
@@ -486,7 +678,13 @@ folder: "文章整理/arXiv-2211.03512v2"
 
 ## 十一、一句话结论（皆对应上文引文）
 
-- 本文把"带电 AdS 黑洞的小/大黑洞一级相变"翻译成一个一维热势中的 Kramers 逃逸问题，热势为 $f(x)=\int(T_h-T)dS$、极值方程为 $3px^4-8tx^3+6x^2-1=0$（第 31、37、47 条）。
+- 本文把"带电 AdS 黑洞的小/大黑洞一级相变"翻译成一个一维热势中的 Kramers 逃逸问题，热势为
+
+  $$
+  f(x)=\int(T_h-T)dS
+  $$
+
+  、极值方程为 $3px^4-8tx^3+6x^2-1=0$（第 31、37、47 条）。
 - 核心发现是**非对称**：在 Gibbs 意义下的共存温度 $t_2$ 处两阱等深，但"小→大"的速率远大于"大→小"；只有到 $t^*\in(t_2,t_3)$ 才达到动力学平衡（第 57、60、67–71 条）。
 - 这一信息是 Gibbs 自由能分析给不出的，也是本文自称填补的空白（第 20、65、70 条）。
 - 本文留下的问题——非对称的**机制**、以及为何 $t_2$ 处速率不等——原文列为公开问题（第 74 条）；本笔记复算给出了**模型内**的答案（见下条与 12.6）。
@@ -503,9 +701,33 @@ folder: "文章整理/arXiv-2211.03512v2"
 
 ### 12.1 记号、归一化与恒等式
 
-- 无量纲热势（原文 (8) 式括号内）：$\psi(x)=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2$，原文的热势是 $f=\frac{\sqrt6Q}{3}\psi$。
-- 由 (2)(3)(5)(6) 式直接积分 $\int(T_h-T)\,\mathrm dS$ 得 $\frac{\sqrt6Q}{3}\psi$（Wolfram 残差 $0$）；积分常数取 $0$ 的依据是"在壳时热势 = Gibbs 自由能"：$\psi\big(x,t_h(x),p\big)=g(x)=\frac{3x}{4}-\frac{px^3}{8}+\frac{3}{8x}$（残差 $0$）。
-- ⚠️ **归一化警告**：第 79 条写过一个差常系数的形式 $\frac{3x}{4}+\frac{px^3}{8}+\frac{1}{8x}-\frac{tx^2}{2}=\psi/2$。**比较两阱等深、根的位置、比值时无所谓，但报绝对势垒高度时必须用 $\psi$**（第 83 条旧值 $0.033587$ 就是把半归一化势当成了 $\psi$）。
+- 无量纲热势（原文 (8) 式括号内）：
+
+  $$
+  \psi(x)=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2,
+  $$
+
+  原文的热势是 $f=\frac{\sqrt6Q}{3}\psi.$
+- 由 (2)(3)(5)(6) 式直接积分
+
+  $$
+  \int(T_h-T)\,\mathrm dS
+  $$
+
+ 得 $\frac{\sqrt6Q}{3}\psi$（Wolfram 残差 $0$）；积分常数取 $0$ 的依据是"在壳时热势 = Gibbs 自由能"：
+
+  $$
+  \psi\big(x,t_h(x),p\big)=g(x)=\frac{3x}{4}-\frac{px^3}{8}+\frac{3}{8x}
+  $$
+
+  （残差 $0$）。
+- ⚠️ **归一化警告**：第 79 条写过一个差常系数的形式
+
+  $$
+  \frac{3x}{4}+\frac{px^3}{8}+\frac{1}{8x}-\frac{tx^2}{2}=\psi/2.
+  $$
+
+  **比较两阱等深、根的位置、比值时无所谓，但报绝对势垒高度时必须用 $\psi$**（第 83 条旧值 $0.033587$ 就是把半归一化势当成了 $\psi$）。
 - 极值方程与三条恒等式（Wolfram 残差均为 $0$）：
 
 
@@ -530,7 +752,13 @@ $$
 
 ### 12.2 Kramers 公式 (10) 的两条独立验证
 
-**（1）Laplace 近似链**。对 Smoluchowski 方程 $\partial_t\rho=\partial_x[D\rho'+\rho f']$，静止解给出
+**（1）Laplace 近似链**。对 Smoluchowski 方程
+
+$$
+\partial_t\rho=\partial_x[D\rho'+\rho f'],
+$$
+
+静止解给出
 
 
 $$
@@ -559,7 +787,13 @@ $$
 
 ### 12.3 端点行为：两个速率如何趋零（第 55、62 条）
 
-在 $t_1$ 处 $x_2,x_3$ 合并于 spinodal 点（$t_3$ 处 $x_1,x_2$ 合并）；合并条件 $px^4-2x^2+1=0$ 恰是 $\psi''=0$ 的条件，且靠近合并点 $\psi''\propto\sqrt{\lvert t-t_{1,3}\rvert}$。于是前因子 $\sqrt{\lvert\psi''\psi''\rvert}$ 给出不同的幂律：
+在 $t_1$ 处 $x_2,x_3$ 合并于 spinodal 点（$t_3$ 处 $x_1,x_2$ 合并）；合并条件 $px^4-2x^2+1=0$ 恰是 $\psi''=0$ 的条件，且靠近合并点
+
+$$
+\psi''\propto\sqrt{\lvert t-t_{1,3}\rvert}.
+$$
+
+于是前因子 $\sqrt{\lvert\psi''\psi''\rvert}$ 给出不同的幂律：
 
 | | $r_{k1}$ | $r_{k2}$ |
 |---|---|---|
@@ -724,7 +958,7 @@ $$
 
 （**Wolfram 核验**：$dt_h/dx\propto px^4-2x^2+1$，两者恒等 ✓）
 
-解出 $x^2=\dfrac{1\pm\sqrt{1-p}}{p}$。用 $px^4=2x^2-1$ 化简：
+解出 $x^2=\dfrac{1\pm\sqrt{1-p}}{p}.$用 $px^4=2x^2-1$ 化简：
 
 
 $$
@@ -732,7 +966,13 @@ t_h=\frac{3(2x^2-1)+6x^2-1}{8x^3}=\frac{3x^2-1}{2x^3}
 $$
 
 
-令 $u\equiv\sqrt{1-p}$（$p=1-u^2$），两个根化为 $x^2=\frac{1+u}{p}=\frac{1}{1-u}$ 与 $x^2=\frac{1-u}{p}=\frac{1}{1+u}$，于是
+令 $u\equiv\sqrt{1-p}$（$p=1-u^2$），两个根化为
+
+$$
+x^2=\frac{1+u}{p}=\frac{1}{1-u}
+$$
+
+与 $x^2=\frac{1-u}{p}=\frac{1}{1+u},$于是
 
 
 $$
@@ -760,8 +1000,20 @@ $$
 
 | | $x^2$ | $x$ | $t_h(x)$ | 性质 |
 | --- | --- | --- | --- | --- |
-| $t_1=0.7325$ | $\frac{1+\sqrt{1-p}}{p}=3.414$ | 1.848 | 极小 | 三根窗口**下界** |
-| $t_3=0.8446$ | $\frac{1-\sqrt{1-p}}{p}=0.586$ | 0.765 | 极大 | 三根窗口**上界** |
+| $t_1=0.7325$ |
+
+$$
+\frac{1+\sqrt{1-p}}{p}=3.414
+$$
+
+| 1.848 | 极小 | 三根窗口**下界** |
+| $t_3=0.8446$ |
+
+$$
+\frac{1-\sqrt{1-p}}{p}=0.586
+$$
+
+| 0.765 | 极大 | 三根窗口**上界** |
 
 即 **$t_1,t_3$ 就是 $t_h(x)$ 在 $x>0$ 上的局部极小值与局部极大值**，正好对应原文第 38 条所说的"swallowtail 尖端的局部最小/最大温度"。三实根存在的条件 $t\in(t_1,t_3)$（原文第 48 条）由此自动得出：因 $t_h(0^+)=-\infty$、$t_h(+\infty)=+\infty$，水平线 $t_h=t$ 与曲线有三个交点当且仅当 $t$ 落在极值之间。
 
@@ -777,7 +1029,13 @@ $$
 $$
 
 
-比较系数得 $d=-\frac1B$、$c=-\frac{A}{B^2}$、$8t=3pA+\frac{A}{B^2}$，以及
+比较系数得 $d=-\frac1B$、
+
+$$
+c=-\frac{A}{B^2}
+$$
+
+、$8t=3pA+\frac{A}{B^2},$以及
 
 
 $$
@@ -825,14 +1083,32 @@ $$
 
 **正好是 (9) 式的 $t_2$。**
 
-**数值核验（$p=0.5$）**：$B=\sqrt2$、$A=3.02846$、$t_2=0.757115$；极值方程的三个正根为 $x_1=0.57685$、$x_2=1.35690$、$x_3=2.45161$，确有 $x_1x_3=1.41421=\sqrt2$ ✓，且由 $A,B$ 反解的 $x_{1,3}=\frac{A\mp\sqrt{A^2-4B}}{2}$ 与之一致 ✓。
+**数值核验（$p=0.5$）**：$B=\sqrt2$、$A=3.02846$、$t_2=0.757115$；极值方程的三个正根为 $x_1=0.57685$、$x_2=1.35690$、$x_3=2.45161$，确有 $x_1x_3=1.41421=\sqrt2$ ✓，且由 $A,B$ 反解的
+
+$$
+x_{1,3}=\frac{A\mp\sqrt{A^2-4B}}{2}
+$$
+
+与之一致 ✓。
 
 顺带：这正是带电 AdS 黑洞扩展相空间的**著名共存曲线** $t_2=\sqrt{p(3-\sqrt p)/2}$（Kubiznak–Mann, JHEP 07 (2012) 033，即本文 [12]），所以 $t_2$ 与文献 [12] 独立已知的结果一致。
 
 #### 4. 三者的关系
 
 - (8) 式热势 $\psi(x)$ → 极值方程 $\mathcal P(x)=0$；
-- **重根条件** $\Rightarrow$ $t_1=\frac{(2+\sqrt{1-p})\sqrt{1-\sqrt{1-p}}}{2}$（$t_h$ 极小）、$t_3=\frac{(2-\sqrt{1-p})\sqrt{1+\sqrt{1-p}}}{2}$（$t_h$ 极大）；
+- **重根条件** $\Rightarrow$
+
+  $$
+  t_1=\frac{(2+\sqrt{1-p})\sqrt{1-\sqrt{1-p}}}{2}
+  $$
+
+（$t_h$ 极小）、
+
+  $$
+  t_3=\frac{(2-\sqrt{1-p})\sqrt{1+\sqrt{1-p}}}{2}
+  $$
+
+  （$t_h$ 极大）；
 - **两阱等深** $\Rightarrow$ $x_1x_3=1/\sqrt p$ $\Rightarrow$ $t_2=\sqrt{p(3-\sqrt p)/2}$；
 - 且 $t_1<t_2<t_3$（$p=0.5$：$0.7325<0.7571<0.8446$ ✓）。
 
@@ -848,7 +1124,13 @@ $$
 
 #### 6. 附：本篇 (8) 式的抄写更正
 
-原笔记第 37 条把 (8) 式抄作 $\sqrt6Q^3(\frac{1}{4x}+3x^2+\frac{px^3}{4}-tx^2)$，**有误**（曾疑为 HTML 渲染缺陷）。按官方 PDF 与独立复算，应为
+原笔记第 37 条把 (8) 式抄作
+
+$$
+\sqrt6Q^3(\frac{1}{4x}+3x^2+\frac{px^3}{4}-tx^2),
+$$
+
+**有误**（曾疑为 HTML 渲染缺陷）。按官方 PDF 与独立复算，应为
 
 
 $$
@@ -856,7 +1138,13 @@ f(x)=\frac{\sqrt6Q}{3}\psi(x)=\frac{\sqrt6Q}{3}\left(\frac{1}{4x}+\frac{3x}{2}+\
 $$
 
 
-已于本条问答同日更正第 37 条。独立复算依据：$\frac{3}{\sqrt6Q}(M-T\pi r_h^2)=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2$，且在 $p=1,x=1$ 处 $\psi=1/4+3/2+1/4-1=1$ ✓。
+已于本条问答同日更正第 37 条。独立复算依据：
+
+$$
+\frac{3}{\sqrt6Q}(M-T\pi r_h^2)=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2,
+$$
+
+且在 $p=1,x=1$ 处 $\psi=1/4+3/2+1/4-1=1$ ✓。
 
 ---
 
@@ -894,11 +1182,23 @@ g(x)=\psi\bigl(x,\,t_h(x)\bigr)
 $$
 
 
-直觉：$\psi=\frac{\sqrt6Q}{3}\int(T_h-T)\mathrm{d}S$ 在 $T=T_h$ 时退化成 $\frac{\sqrt6Q}{3}(M-T_hS)=g$。所以**燕尾图（$g$–$t$ 平面）就是热势在壳取值随温度变化的轨迹**。
+直觉：$\psi=\frac{\sqrt6Q}{3}\int(T_h-T)\mathrm{d}S$ 在 $T=T_h$ 时退化成
+
+$$
+\frac{\sqrt6Q}{3}(M-T_hS)=g.
+$$
+
+所以**燕尾图（$g$–$t$ 平面）就是热势在壳取值随温度变化的轨迹**。
 
 #### 1. $\mathrm{d}g_i/\mathrm{d}t=-x_i^2$ 的三种证法
 
-**路子 A（热力学，最本质）**：第一定律 $\mathrm{d}G=V\mathrm{d}P-S\mathrm{d}T_h+\Phi\mathrm{d}Q$，固定 $P,Q$ 得
+**路子 A（热力学，最本质）**：第一定律
+
+$$
+\mathrm{d}G=V\mathrm{d}P-S\mathrm{d}T_h+\Phi\mathrm{d}Q,
+$$
+
+固定 $P,Q$ 得
 
 
 $$
@@ -960,7 +1260,13 @@ $$
 
 好处：系数比较（韦达定理）**不需解四次方程**，就能锁住 $t_2,A,B$ 的关系。
 
-**系数比较**（展开 $\mathcal P=(x^2-Ax+B)(3px^2+\beta x+\gamma)$）：
+**系数比较**（展开
+
+$$
+\mathcal P=(x^2-Ax+B)(3px^2+\beta x+\gamma)
+$$
+
+）：
 
 | 次数 | 系数 | 等于 |
 | --- | --- | --- |
@@ -970,7 +1276,19 @@ $$
 | $x^1$ | $A\gamma-B\beta$ | $0$ |
 | $x^0$ | $B\gamma$ | $-1$ |
 
-由 $x^0$：$\gamma=-\frac1B$；由 $x^1$：$\beta=\frac{A\gamma}{B}=-\frac{A}{B^2}$。代入 $x^3$、$x^2$ 得两条关系：
+由 $x^0$：
+
+$$
+\gamma=-\frac1B;
+$$
+
+由 $x^1$：
+
+$$
+\beta=\frac{A\gamma}{B}=-\frac{A}{B^2}.
+$$
+
+代入 $x^3$、$x^2$ 得两条关系：
 
 
 $$
@@ -992,7 +1310,13 @@ $$
 $$
 
 
-代入 (I)（即 $t_2A=\frac{A^2}{8}(3p+\frac{1}{B^2})$），注意 $\frac{pA^2}{4}-\frac{3pA^2}{8}=-\frac{pA^2}{8}$，得
+代入 (I)（即
+
+$$
+t_2A=\frac{A^2}{8}(3p+\frac{1}{B^2})
+$$
+
+），注意 $\frac{pA^2}{4}-\frac{3pA^2}{8}=-\frac{pA^2}{8},$得
 
 
 $$
@@ -1000,7 +1324,13 @@ $$
 $$
 
 
-令 (II)=(IV)，两边乘 $(p+\frac{1}{B^2})$，左边展开为 $pB+\frac1B+6pB^2+6-3p^2B^3-3pB$，$-2pB$ 两边相消，整理得
+令 (II)=(IV)，两边乘
+
+$$
+(p+\frac{1}{B^2}),
+$$
+
+左边展开为 $pB+\frac1B+6pB^2+6-3p^2B^3-3pB,$$-2pB$ 两边相消，整理得
 
 
 $$
@@ -1008,7 +1338,13 @@ $$
 $$
 
 
-该四次式**整除** $\left(B-\frac{1}{\sqrt p}\right)$（余式为 0 ✓），故
+该四次式**整除**
+
+$$
+\left(B-\frac{1}{\sqrt p}\right)
+$$
+
+（余式为 0 ✓），故
 
 
 $$
@@ -1034,7 +1370,19 @@ $$
 $$
 
 
-$x^3$ 系数给出 $-Ap-3pA=-4pA=-8t_2$，**自动成立**，原因正是 $t_2=\frac{Ap}{2}$——即 $t_2$ 的表达式就是从这个因式分解里"读"出来的。另一个二次式 $3px^2-Apx-\sqrt p=0$ 的**正根即 $x_2$**（$p=0.5$：$1.5x^2-1.5142x-0.70711=0\Rightarrow x_2=1.35690$ ✓），负根为非物理根。
+$x^3$ 系数给出 $-Ap-3pA=-4pA=-8t_2$，**自动成立**，原因正是
+
+$$
+t_2=\frac{Ap}{2}
+$$
+
+——即 $t_2$ 的表达式就是从这个因式分解里"读"出来的。另一个二次式 $3px^2-Apx-\sqrt p=0$ 的**正根即 $x_2$**（$p=0.5$：
+
+$$
+1.5x^2-1.5142x-0.70711=0\Rightarrow x_2=1.35690
+$$
+
+✓），负根为非物理根。
 
 #### 5. 数值总核验（$p=0.5$）
 
@@ -1053,7 +1401,13 @@ $x^3$ 系数给出 $-Ap-3pA=-4pA=-8t_2$，**自动成立**，原因正是 $t_2=\
 
 ### Q3. $\mathcal P(x)$ 是什么、怎么来的（2026-09-14）
 
-**问题**：你的 $\mathcal P(x)\equiv 3px^4-8t_2x^3+6x^2-1=0$ 怎么来的？$\mathcal P(x)$ 是什么？
+**问题**：你的
+
+$$
+\mathcal P(x)\equiv 3px^4-8t_2x^3+6x^2-1=0
+$$
+
+怎么来的？$\mathcal P(x)$ 是什么？
 
 > **本条定位**：这是 **Q2 第 2 节**中 $\mathcal P(x)$ 记号的展开（该记号在 Q2 里首次使用但未展开；Q1、Q2 相关处已补「见 Q3」）。
 
@@ -1071,15 +1425,33 @@ $$
 
 符号 $\equiv$（而非 $=$）表示"**定义为**"，即这是我引入的记号，不是新推出的结果。
 
-> **与 (10) 式的区分**：原文 (10) 式是 Kramers 速率 $r_k=\frac{\sqrt{\lvert f''(x_{\min})f''(x_{\max})\rvert}}{2\pi}e^{-\frac{f(x_{\max})-f(x_{\min})}{D}}$（见第 46 条），与极值方程是**两条不同的式子**；极值方程在原文中**没有公式编号**（第 47 条已如实记录）。
+> **与 (10) 式的区分**：原文 (10) 式是 Kramers 速率
+
+$$
+r_k=\frac{\sqrt{\lvert f''(x_{\min})f''(x_{\max})\rvert}}{2\pi}e^{-\frac{f(x_{\max})-f(x_{\min})}{D}}
+$$
+
+（见第 46 条），与极值方程是**两条不同的式子**；极值方程在原文中**没有公式编号**（第 47 条已如实记录）。
 
 #### 1. 三种完全等价的定义（Wolfram 残差均为 0 ✓）
 
 | 写法 | 表达式 | 视角 |
 | --- | --- | --- |
 | 显式（定义式） | $3px^4-8t_2x^3+6x^2-1$ | 从极值方程抄（原文未编号） |
-| 热势导数 | $4x^2\,\psi'(x)$ | $\psi'=-\frac{1}{4x^2}+\frac32+\frac{3px^2}{4}-2t_2x$，两边乘 $4x^2$ 消分母 |
-| 温度差 | $8x^3\left[t_h(x)-t_2\right]$ | 因 $t_h(x)=\frac{3px^4+6x^2-1}{8x^3}$ |
+| 热势导数 | $4x^2\,\psi'(x)$ |
+
+$$
+\psi'=-\frac{1}{4x^2}+\frac32+\frac{3px^2}{4}-2t_2x,
+$$
+
+两边乘 $4x^2$ 消分母 |
+| 温度差 | $8x^3\left[t_h(x)-t_2\right]$ | 因
+
+$$
+t_h(x)=\frac{3px^4+6x^2-1}{8x^3}
+$$
+
+|
 
 最直观的读法是第三种：
 
@@ -1089,7 +1461,13 @@ $$
 $$
 
 
-即"在壳温度偏离系综温度的程度"按 $8x^3$ 加权——这正是热势定义 $\psi=\frac{\sqrt6Q}{3}\int(T_h-T)\mathrm{d}S$ 的导数在起作用。
+即"在壳温度偏离系综温度的程度"按 $8x^3$ 加权——这正是热势定义
+
+$$
+\psi=\frac{\sqrt6Q}{3}\int(T_h-T)\mathrm{d}S
+$$
+
+的导数在起作用。
 
 **关键等价性**：$\psi'(x)=0\iff\mathcal P(x)=0$（因 $4x^2>0$ 恒成立），故两者零点相同。这就是该方程能当"极值方程"用的原因。
 
@@ -1121,7 +1499,13 @@ $$
 
 这一步的价值：**把"求两个未知数 $x_1,x_3$（需解四次方程）"换成"求两个对称多项式 $A,B$（只需比较系数）"**。这就是 $A,B$ 的来历，也是引入 $\mathcal P$ 记号的唯一目的——让"$x_1,x_3$ 是 $\mathcal P$ 的根"这句话有个紧凑写法。
 
-（比较系数得 $d=-1/B$、$c=-A/B^2$、$t_2=\frac A8(3p+\frac1{B^2})$、$A^2=B+6B^2-3pB^3$；再用等深条件补第三式，解得 $B=1/\sqrt p$，详见 Q2。）
+（比较系数得 $d=-1/B$、$c=-A/B^2$、
+
+$$
+t_2=\frac A8(3p+\frac1{B^2})
+$$
+
+、$A^2=B+6B^2-3pB^3$；再用等深条件补第三式，解得 $B=1/\sqrt p$，详见 Q2。）
 
 #### 4. 完整因式分解（自洽性检验）
 
@@ -1138,7 +1522,13 @@ $$
 | $x^2-Ax+B$ | $x_1,\;x_3$ | 双阱的两个底（**特意分出来的**） |
 | $3px^2-Apx-\sqrt p$ | $x_2$ 与负根 | 垒顶 + 伪根 |
 
-**自洽性**：展开后 $x^3$ 系数为 $-4pA$，必须等于 $-8t_2$，恰好给出 $t_2=\frac{Ap}{2}$——说明 $t_2$ 的解析式与该因式分解互相印证；常数项 $-B\sqrt p=-1$ 给出 $B=1/\sqrt p$，同样互相印证。
+**自洽性**：展开后 $x^3$ 系数为 $-4pA$，必须等于 $-8t_2$，恰好给出
+
+$$
+t_2=\frac{Ap}{2}
+$$
+
+——说明 $t_2$ 的解析式与该因式分解互相印证；常数项 $-B\sqrt p=-1$ 给出 $B=1/\sqrt p$，同样互相印证。
 
 #### 5. 小结
 
@@ -1185,15 +1575,57 @@ $$
 
 #### 2. (10) 式是怎么验的
 
-静止 Smoluchowski 方程的解给出 $r_k=\frac{J}{N_a}$；Laplace 近似下 $N_a=\rho(x_a)\sqrt{2\pi D/\lvert f''(x_a)\rvert}$，而通量积分 **$\int_{x_a}^{x_c}e^{(f-f_b)/D}\mathrm dx$ 必须跨过垒顶到另一阱**（只积到垒顶会差 2 倍），于是 $r_k=\frac{1}{2\pi}\sqrt{\lvert f''(x_a)f''(x_b)\rvert}e^{-\Delta f/D}$——正是 (10) 式。数值静止通量与公式之比：$D=1/50\to0.823$、$1/200\to0.964$、$1/1000\to0.993$（趋于 $1$ ✓）；教科书双阱 $\frac{x^4}{4}-\frac{x^2}{2}$ 上同检验 $1/10\to0.910$、$1/50\to0.968$、$1/100\to0.984$ ✓。
+静止 Smoluchowski 方程的解给出
+
+$$
+r_k=\frac{J}{N_a};
+$$
+
+Laplace 近似下
+
+$$
+N_a=\rho(x_a)\sqrt{2\pi D/\lvert f''(x_a)\rvert},
+$$
+
+而通量积分 **
+
+$$
+\int_{x_a}^{x_c}e^{(f-f_b)/D}\mathrm dx
+$$
+
+ 必须跨过垒顶到另一阱**（只积到垒顶会差 2 倍），于是
+
+$$
+r_k=\frac{1}{2\pi}\sqrt{\lvert f''(x_a)f''(x_b)\rvert}e^{-\Delta f/D}
+$$
+
+——正是 (10) 式。数值静止通量与公式之比：$D=1/50\to0.823$、$1/200\to0.964$、$1/1000\to0.993$（趋于 $1$ ✓）；教科书双阱
+
+$$
+\frac{x^4}{4}-\frac{x^2}{2}
+$$
+
+上同检验 $1/10\to0.910$、$1/50\to0.968$、$1/100\to0.984$ ✓。
 
 #### 3. 三处更正（旧值 → 新值）
 
 | 条 | 旧 | 新 | 影响 |
 |---|---|---|---|
-| 52 | (13) 式右端 $\sqrt6Q^3\Delta\psi$ | $\frac{\sqrt6Q}{3}\Delta\psi$ | 只是抄写误读 |
+| 52 | (13) 式右端 $\sqrt6Q^3\Delta\psi$ |
+
+$$
+\frac{\sqrt6Q}{3}\Delta\psi
+$$
+
+| 只是抄写误读 |
 | 83 | 势垒 $0.033587$ | $\Delta\psi=0.0671744$ | 旧值是半归一化势的值；"两方向相等"结论不变 |
-| 84 | $\psi''=\frac{3px}{4}+\frac{1}{4x^3}-t$ | $\psi''=\frac{1}{2x^3}+\frac{3p}{2}x-2t$ | 旧式是 $\psi''/2$；比值不受影响 |
+| 84 | $\psi''=\frac{3px}{4}+\frac{1}{4x^3}-t$ |
+
+$$
+\psi''=\frac{1}{2x^3}+\frac{3p}{2}x-2t
+$$
+
+| 旧式是 $\psi''/2$；比值不受影响 |
 
 #### 4. 顺带得到的两个新结果（本文复算，非原文）
 
@@ -1202,7 +1634,12 @@ $$
 
 #### 5. 一句话
 
-从"黑洞分子假设"往后（分子重排 → Smoluchowski/Kramers → 两方向速率 → 非对称 → $t^*$ → Summary 的五条评价），现在每一句都有对应的判据与数值；其中"为何 $t_2$ 处速率不等"在模型内的答案是：**指数因子在同深处精确相消，剩下的纯粹是阱宽（曲率）之比** $\sqrt{x_1t_h'(x_1)/x_3t_h'(x_3)}=2.06155$。
+从"黑洞分子假设"往后（分子重排 → Smoluchowski/Kramers → 两方向速率 → 非对称 → $t^*$ → Summary 的五条评价），现在每一句都有对应的判据与数值；其中"为何 $t_2$ 处速率不等"在模型内的答案是：**指数因子在同深处精确相消，剩下的纯粹是阱宽（曲率）之比**
+
+$$
+\sqrt{x_1t_h'(x_1)/x_3t_h'(x_3)}=2.06155.
+$$
+
 
 ---
 
@@ -1227,8 +1664,20 @@ $x$ 是**事件视界半径的无量纲化**：$x:=r_h/r_c$，即"视界半径 �
 | 定义 | $x=r_h/r_c$ | 式(6) |
 | 半径 | $r_c=\sqrt6Q\Rightarrow r_h=\sqrt6Q\,x$ | 式(5)；Wolfram 核验 $r_h/x=\sqrt6Q$ ✓ |
 | 无量纲熵 | $S=\pi r_h^2$、$S_c=\pi r_c^2=6\pi Q^2$ ⇒ $x^2=S/S_c$ | 式(3)(5)；残差 $0$ ✓ |
-| 无量纲体积 | $V=\frac{4\pi}{3}r_h^3$ ⇒ $x^3=V/V_c$ | 由 $V$ 的定义；残差 $0$ ✓ |
-| 无量纲温度 | $t_h(x)=\frac{T_h(x)}{T_c}=\frac{3px^4+6x^2-1}{8x^3}$ | 式(2)(5)(6)；残差 $0$ ✓ |
+| 无量纲体积 |
+
+$$
+V=\frac{4\pi}{3}r_h^3
+$$
+
+⇒ $x^3=V/V_c$ | 由 $V$ 的定义；残差 $0$ ✓ |
+| 无量纲温度 |
+
+$$
+t_h(x)=\frac{T_h(x)}{T_c}=\frac{3px^4+6x^2-1}{8x^3}
+$$
+
+| 式(2)(5)(6)；残差 $0$ ✓ |
 | Gibbs 斜率 | $\mathrm{d}g_i/\mathrm{d}t=-x_i^2$ | Q2 第 1 节（三种证法） |
 
 所以"$x$"不是一个新变量，而是同一件事的三种等价读法：**半径 / 熵的平方根 / 体积的立方根**（各自除以临界值），且随 $r_h$ 单调增。
@@ -1236,7 +1685,13 @@ $x$ 是**事件视界半径的无量纲化**：$x:=r_h/r_c$，即"视界半径 �
 #### 2. 为什么用 $x$ 而不是 $r_h$ 或 $S$
 
 - **临界点归一一致**：$x=1$ 同时意味着 $r_h=r_c$、$S=S_c$、$V=V_c$，且 $p=1$ 时 $t_h(1)=1$（核验 ✓）——于是 $(t_h,p,x,g)$ 是一套自洽的无量纲坐标（式(6)）。
-- **热势写得最干净**：$f(x)=\frac{\sqrt6Q}{3}\psi(x)$，$\psi=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2$；极值方程 $3px^4-8tx^3+6x^2-1=0$（式(8) 与其后那条未编号式子，第 47 条）。
+- **热势写得最干净**：
+
+  $$
+  f(x)=\frac{\sqrt6Q}{3}\psi(x),
+  $$
+
+  $\psi=\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2;$极值方程 $3px^4-8tx^3+6x^2-1=0$（式(8) 与其后那条未编号式子，第 47 条）。
 - **三个根就是三个相**：$x_1$（小黑洞，$x_1<1$）、$x_2$（中间不稳定支）、$x_3$（大黑洞，$x_3>1$）；$p=0.5,t=t_2$ 时 $0.5768511<1.3568998<2.4516094$（第 48、51 条）。
 
 #### 3. 它在文中的四处角色
@@ -1244,7 +1699,13 @@ $x$ 是**事件视界半径的无量纲化**：$x:=r_h/r_c$，即"视界半径 �
 1. **相变的反应坐标/序参量**：黑洞分子在热势 $\psi(x)$ 中沿 $x$ 做 Brownian 运动，小黑洞 ↔ 大黑洞的重排就是 $x_1\to x_3$ 的跃迁（第 42、44 条）；故 Kramers 率（式(11)(12)）里的极值点就是这个 $x$ 轴上的阱底与垒顶。
 2. **在壳条件**：极值点满足 $t_h(x)=t$，即"在壳 Hawking 温度 = 系综温度"（第 47、48 条）。
 3. **稳定性判据**：在壳时 $\psi''=2x\,t_h'(x)$，故 $\psi''>0$（$x_1,x_3$）是局域稳定支、$\psi''<0$（$x_2$）是不稳定支（第 72 条、12.6）。
-4. **速率比里的纯几何量**：$t_2$ 处 $\frac{r_{k1}}{r_{k2}}\big\rvert_{t_2}=\sqrt{\left\lvert\frac{\psi''(x_1)}{\psi''(x_3)}\right\rvert}=\sqrt{\frac{x_1t_h'(x_1)}{x_3\lvert t_h'(x_3)\rvert}}=2.06155$（第 84 条、12.6）。
+4. **速率比里的纯几何量**：$t_2$ 处
+
+   $$
+   \frac{r_{k1}}{r_{k2}}\big\rvert_{t_2}=\sqrt{\left\lvert\frac{\psi''(x_1)}{\psi''(x_3)}\right\rvert}=\sqrt{\frac{x_1t_h'(x_1)}{x_3\lvert t_h'(x_3)\rvert}}=2.06155
+   $$
+
+   （第 84 条、12.6）。
 
 #### 4. 两个容易混淆的点
 
@@ -1258,3 +1719,4 @@ $x$ 是**事件视界半径的无量纲化**：$x:=r_h/r_c$，即"视界半径 �
 3. $r_h/x=\sqrt6Q$ ✓
 4. $T_h(x)/T_c-\frac{3px^4+6x^2-1}{8x^3}=0$ ✓
 5. $t_h(1)\big\rvert_{p=1}=1$ ✓（临界点自洽）
+
