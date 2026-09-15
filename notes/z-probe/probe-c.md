@@ -1,6 +1,6 @@
 ---
 title: "probe-c 单行"
-folder: "_probe"
+folder: "z-probe"
 ---
 
 单行（当前线上写法，预期被降级成行内）：

@@ -1,6 +1,6 @@
 ---
 title: "probe-a 三行式"
-folder: "_probe"
+folder: "z-probe"
 ---
 
 三行式（`$$` 各自独占一行）：

@@ -15,6 +15,9 @@
 #        ![[论文.pdf#page=5]] →  链接/阅读器直接翻到第 5 页
 #        `论文.pdf`           →  行内代码里的 PDF 文件名自动变成链接（解析得到才变）
 #      围栏代码块（``` / ~~~）内部一律不改写。
+#   4. 数学：kramdown 只在 $$ 各自独占一行时才把公式当「块级数学」（输出 \[...\]）；
+#      写成单行 $$X$$ 会被降级成行内 \(...\)，MathJax 按 inline 渲染，公式就和正文
+#      挤在同一行。笔记里几乎都写单行式，所以这里统一展开成三行（前后补空行）。
 #
 # 用法:  scripts/convert-wikilinks.sh notes
 # 说明:  原地修改 notes/ 下的 .md；笔记内链写成绝对路径 /notes/名字/
@@ -115,6 +118,27 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
         line = substr(line, RSTART + RLENGTH)
       }
       return out line
+    }
+
+    # 把「整行就是一个 $$...$$」展开成 kramdown 的块级数学写法：
+    #     $$公式$$
+    #  →
+    #     $$
+    #     公式
+    #     $$
+    # 并前后各补一个空行（块级元素得有自己的段落）。kramdown 对块级数学输出
+    # \[...\]，MathJax 配置里 displayMath 含 \[ \] ，于是渲染成独立成行的 display 公式。
+    # 只有「整行、且中间没有其它 $」的才动；行内混排的保持原样。
+    function math_block(line,   indent, body) {
+      if (line ~ /\$\$\$/) return line                    # 连续的 $$$ 别乱动
+      if (line !~ /^[ \t]*\$\$[^$]*\$\$[ \t]*$/) return line
+      indent = line
+      sub(/[^ \t].*$/, "", indent)
+      body = line
+      sub(/^[ \t]*\$\$/, "", body)
+      sub(/\$\$[ \t]*$/, "", body)
+      if (body ~ /^[ \t]*$/) return line
+      return "\n" indent "$$\n" indent body "\n" indent "$$\n"
     }
 
     function site_url(name,   key, base, u) {
@@ -224,7 +248,7 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
           out = out (embed && is_file ? "!" : "") "[" label "](" u ")"
         }
       }
-      converted[NR] = link_pdf_codes(out line)
+      converted[NR] = math_block(link_pdf_codes(out line))
       next
     }
 

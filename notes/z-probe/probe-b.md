@@ -1,6 +1,6 @@
 ---
 title: "probe-b div 包裹"
-folder: "_probe"
+folder: "z-probe"
 ---
 
 div 包裹（kramdown 应原样透传，不碰内部）：
