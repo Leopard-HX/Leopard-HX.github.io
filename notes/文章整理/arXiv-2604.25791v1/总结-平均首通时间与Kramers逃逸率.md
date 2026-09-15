@@ -122,7 +122,11 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："And the other thermodynamical quantities for the Bardeen-AdS-class black holes are described by [20]"（其后为式 (8)–(12)）
 
 29. **推广的第一定律成立**：
-    $$dM = T_h\,dS + V\,dP + \Phi_m\,dQ_m + \phi_m\,dm_0 + \phi_q\,dq_0 \qquad \text{(原文式 (13))}$$
+
+    $$
+    dM = T_h\,dS + V\,dP + \Phi_m\,dQ_m + \phi_m\,dm_0 + \phi_q\,dq_0 \qquad \text{(原文式 (13))}
+    $$
+
     > 原文："They satisfy the extended first law of black hole thermodynamics"
     > 原文式 (13)："d M = Th dS + V dP + Φm dQm + φm dm0 + φq dq0"
 
@@ -130,7 +134,11 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："Where Φm, φm, and φq are the conjugate potentials arising from the variations of the mass M with respect to the magnetic charge Qm and the coupling parameters m0 and q0, respectively. However, it should be pointed out that if Qm and q0 are treated as identical, the magnetic potential of the black hole would become Φm+φq, which deviates from the conventional definition."
 
 31. **量纲分析与 Smarr 关系**：由标度分析（原文式 (14)）可得 Smarr 关系
-    $$M = 2T_hS - 2VP + \Phi_mQ_m + \phi_m m_0 + \phi_q q_0 \qquad \text{(原文式 (15))}$$
+
+    $$
+    M = 2T_hS - 2VP + \Phi_mQ_m + \phi_m m_0 + \phi_q q_0 \qquad \text{(原文式 (15))}
+    $$
+
     > 原文："We can derive the Smarr relation using the method of scaling analysis."
     > 原文式 (15)："M = 2 Th S − 2 V P + Φm Qm + φm m0 + φq q0"
 
@@ -144,12 +152,20 @@ folder: "文章整理/arXiv-2604.25791v1"
 ### 5.1 广义自由能（热势）
 
 33. **出发点**：在扩展相空间中，黑洞相变可由 Maxwell 等面积律判定；黑洞物态方程即 $T_h=T_h(S,P)$。等面积律在 $T_h$–$S$ 平面上可写为
-    $$\int_{S_1}^{S_2} T_h\,dS = T\cdot(S_2-S_1) \;\Rightarrow\; \int_{S_1}^{S_2}(T_h-T)\,dS = 0 \qquad \text{(原文式 (16))}$$
+
+    $$
+    \int_{S_1}^{S_2} T_h\,dS = T\cdot(S_2-S_1) \;\Rightarrow\; \int_{S_1}^{S_2}(T_h-T)\,dS = 0 \qquad \text{(原文式 (16))}
+    $$
+
     > 原文："In the extended phase space of black hole thermodynamics, the phase transition of black hole can be determined by the Maxwell equal area law."；"The Maxwell equal area law states that there exists an isotherm T such that AreaA=AreaB, as shown in Fig 1."
     > 原文式 (16)："∫S1S2 Th dS = T·(S2−S1) ⇒ ∫S1S2 (Th−T) dS = 0"
 
 34. **本文定义**：放开等面积律约束，引入广义自由能 $\mathcal{U}$（又称热势）
-    $$\mathcal{U} = \int (T_h - T)\,dS \qquad \text{(原文式 (17))}$$
+
+    $$
+    \mathcal{U} = \int (T_h - T)\,dS \qquad \text{(原文式 (17))}
+    $$
+
     > 原文："Now, based on the definition of generalized free energy in reference [29, 30, 31, 32], we release the Maxwell equal area law mentioned above, and introduce generalized free energy 𝒰 (or called the thermal potential) as"
 
 35. **自由能图景的核心思想**：放松物态方程带来的约束，让内部变量独立变化，从而构造出极值对应平衡态的能量超曲面。
@@ -175,7 +191,11 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："Furthermore, there is another form of off-shell free energy defined as 𝒢=M−TS [24], where T is not the system's equilibrium temperature but an arbitrary external (ensemble) temperature. This construction generalizes the Gibbs free energy G by lifting the constraint T=Th, so that the on-shell equilibrium condition T=Th is recovered only when 𝒢 attains its extremum."
 
 42. **两者的等价性**：在固定压强 $P$ 下
-    $$\mathcal{U}=\int(T_h-T)dS = E+PV-TS = M-TS = \mathcal{G} \qquad \text{(原文式 (19))}$$
+
+    $$
+    \mathcal{U}=\int(T_h-T)dS = E+PV-TS = M-TS = \mathcal{G} \qquad \text{(原文式 (19))}
+    $$
+
     即 $P$ 固定时 $\mathcal{U}$ 与 $\mathcal{G}$ 数学上完全相同，$\mathcal{U}$ 可看作离壳 Gibbs 自由能 $\mathcal{G}$ 的一个具体实现。
     > 原文式 (19)："𝒰=∫(Th−T)dS = E+PV−TS = M−TS = 𝒢"
     > 原文："Thus, when P is fixed, 𝒰 and 𝒢 are mathematically identical. In this sense, 𝒰 can be viewed as a specific realization of the off-shell Gibbs free energy 𝒢, with the integration path chosen as the deviation from equilibrium."
@@ -198,7 +218,11 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："If the black hole temperature is significantly lower than the potential barrier height (e.g., in a double-well potential), the probability of the state residing at the lowest point of one potential well largely exceeds the probability of it reaching the top of the barrier. Even if the state does surmount the barrier peak, it will typically fall symmetrically to either side. However, if the state settles into the lowest point of one potential well, thermodynamic fluctuations imply that, after a period of residence, there is a finite probability for it to cross the potential barrier and eventually reach the minimum point of the other potential well."
 
 48. **起手方程**：由于关注态之间的跃迁而非单一态内的扰动，从过阻尼 Fokker–Planck 方程出发
-    $$\frac{\partial \rho(r,t)}{\partial t} = D\frac{\partial}{\partial r}\left(e^{-\beta\mathcal{U}(r)}\frac{\partial}{\partial r}\left(e^{\beta\mathcal{U}(r)}\rho(r,t)\right)\right) \qquad \text{(原文式 (21))}$$
+
+    $$
+    \frac{\partial \rho(r,t)}{\partial t} = D\frac{\partial}{\partial r}\left(e^{-\beta\mathcal{U}(r)}\frac{\partial}{\partial r}\left(e^{\beta\mathcal{U}(r)}\rho(r,t)\right)\right) \qquad \text{(原文式 (21))}
+    $$
+
     > 原文："Since we focus on the transitions between states rather than the perturbations within a specific state, we start with the overdamped Fokker-Planck equation [36, 37]"
 
 49. **量的含义**：$\rho(r,t)$ 是黑洞态的概率分布，$\beta=1/T$ 是逆温度，$\mathcal{U}(r)$ 是本文的广义自由能，$D$ 是扩散系数；事件视界半径 $r$ 被当作系统的序参量。
@@ -223,7 +247,11 @@ folder: "文章整理/arXiv-2604.25791v1"
 ### 5.3 MFPT 与 Kramers 逃逸率
 
 55. **MFPT 的定义逻辑**：态在区间 $(r_A,r_m)$ 内被找到的概率为 $\int_{r_A}^{r_m}dr\,\rho(r,t)$；态不在该区间时，可认为它已越过势垒到达另一态。于是该积分可视为"黑洞到时刻 $t$ 尚未发生首次相变"的概率，由此得 MFPT 的分布
-    $$F_p(t) = -\frac{d\left(\int_{r_A}^{r_m}dr\,\rho\right)}{dt} \qquad \text{(原文式 (24))}$$
+
+    $$
+    F_p(t) = -\frac{d\left(\int_{r_A}^{r_m}dr\,\rho\right)}{dt} \qquad \text{(原文式 (24))}
+    $$
+
     > 原文："Considering that the probability of finding the state within the interval (rA,rm) is given by ∫rArm dr ρ(r,t), when the state is not in this interval, we can assume that it has crossed the potential barrier and reached the other state. Therefore, we can regard this integral expression as the probability that the black hole has not undergone the first phase transition by time t. This leads directly to the distribution of the MFPT"
 
 56. **MFPT 的定义式**：$\langle t\rangle = \int_0^\infty dt\, t\, F_p(t)$（原文式 (25)）。
@@ -231,11 +259,19 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文式 (25)："⟨t⟩=∫0∞ dt t Fp(t)"
 
 57. **MFPT 的显式积分表示**：把式 (21) 与边界条件式 (22)、(23) 代入式 (24) 并做式 (25) 的计算，得
-    $$\langle t\rangle = \frac{1}{D}\int_{r_A}^{r_m}dr\int_{r_A}^{r}dr'\, e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))} \qquad \text{(原文式 (26))}$$
+
+    $$
+    \langle t\rangle = \frac{1}{D}\int_{r_A}^{r_m}dr\int_{r_A}^{r}dr'\, e^{\beta(\mathcal{U}(r)-\mathcal{U}(r'))} \qquad \text{(原文式 (26))}
+    $$
+
     > 原文："the MFPT ⟨t⟩ can be correlated with the probability density ρ(r,t). By substituting the Fokker-Planck equation (21) and the boundary conditions (22) and (23) into the expression for Fp(t) (24) and performing the calculation (25), we obtain"
 
 58. **Kramers 逃逸率的推导起点**：定义流
-    $$J(r,t) = \frac{D\,e^{\mathcal{U}(r_{\min})/D}\rho(r_{\min},t)}{\int_{r_{\min}}^{A}e^{\mathcal{U}(r)/D}dr} \qquad \text{(原文式 (27))}$$
+
+    $$
+    J(r,t) = \frac{D\,e^{\mathcal{U}(r_{\min})/D}\rho(r_{\min},t)}{\int_{r_{\min}}^{A}e^{\mathcal{U}(r)/D}dr} \qquad \text{(原文式 (27))}
+    $$
+
     其中 $\mathcal{U}(r)$ 是本文的势/广义自由能，$D$ 为扩散系数（系统达到热平衡时可视为常数），并假设在 $r=A$（$A$ 为大于 $r_{\max}$ 的任意位置）概率分布为零。
     > 原文："In the derivation of the Kramers escape rate, the current J(r,t) is defined as"
     > 原文："where 𝒰(r) is the potential or the generalized free energy in our work, and D is the diffusion coefficient, which can be considered constant when the system reaches thermal equilibrium, and we assume that at r=A (A is any position greater than rmax), the probability distribution is zero."
@@ -245,19 +281,31 @@ folder: "文章整理/arXiv-2604.25791v1"
     > 原文："The probability p times the Kramers escape rate rk is just the current J(r,t), hence we can obtain the escape rate [36, 37]"
 
 60. **逃逸率的表达式**：
-    $$\frac{1}{r_k} = \frac{p}{J} = \frac{1}{D}\int_{r_{\min}}^{A}e^{\mathcal{U}(r)/D}dr\int_{(r_{\min})}e^{-\mathcal{U}(r)/D}dr \qquad \text{(原文式 (29))}$$
+
+    $$
+    \frac{1}{r_k} = \frac{p}{J} = \frac{1}{D}\int_{r_{\min}}^{A}e^{\mathcal{U}(r)/D}dr\int_{(r_{\min})}e^{-\mathcal{U}(r)/D}dr \qquad \text{(原文式 (29))}
+    $$
+
     > 原文式 (29)："1/rk = p/J = (1/D) ∫rminA e^{𝒰(r)/D} dr ∫(rmin) e^{−𝒰(r)/D} dr"
 
 61. **两个量的物理区别与近似互逆**：Kramers 逃逸率表示单位时间内成功翻越势垒的态所占比例，而 MFPT 表示单个态越过势垒到达目标态所需的平均时间；因此两者近似互为倒数，比较式 (26) 与式 (29) 即可验证。
     > 原文："Physically, the Kramers escape rate represents the fraction of states that successfully surmount the potential barrier per unit time, whereas the MFPT denotes the average time a single state requires to cross the barrier and reach the target state. Consequently, they are approximately reciprocals of each other, as can be readily verified by comparing Eqs. (26) and (29)."
 
 62. **鞍点/极值附近的 Taylor 展开**：第一个积分的主要贡献来自 $r_{\max}$ 附近，第二个积分的主要贡献来自 $r_{\min}$ 附近；势函数在极值点二阶展开为
-    $$\mathcal{U}(r)\approx\mathcal{U}(r_{\max})-\tfrac12|\mathcal{U}''(r_{\max})|(r-r_{\max})^2,\quad \mathcal{U}(r)\approx\mathcal{U}(r_{\min})+\tfrac12\mathcal{U}''(r_{\min})(r-r_{\min})^2$$
+
+    $$
+    \mathcal{U}(r)\approx\mathcal{U}(r_{\max})-\tfrac12|\mathcal{U}''(r_{\max})|(r-r_{\max})^2,\quad \mathcal{U}(r)\approx\mathcal{U}(r_{\min})+\tfrac12\mathcal{U}''(r_{\min})(r-r_{\min})^2
+    $$
+
     （原文式 (30)、(31)）
     > 原文："For above two integrals, we can clearly see that the main contribution of the first integral comes from the regions around rmax, while the main contribution of the second integral comes from the regions around rmin. The Taylor expansions approximation to second order of the potential function U(r) near two extreme points are"
 
 63. **Kramers 逃逸率的解析式**：把积分上限延拓到 $\pm\infty$ 后
-    $$r_k = \frac{\sqrt{|\mathcal{U}''(r_{\min})\mathcal{U}''(r_{\max})|}}{2\pi}\,e^{-\frac{\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})}{D}} \qquad \text{(原文式 (32))}$$
+
+    $$
+    r_k = \frac{\sqrt{|\mathcal{U}''(r_{\min})\mathcal{U}''(r_{\max})|}}{2\pi}\,e^{-\frac{\mathcal{U}(r_{\max})-\mathcal{U}(r_{\min})}{D}} \qquad \text{(原文式 (32))}
+    $$
+
     > 原文："and we may extend the above two integrations boundaries to ±∞, thus the Kramers escape rate can be taken as [36, 37]"
 
 64. **数值策略**：MFPT 采用精确积分形式以保证整个图景上的数值精度；Kramers 逃逸率则使用近似解析形式，因为它是高垒极限下的领头阶近似。
@@ -441,9 +489,17 @@ folder: "文章整理/arXiv-2604.25791v1"
 ### Q2. "冲突"的具体内容（出自 [17]）
 
 - [17] 指出存在两条算温度的路：一条由度规给出
-  $$T_h=\frac{\kappa}{2\pi}=-\frac{1}{4\pi}\frac{\partial_rg_{tt}}{\sqrt{-g_{tt}g_{rr}}}\Big|_{r=r_h}=\frac{1}{4\pi}f'(r)\Big|_{r=r_h}\qquad\text{（原文式 (5)）}$$
+
+  $$
+  T_h=\frac{\kappa}{2\pi}=-\frac{1}{4\pi}\frac{\partial_rg_{tt}}{\sqrt{-g_{tt}g_{rr}}}\Big|_{r=r_h}=\frac{1}{4\pi}f'(r)\Big|_{r=r_h}\qquad\text{（原文式 (5)）}
+  $$
+
   另一条由第一定律与熵给出
-  $$T_H=\frac{\partial M}{\partial S}\Big|_{J,\dots}\qquad\text{（原文式 (6)）}$$
+
+  $$
+  T_H=\frac{\partial M}{\partial S}\Big|_{J,\dots}\qquad\text{（原文式 (6)）}
+  $$
+
   并指出"如果黑洞热力学第一定律总是成立，两个温度 $T_h$ 与 $T_H$ 就应当相同"。
   [引·[17] §II："the temperature of the above black hole can be expressed as"（式(5)）；"From Eq.(1), it seems that the temperature of a black hole can also be derived according to the entropy"（式(6)）；"If the first law of black hole thermodynamics is always satisfied, the two temperatures $T_h$ and $T_H$ should be the same."]
 
@@ -451,8 +507,16 @@ folder: "文章整理/arXiv-2604.25791v1"
   [引·[17] §II 式(8)(9)："Bardeen black hole. For this black hole, the function $f(r)$ is"（式(8)）；式(9)]
 
 - 两种算法给出
-  $$T_H=\frac{(S-2\pi g^2)\sqrt{g^2+S/\pi}}{4S^2}=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}\qquad\text{（原文式 (10)）}$$
-  $$T_h=\frac{M(r_h^3-2g^2r_h)}{2\pi(g^2+r_h^2)^{5/2}}=\frac{r_h^2-2g^2}{4\pi g^2r_h+4\pi r_h^3}\qquad\text{（原文式 (11)）}$$
+
+  $$
+  T_H=\frac{(S-2\pi g^2)\sqrt{g^2+S/\pi}}{4S^2}=\frac{(r_h^2-2g^2)\sqrt{g^2+r_h^2}}{4\pi r_h^4}\qquad\text{（原文式 (10)）}
+  $$
+
+
+  $$
+  T_h=\frac{M(r_h^3-2g^2r_h)}{2\pi(g^2+r_h^2)^{5/2}}=\frac{r_h^2-2g^2}{4\pi g^2r_h+4\pi r_h^3}\qquad\text{（原文式 (11)）}
+  $$
+
   [引·[17] §II 式(10)(11)]
 
 - [17] 对这两式的判词：> 原文："Obviously, the two temperatures are different generally, which means the inconsistency between the area law and the first law of black hole thermodynamics. When $g=0$, they will coincide and agree with the temperature of Schwarzschild black hole."
@@ -471,7 +535,11 @@ folder: "文章整理/arXiv-2604.25791v1"
   [引·[17] §II 式(12) 之后]
 
 - [17] 给出的根源与修正：关键在于物质场的能量—动量张量里含有黑洞质量 $M$ 本身。设 $f(r)=1-2m(r)/r$，由爱因斯坦方程得 $m(r)=M+4\pi\int_r^\infty r^2T^0{}_0\,dr$，取变分后有
-  $$\left(1+4\pi\int_{r_h}^{\infty}r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\delta M=\left(\frac{1}{4\pi r_h}+2r_hT^0{}_0\right)\frac{\delta A}{4},\qquad\text{即}\qquad C(M,r_h)\,\delta M=T_h\,\frac{\delta A}{4}\qquad\text{（原文式 (32)）}$$
+
+  $$
+  \left(1+4\pi\int_{r_h}^{\infty}r^2\frac{\partial T^0{}_0}{\partial M}dr\right)\delta M=\left(\frac{1}{4\pi r_h}+2r_hT^0{}_0\right)\frac{\delta A}{4},\qquad\text{即}\qquad C(M,r_h)\,\delta M=T_h\,\frac{\delta A}{4}\qquad\text{（原文式 (32)）}
+  $$
+
   [引·[17] §III 式(28)(30)(31)(32)：式(32) 后紧接 "In fact, this should be the first law of black hole mechanics. Due to the above equation, if the Bekenstein-Hawking area law, namely $S=A/4$, is satisfied, the conventional first law of thermodynamics must be violated for the regular black holes we studied."]
 
 - 于是两个温度的关系是 $T_h=C(M,r_h)\,\partial M/\partial S=C(M,r_h)\,T_H$（原文式 (33)）。

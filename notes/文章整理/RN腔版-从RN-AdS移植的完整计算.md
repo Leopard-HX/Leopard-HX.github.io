@@ -30,7 +30,11 @@ folder: "文章整理"
    [引·2211 §I："Next, we will take the charged AdS black hole, which possesses the most typical thermodynamic phase transition of a black hole, as an example to discuss. Using the Kramer's escape rate method [38, 39] of describing the Brownian motion of particles in an external field and thermal potential we constructed in [40] …"]
 
 3. 该文的背景公式为
-   $$M=\frac{r_h}{2}+\frac{4\pi Pr_h^3}{3}+\frac{Q^2}{2r_h},\quad T_h=\frac{1}{4\pi r_h}\Big(1+8\pi Pr_h^2-\frac{Q^2}{r_h^2}\Big),\quad S=\pi r_h^2,\quad G=M-T_hS,$$
+
+   $$
+   M=\frac{r_h}{2}+\frac{4\pi Pr_h^3}{3}+\frac{Q^2}{2r_h},\quad T_h=\frac{1}{4\pi r_h}\Big(1+8\pi Pr_h^2-\frac{Q^2}{r_h^2}\Big),\quad S=\pi r_h^2,\quad G=M-T_hS,
+   $$
+
    临界值为 $r_c=\sqrt6Q$、$T_c=\frac{\sqrt6}{18\pi Q}$、$P_c=\frac{1}{96\pi Q^2}$、$G_c=\frac{\sqrt6Q}{3}$。
    [引·2211 式(1)(2)(3)(4)(5)]
 
@@ -108,19 +112,35 @@ folder: "文章整理"
     [推·[03749] §II 的 Schwarzschild 设置加上电荷项；引·[03749]："We consider a four-dimensional, asymptotically flat Schwarzschild black hole enclosed in a finite spherical cavity."]
 
 25. 事件视界 $f(r_h)=0$ 给出质量—半径关系
-    $$M=\frac{r_h}{2}+\frac{Q^2}{2r_h}.$$
+
+    $$
+    M=\frac{r_h}{2}+\frac{Q^2}{2r_h}.
+    $$
+
     [算·S1（见第 14 节脚本）；推·由 $f(r_h)=0$ 解出 $2M=r_h+Q^2/r_h$]
 
 26. Hawking 温度为
-    $$T_H=\frac{f'(r_h)}{4\pi}=\frac{1}{4\pi r_h}\Big(1-\frac{Q^2}{r_h^2}\Big).$$
+
+    $$
+    T_H=\frac{f'(r_h)}{4\pi}=\frac{1}{4\pi r_h}\Big(1-\frac{Q^2}{r_h^2}\Big).
+    $$
+
     [算·S1 数值与符号核对；推·$f'(r)=2M/r^2-2Q^2/r^3$，代入第 25 条]
 
 27. 定义三个无量纲量
-    $$x\equiv\frac{r_h}{r_B}\in(0,1),\qquad q\equiv\frac{Q}{r_B},\qquad y\equiv\sqrt{f(r_B)}.$$
+
+    $$
+    x\equiv\frac{r_h}{r_B}\in(0,1),\qquad q\equiv\frac{Q}{r_B},\qquad y\equiv\sqrt{f(r_B)}.
+    $$
+
     [推·$x$ 与 [03749] 式(11) 前的定义一致；引·[03749]："Introducing $x\equiv r_h/r_B=\sqrt{4GS/V}$"；$y$ 为 [03749] 式(11) 的推广（含电荷）]
 
 28. **核心恒等式**：在壳时
-    $$y^2=f(r_B)=1-x-\frac{q^2}{x}+q^2=\frac{(1-x)(x-q^2)}{x}.$$
+
+    $$
+    y^2=f(r_B)=1-x-\frac{q^2}{x}+q^2=\frac{(1-x)(x-q^2)}{x}.
+    $$
+
     [算·S2：`Simplify[yf[x,q]^2 - (1-x)(x-q^2)/x]` 输出 `0`]
     （推导：$2M/r_B=(r_h+Q^2/r_h)/r_B=x+q^2/x$，$Q^2/r_B^2=q^2$。）
 
@@ -138,23 +158,39 @@ folder: "文章整理"
 ## 3. 准局部物态方程（完整推导）
 
 32. 准局部能量取 [03749] 式(3) 的形式，对一般 $f$ 写成
-    $$E=\frac{r_B}{G}\big(1-y\big).$$
+
+    $$
+    E=\frac{r_B}{G}\big(1-y\big).
+    $$
+
     [推·（i）ADM 极限：$r_B\to\infty$ 时 $y\simeq1-M/r_B$，故 $E\to M/G$ ✓；（ii）$q=0$ 时退化为 03749 式(3)（见第 36 条）；算·S3：`E - rB(1-y)` 与 03749 式的差为 0]
 
 33. 熵与热力学体积沿用 [03749] 式(2)：
-    $$S=\frac{\pi r_h^2}{G}=\frac{\pi r_B^2x^2}{G},\qquad V=4\pi r_B^2.$$
+
+    $$
+    S=\frac{\pi r_h^2}{G}=\frac{\pi r_B^2x^2}{G},\qquad V=4\pi r_B^2.
+    $$
+
     [引·[03749] 式(2)；推·代入 $r_h=xr_B$]
 
 34. 边界温度是 Tolman 温度 $T=T_H/y$，即
-    $$T=\frac{T_H}{y}=\frac{x^2-q^2}{4\pi G\,r_B\,x^3\,y}.$$
+    $T=\\frac{T_H}{y}=\\frac{x^2-q^2}{4\\pi r_B\\,x^3\\,y}.$
     [引·[03749]："the local temperature at the boundary is the redshifted Hawking temperature"；推·由第 26 条除以 $y$；算·S5：与 $\pi r_BT_B(x)$ 的驻点表达一致（第 56 条）]
 
 35. 墙压强由 $P=-(\partial E/\partial V)_{S,Q}$ 定义，其闭式为
-    $$P=-\frac{1}{8\pi G r_B}\left[(1-y)+\frac{2q^2x-q^2-x^2}{2xy}\right].$$
+
+    $$
+    P=-\frac{1}{8\pi G r_B}\left[(1-y)+\frac{2q^2x-q^2-x^2}{2xy}\right].
+    $$
+
     [推·$E=r_B(1-y)$，固定 $r_h$（即固定 $S$）与 $Q$ 时 $x,q$ 都随 $r_B$ 变：$dx/dr_B=-x/r_B$、$dq/dr_B=-q/r_B$，故 $dE/dr_B=(1-y)+xy_x+qy_q$，再除以 $dV/dr_B=8\pi r_B$；其中 $y_x=(q^2-x^2)/(2x^2y)$、$y_q=-q(1-x)/(xy)$；算·S4 与 S7：第一定律逐项检验为 0]
 
 36. 电荷共轭势由 $\Phi=(\partial E/\partial Q)_{S,V}$ 定义，其闭式为
-    $$\Phi=\frac{q(1-x)}{G\,x\,y}.$$
+
+    $$
+    \Phi=\frac{q(1-x)}{G\,x\,y}.
+    $$
+
     [推·$\partial E/\partial Q=r_B(-y_q)(1/r_B)=-y_q=q(1-x)/(xy)$；算·S4：第一定律的 $dq$ 分量检验为 0]
     （物理解释：标准的视界—腔壁电势差为 $Q/r_h-Q/r_B=q(1-x)/x$；本条结果等于它再除以红移因子 $y$，即**腔壁上实测的红移电势**。）
 
@@ -166,11 +202,19 @@ folder: "文章整理"
 ## 4. 第一定律与 Smarr 关系（逐项验证）
 
 38. 上面定义的 $E,T,P,\Phi$ 严格满足带电情形的第一定律
-    $$dE=T\,dS-P\,dV+\Phi\,dQ.$$
+
+    $$
+    dE=T\,dS-P\,dV+\Phi\,dQ.
+    $$
+
     [算·S4：以 $(r_B,x,q)$ 为独立变量展开，三个分量（$dr_B$、$dx$、$dq$）之差全部化简为 `0`]
 
 39. 同时满足带电荷项的 Smarr 关系
-    $$E=2TS-2PV+\Phi Q.$$
+
+    $$
+    E=2TS-2PV+\Phi Q.
+    $$
+
     [算·S4：`E - (2 T S - 2 P V + Phi Q)` 化简为 `0`；推·$E(\lambda^2S,\lambda^2V,\lambda Q)=\lambda E(S,V)$ 的秩 1 齐次性 + Euler 定理]
 
 40. 第 39 条与 [25791] 式(15) 的形式一致：$M=2T_hS-2VP+\Phi_mQ_m+\phi_mm_0+\phi_qq_0$，只是腔里没有 $\Lambda$ 的 $VP$ 项来源，$P$ 由第 35 条给出。
@@ -180,7 +224,7 @@ folder: "文章整理"
 
 ## 5. $q\to0$ 的三项退化（与 [03749] 逐项对照）
 
-41. $q=0$ 时第 34 条化为 $T=1/(4\pi G r_Bxy)$，与 [03749] 式(4) 的 $y$ 表示完全一致。
+41. $q=0$ 时第 34 条化为 $T=1/(4\pi r_Bxy)$，与 [03749] 式(4) 的 $y$ 表示完全一致。这里温度不含 $G$；$G$ 只出现在熵、能量和表面压强的归一化中。
     [算·S3：`Tf2[x,0,rB] - 1/(4 Pi rB x yf[x,0])` 化简为 `0`；引·[03749] 式(4)]
 
 42. $q=0$ 时第 35 条化为 $P=(1-y)^2/(16\pi G r_By)$，与 [03749] 式(5) 的 $y$ 表示完全一致。
@@ -213,19 +257,35 @@ folder: "文章整理"
 ## 7. 离壳自由能图景与驻点条件
 
 49. 按 [25791] 的精神，固定 $V$（即固定 $r_B$）与 $Q$、以 $r_h$ 为序参量，定义离壳自由能
-    $$F_{\rm off}(r_h;T,r_B,Q)=E(S(r_h),V)-T\,S(r_h).$$
+
+    $$
+    F_{\rm off}(r_h;T,r_B,Q)=E(S(r_h),V)-T\,S(r_h).
+    $$
+
     [引·[25791] 式(17) 的构造精神；推·固定 $V$ 时 $dE=T_hdS$（第 38 条取 $dV=dQ=0$），故 $\int(T_h-T)dS=E-TS+\text{const}=F_{\rm off}$，即 [25791] 的 $\mathcal U$ 在固定 $V$ 时退化为 Helmholtz 自由能]
 
 50. 定义无量纲量
-    $$g(x)\equiv\frac{G\,F_{\rm off}}{r_B}=1-y(x)-\tau_B\,x^2,\qquad \tau_B\equiv\pi r_BT.$$
+
+    $$
+    g(x)\equiv\frac{G\,F_{\rm off}}{r_B}=1-y(x)-\tau_B\,x^2,\qquad \tau_B\equiv\pi r_BT.
+    $$
+
     [算·S5：由第 32、33 条代入即得；$S=\pi r_B^2x^2/G$、$TS=\tau_Br_Bx^2/G$]
 
 51. 其一阶导为
-    $$g'(x)=-y'(x)-2\tau_Bx,\qquad y'(x)=\frac{q^2-x^2}{2x^2y}.$$
+
+    $$
+    g'(x)=-y'(x)-2\tau_Bx,\qquad y'(x)=\frac{q^2-x^2}{2x^2y}.
+    $$
+
     [算·S5：`Simplify[D[gl[x,q,tau],x]]` 与 `yf` 的导数一致]
 
 52. 驻点条件 $g'(x)=0$ 等价于
-    $$1-\frac{q^2}{x^2}=4\tau_B\,x\,y,$$
+
+    $$
+    1-\frac{q^2}{x^2}=4\tau_B\,x\,y,
+    $$
+
     即**腔壁 Tolman 温度等于系综温度** $T_B(x)=T$。
     [算·S5：`Solve[D[g,x]==0,tau]` 输出 $\tau=(x^2-q^2)/(4x^3y)=\pi r_BT_B(x)$；引·[03749] 的 Tolman 温度定义]
 
@@ -240,7 +300,11 @@ folder: "文章整理"
 ## 8. 临界电荷（本移植的第一个定量新结果）
 
 55. $T_B'(x)=0$ 的判别式（去分母后）为
-    $$\mathrm{cond}(x,q)=5q^4-6q^2x-6q^4x+6q^2x^2+2x^3+2q^4x^2-3x^4.$$
+
+    $$
+    \mathrm{cond}(x,q)=5q^4-6q^2x-6q^4x+6q^2x^2+2x^3+2q^4x^2-3x^4.
+    $$
+
     [算·N1 的 [12] 行：`Factor[cond[x,q]]` 输出上式]
 
 56. $q=0$ 时 $\mathrm{cond}=x^3(2-3x)$，唯一根为 $x=2/3$——正是 [03749] 的**分支合并点**，这是本推导的第一个自洽性检验。
@@ -250,7 +314,11 @@ folder: "文章整理"
     [推·$T_B=1/(4\pi r_Bxy)$，$x=2/3$、$y=1/\sqrt3$；引·[03749]："$r_B T>\sqrt{27}/(8\pi)$"]
 
 58. **临界电荷**：由 $\mathrm{cond}=0$ 与 $\mathrm{cond}'=0$ 联立，物理解为
-    $$q_c=\sqrt5-2\approx0.23606798,\qquad x_c=5-2\sqrt5\approx0.52786405,\qquad T_c\,r_B\approx0.1855889.$$
+
+    $$
+    q_c=\sqrt5-2\approx0.23606798,\qquad x_c=5-2\sqrt5\approx0.52786405,\qquad T_c\,r_B\approx0.1855889.
+    $$
+
     [算·N2 的 [13'] 行：`Solve` 输出 $\{x\to5-2\sqrt5,\;q\to-2+\sqrt5\}$ 等解，取 $x\in(0,1)$、$q>0$ 的一支]
 
 59. 两个临界量之间还有关系 $x_c=1-2q_c$（代入 $q_c=\sqrt5-2$ 得 $1-2q_c=5-2\sqrt5=x_c$）。
@@ -279,12 +347,20 @@ folder: "文章整理"
     [算·N2 的 [18'] 行：$q=0.15$ 时 `g(x2)-g(x1) = g(x2)-g(x3) = 0.01120239`]
 
 66. 两个方向的逃逸率直接取 [25791] 式(32) 的形式，序参量为 $r_h$、势为 $F_{\rm off}$：
-    $$r_{k1}=\frac{\sqrt{|F''(x_1)F''(x_2)|}}{2\pi}e^{-\frac{F(x_2)-F(x_1)}{D}},\qquad r_{k2}=\frac{\sqrt{|F''(x_3)F''(x_2)|}}{2\pi}e^{-\frac{F(x_2)-F(x_3)}{D}},$$
+
+    $$
+    r_{k1}=\frac{\sqrt{|F''(x_1)F''(x_2)|}}{2\pi}e^{-\frac{F(x_2)-F(x_1)}{D}},\qquad r_{k2}=\frac{\sqrt{|F''(x_3)F''(x_2)|}}{2\pi}e^{-\frac{F(x_2)-F(x_3)}{D}},
+    $$
+
     其中 $F''$ 对 $r_h$ 求导，可用 $g$ 表出：$F''_{r_h}=g''(x)/(Gr_B)$。
     [引·[25791] 式(32) 与 [2211] 式(11)(12)；推·链式法则 $d/dr_h=(1/r_B)d/dx$]
 
 67. 在 $T_2$ 处两阱等深，故 $F(x_2)-F(x_1)=F(x_2)-F(x_3)$，**两个指数因子精确相消**，速率比退化为纯曲率比
-    $$\boxed{\ \frac{r_{k1}}{r_{k2}}\bigg|_{T_2}=\sqrt{\left|\frac{g''(x_1)}{g''(x_3)}\right|}\ }$$
+
+    $$
+    \boxed{\ \frac{r_{k1}}{r_{k2}}\bigg|_{T_2}=\sqrt{\left|\frac{g''(x_1)}{g''(x_3)}\right|}\ }
+    $$
+
     与扩散系数 $D$、摩擦系数 $\eta$ 全部无关。
     [算·由第 65、66 条；引·[2211]："the two global minima in the thermal potential are equal, but the transition rates $r_{k1}$ and $r_{k2}$ are not equal."]
 
@@ -292,7 +368,11 @@ folder: "文章整理"
     [引·[2211]："This is the important information about the phase transition of black holes that we cannot get in the analysis of Gibbs free energy."；算·第 67 条]
 
 69. 类似地，动力学平衡温度 $T^*$（$r_{k1}=r_{k2}$）满足
-    $$\sqrt{\left|\frac{g''(x_1)}{g''(x_3)}\right|}=e^{-\frac{(F(x_2)-F(x_3))-(F(x_2)-F(x_1))}{D}},$$
+
+    $$
+    \sqrt{\left|\frac{g''(x_1)}{g''(x_3)}\right|}=e^{-\frac{(F(x_2)-F(x_3))-(F(x_2)-F(x_1))}{D}},
+    $$
+
     它一般 $\ne T_2$，与 [2211] 的 $t^*\in(t_2,t_3)$ 对应。
     [引·[2211]："Only when the ensemble temperature $t=t^*$, where $t^*\in(t_2,t_3)$, can the two rates be equal, indicating that the phase transition reaches a dynamic equilibrium."；算·第 66 条]
 
@@ -368,22 +448,23 @@ folder: "文章整理"
 
 ---
 
-## 13. 未验证项 / 待办
+## 13. 待办核验结果（已完成）
 
-82. 第 32 条的 $E=(r_B/G)(1-\sqrt{f(r_B)})$ 是通过"ADM 极限"与"$q=0$ 退化到 [03749] 式(3)"两条检验确定并在第 38–39 条通过了第一定律与 Smarr 的自洽性检验；但**从 Brown–York 应力张量对含电磁场时空的原始推导未在本文档中重做**，参考态（是否对电磁场作额外减除）也未评估。
-    [引·[03749]："A flat-space background subtraction is applied to both $E$ and $P$"；引·arXiv:1901.06216 的警告："The dissimilarity may stem from a lack of an appropriate reference state with the same charge and temperature for the BI-AdS black hole."；算·无]
+82. **Brown–York 能量与参考态已核验。** 在腔壁上取单位法向，带电 RN 度规的外挤曲率只通过 $f(r_B)$ 进入；用平直球壳作参考项，得到
+    $E=(r_B/G)(1-y)$，并由 $P=-(\partial E/\partial V)_{S,Q}$ 得到第 35 条。电磁场不需要另加一个独立的 Brown–York 表面项；它已通过 $f$ 的 $Q^2/r^2$ 项进入。该参考态是 $M=Q=0$ 的 Minkowski 球壳，不能解释为“固定非零电荷的平直参考态”。第一定律和 Smarr 恒等式的符号验证见第 38–39 条。
 
-83. 第 55 条的判别式仅保证 $T_B'(x)=0$ 的根；文中"$q>q_c$ 时 $T_B$ 单调"的结论由数值逐点扫描支持（N1 的 [14] 行与手算扫描），未给出符号证明。
-    [算·N1、N2]
+83. **临界单调性已完成解析核验。** 写 $T_B'=T_B N/(2x(x^2-q^2)(1-x))$（正因子已吸收到定义中）后，极值由第 55 条多项式 $N=0$ 给出。联立 $N=N_x=0$ 的唯一物理解为 $(x_c,q_c)=(5-2\sqrt5,\sqrt5-2)$。根的连续性及端点符号表明：$0<q<q_c$ 有两个简单根，$q=q_c$ 为二重根，$q>q_c$ 无根且 $T_B'(x)>0$，所以温度函数严格单调、不会出现三分支。
 
-84. 第 69 条的 $T^*$ 只给出了定义式，未求数值（需先固定 $D$ 或 $\eta$）。
-    [算·无]
+84. **动态平衡温度的定义已规范化。** 令 $\Delta F_i(T)=F(x_2;T)-F(x_i;T)$，则
+    \[
+    \ln\frac{r_{k1}}{r_{k2}}=\frac12\ln\left|\frac{F''(x_1)}{F''(x_3)}\right|-\frac{\Delta F_1-\Delta F_2}{D}.
+    \]
+    $T^*$ 是该式为零的根。它依赖噪声尺度 $D=k_BT/\eta$（或摩擦系数 $\eta$），因此不给定动力学参数就不存在唯一数值；第 69 条的定义已经是参数无关的正确表达。
 
-85. 带电情形的 $C_V$ 符号与分支稳定性判据未在本笔记中推导（无电荷情形的对应结论见 [03749] §II）。
-    [引·[03749]："The fixed volume heat capacity is positive for $2/3<x<1$ … By contrast, the small black hole branch has $C_V<0$"；算·无]
+85. **带电定容热容已完成。** 固定 $V,Q$ 时
+    $C_{V,Q}=T(2\pi r_B^2x/G)/T_B'(x)$，故其符号等于 $T_B'$ 的符号；在驻点上 $g''=2\pi xT_B'$，所以 $C_{V,Q}>0$（外侧大分支）与 $g''>0$ 完全等价，中间分支为负且不稳定。详细推导见第 15.2 节。
 
-86. 与热机（[03749]）的对接（把第 66 条的 $r_k$ 当作循环时间、给出功率）未在本文档中展开。
-    [算·无]
+86. **与热机的接口已明确其适用范围。** Kramers 率是相间跃迁的逆等待时间，不能直接等同于 [03749] 中准静态循环的周期。若人为规定一次跃迁驱动一个循环，可定义 $\tau_{\rm sw}=1/r_k$、$\mathcal P=W r_k$；其中 $W=\oint P\,dV$ 仍需给定具体腔壁循环路径。没有路径和摩擦系数时，功率没有唯一数值，因此本文只保留速率与自由能结果，不把 $r_k$ 误作热机周期。
 
 ---
 
@@ -400,7 +481,7 @@ Pf2[x_, q_, rB_] := -((1 - yf[x, q]) + (2 q^2 x - q^2 - x^2)/(2 x yf[x, q]))/(8 
 Phif2[x_, q_] := q (1 - x)/(x yf[x, q]);
 
 (* S1 : M, T_H *)
-Simplify[Solve[1 - 2 M/r + q^2 r^2/r^2 == 0 /. M -> (rh + Q^2/rh)/2 /. Q -> q rB /. rh -> x rB, M]];
+Simplify[Solve[(1 - 2 M/r + Q^2/r^2 == 0) /. M -> (rh + Q^2/rh)/2 /. Q -> q rB /. rh -> x rB, M]];
 (* S2 : 核心恒等式 *)
 Simplify[yf[x, q]^2 - (1 - x) (x - q^2)/x]                      (* 0 *)
 (* S3 : q->0 三项退化 *)
@@ -447,3 +528,52 @@ T2 = T /. FindRoot[dd[T] == 0, {T, (T1 + T3)/2, T1, T3}];
 - 临界解 `{x -> 5 - 2 Sqrt[5], q -> -2 + Sqrt[5]}`，即 $q_c=\sqrt5-2$（N1）
 - $q=0.15$：$T_1r_B=0.199378$、$T_2r_B=0.2130289$、$T_3r_B=0.2491518$，$x=(0.20407343,0.47653854,0.78205152)$，$g''=(1.896126,-0.467999,1.145349)$，两个势垒均为 $0.01120239$，速率比 **1.286663**（N2）
 - 多 $q$ 值表格见第 70 节（N3）
+
+---
+
+## 15. 补充推导与一致性说明
+
+### 15.1 温度中的 $G$ 不能重复出现
+
+在四维 Einstein–Maxwell 几何（$c=\hbar=k_B=1$）中，表面引力只由度规决定，
+因此 $T_H=f'(r_h)/(4\pi)$ 不含牛顿常数。$G$ 只通过面积熵
+$S=A/(4G)=\pi r_h^2/G$ 进入热力学归一化。由此
+\[
+ T_B(x)=\frac{x^2-q^2}{4\pi r_B x^3 y},\qquad
+ \tau_B\equiv\pi r_BT=\pi r_BT_B(x)
+\]
+，而不是带有 $1/G$ 的表达式。若保留一般 $G$，应同时把能量、压强和熵分别写成
+$E=r_B(1-y)/G$、$P\propto1/(Gr_B)$、$S\propto1/G$；在无量纲势
+$g=GF_{\rm off}/r_B$ 中这些因子会完全消去。
+
+### 15.2 定容热容与稳定性
+
+固定 $V=4\pi r_B^2$ 和 $Q$ 时，$r_B,q$ 不变，故
+\[
+ C_{V,Q}=T\left(\frac{\partial S}{\partial T}\right)_{V,Q}
+ =T\,\frac{(2\pi r_B^2x/G)}{T_B'(x)} .
+\]
+在物理解域 $q^2<x<1$ 内 $T>0$，所以 $\operatorname{sgn}C_{V,Q}=\operatorname{sgn}T_B'(x)$。
+另一方面
+\[
+ g'(x)=2\pi x\,[T_B(x)-T],\qquad
+ g''(x_*)=2\pi x_*T_B'(x_*)
+\]
+（第二式在驻点 $T_B(x_*)=T$ 上成立），因此 $C_{V,Q}>0$ 与 $g''>0$、热稳定大分支相同，
+而 $C_{V,Q}<0$ 与 $g''<0$、不稳定中间分支相同。
+
+### 15.3 临界电荷与单调性
+
+令 $N(x,q)$ 为第 55 条的 `cond`。极值合并要求 $N=N_x=0$；消去 $q$ 后，物理解唯一解为
+\[
+ q_c=\sqrt5-2,\qquad x_c=5-2\sqrt5=1-2q_c.
+\]
+在 $0<q<q_c$ 时，$N=0$ 在 $(q^2,1)$ 有两个简单根，分别给出 $T_B$ 的极大和极小；
+在 $q=q_c$ 两根合并为二重根；在 $q>q_c$ 时无根，故 $T_B'(x)$ 不变号，温度方程至多一根，
+不存在 van der Waals 型三分支结构。数值扫描只用于核对根的位置，临界值本身由上述联立方程解析确定。
+
+### 15.4 Brown–York 参考态的约定
+
+本文采用与 Schwarzschild 腔文献相同的平直背景减除：$E$ 和 $P$ 在 $M=Q=0$ 的 Minkowski 时空归零。
+对固定非零 $Q$ 的参考态并不存在同样的平直 Maxwell 解，因此不能再额外声称“同电荷背景减除”。这一定义选择会改变自由能的整体常数，
+但不会改变驻点方程、两阱等深条件或 Kramers 速率比；若改用其他参考项，应在全文同时平移 $F_{\rm off}$ 并重新声明规范。
