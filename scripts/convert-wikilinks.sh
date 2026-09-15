@@ -15,9 +15,10 @@
 #        ![[论文.pdf#page=5]] →  链接/阅读器直接翻到第 5 页
 #        `论文.pdf`           →  行内代码里的 PDF 文件名自动变成链接（解析得到才变）
 #      围栏代码块（``` / ~~~）内部一律不改写。
-#   4. 数学：kramdown 只在 $$ 各自独占一行时才把公式当「块级数学」（输出 \[...\]）；
-#      写成单行 $$X$$ 会被降级成行内 \(...\)，MathJax 按 inline 渲染，公式就和正文
-#      挤在同一行。笔记里几乎都写单行式，所以这里统一展开成三行（前后补空行）。
+#   4. 数学：kramdown 只在 $$ 行与相邻正文之间有空行时才按「块级数学」处理（输出 \[...\]）；
+#      紧贴正文的写法（单行 $$X$$、以及 $$ 块前后紧邻文字或另一个 $$ 块）会被降级
+#      成行内 \(...\)，MathJax 便按 inline 渲染，公式就和正文挤在同一行。
+#      所以这里做两步：单行 $$X$$ 展开成三行；成对 $$ 块的外侧补空行（内侧不能动）。
 #
 # 用法:  scripts/convert-wikilinks.sh notes
 # 说明:  原地修改 notes/ 下的 .md；笔记内链写成绝对路径 /notes/名字/
@@ -298,7 +299,34 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
       }
     }
   ' "$file" > "$file.tmp"
-  mv "$file.tmp" "$file"
+
+  # ---- 3. 第二遍：给「独立的 $$ 行」在成对块的外侧补空行。
+  # 笔记里常见「正文紧接着 $$、甚至两个 $$ 块背靠背」的写法，kramdown 会把它
+  # 降级成行内数学。只在成对块的外侧补（内侧插空行会把式子截断），已经空着的
+  # 不会重复插；围栏代码块里的 $$ 不参与配对。
+  awk '
+    { line[NR] = $0 }
+    END {
+      infence = 0
+      n = 0
+      for (i = 1; i <= NR; i++) {
+        if (line[i] ~ /^[ \t]*(```|~~~)/) infence = !infence
+        if (!infence && line[i] ~ /^[ \t]*\$\$[ \t]*$/) { n++; d[n] = i }
+      }
+      for (k = 1; k + 1 <= n; k += 2) {
+        a = d[k]
+        b = d[k+1]
+        if (a > 1 && line[a-1] ~ /[^ \t]/) before[a] = 1
+        if (b < NR && line[b+1] ~ /[^ \t]/) after[b] = 1
+      }
+      for (i = 1; i <= NR; i++) {
+        if (before[i]) print ""
+        print line[i]
+        if (after[i]) print ""
+      }
+    }
+  ' "$file.tmp" > "$file.tmp2"
+  mv "$file.tmp2" "$file"
 done
 
 echo "转换完成:$root"
