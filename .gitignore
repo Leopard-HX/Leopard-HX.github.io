@@ -29,5 +29,11 @@ notes/**
 !notes/**/
 !notes/**/*.md
 !notes/**/*.pdf
+!notes/**/*.png
+!notes/**/*.jpg
+!notes/**/*.jpeg
+!notes/**/*.gif
+!notes/**/*.svg
+!notes/**/*.webp
 # 给 AI 看的配置笔记：进 vault 仓库可以，上站点不行
 notes/**/[Aa]gent*.md

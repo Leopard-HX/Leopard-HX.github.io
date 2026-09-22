@@ -51,12 +51,13 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
 所以笔记原样丢进 `notes/` 就能渲染，`_config.yml` 里只给 `notes` 目录配了一组 `defaults`
 （`layout: single` / 关掉侧栏 / 打上 `is_note: true` 标签供索引页筛选）。
 
-`scripts/convert-wikilinks.sh` 只负责 Jekyll 不会做的三件事：
+`scripts/convert-wikilinks.sh` 只负责 Jekyll 不会做的几件事：
 
 1. `[[双向链接]]` / `[[目标|别名]]` / `[[目标#标题]]` / `![[附件]]` → 标准 Markdown 链接
    （笔记写成绝对路径 `/notes/名字/`，附件写成 `/notes/文件名`）
 2. PDF 相关的写法（见下面「笔记里的 PDF」）
-3. 正文开头的第一个 `# H1` → front matter 的 `title`（并从正文里删掉，避免和版面标题重复显示）；
+3. 图片与附件的**相对路径** → 站点根绝对路径（见下面「笔记里的图片」）
+4. 正文开头的第一个 `# H1` → front matter 的 `title`（并从正文里删掉，避免和版面标题重复显示）；
    完全没有标题的笔记就用文件名当 `title`
 
 找不到目标的链接会退化成纯文本，并在 Actions 日志里列出来。
@@ -64,8 +65,9 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
 
 ### 笔记里的 PDF
 
-只有 `Notes/` 下的 **`.md` 和 `.pdf`** 会同步过来（`.tex`/`.eps`/`.png`/`source.tar.gz`/`00README.json`/`agent*.md`
-都只留在 vault 里），PDF 直接丢在笔记旁边就行，然后在笔记里按下面的写法引用：
+只有 `Notes/` 下的 **`.md`、`.pdf` 和图片（`.png`/`.jpg`/`.jpeg`/`.gif`/`.svg`/`.webp`）** 会同步过来
+（`.tex`/`.eps`/`source.tar.gz`/`.wl`/`.csv`/`.json`/`00README.json`/`agent*.md` 都只留在 vault 里），
+PDF 直接丢在笔记旁边就行，然后在笔记里按下面的写法引用：
 
 | 笔记里写 | 站点上显示 |
 | --- | --- |
@@ -83,6 +85,24 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
   会把 PDF 和同目录的笔记列在一起，条目末尾带一个「PDF」小徽标；只放 PDF、没有笔记的文件夹
   （例如 `参考论文/`）同样会出现，文件夹徽标里的数字也是「笔记 + PDF」的总数。
 
+### 笔记里的图片
+
+图片直接丢在笔记旁边（可以放在子目录里），用**标准的 Markdown 写法**引用即可：
+
+```markdown
+![图注](图目录/xxx.png)
+```
+
+- 脚本会把相对路径改写成站点根绝对路径。**必须改写**，因为笔记页 URL 是
+  `/notes/<子目录>/<笔记名>/`，比源文件所在的 `notes/<子目录>/` 多一层 —— 不改写的话，
+  浏览器会把 `图目录/xxx.png` 解析到「笔记页目录」下面，那里没有文件（404）。
+- 同理，其它相对链接（PDF、附件、指向别的笔记的 `.md`）也会一起改写：`.md` 目标按站点上的
+  目录形式 URL 处理（`其他.md` → `/notes/其他/`），带锚点的（`其他.md#标题`）保留锚点，
+  带空格的路径会转成 `%20`，Markdown 的 title 部分原样保留。
+- 已经是 `https://…`、以 `/` 开头、以 `#` 开头、或含 `../` 的路径一律不动；
+  围栏代码块（``` / ~~~）里的一律不动。
+- 图片必须在上面的 rsync 白名单里才会真的同步过去（见「几个注意点」）。
+
 ### 索引页的分组
 
 `/notes/` 会按 `Notes/` 里的子文件夹分组显示（文件夹标题 + 里面的笔记，根目录的笔记直接列在最上面）。
@@ -95,9 +115,12 @@ GitHub Pages 默认启用了（且无法关闭）这几个插件：
 
 - 笔记文件名**别用** `README.md`、`CONTRIBUTING.md`、`LICENSE` 这类名字 —— `jekyll-optional-front-matter` 对它们不生效
 - 重名笔记（不同子目录下同名）按路径排序取第一个来解析链接
-- 图片（`.png`/`.jpg`/`.svg`…）**不会**发布到站点：rsync 白名单只放行 `*.md` 和 `*.pdf`。
-  笔记里引用的插图在站点上是死链，要发布的话得同时改 `.github/workflows/sync-notes.yml`
-  的 include 白名单和站点 `.gitignore` 的 `notes/**` 规则
+- 站点发布走 **rsync include 白名单**（`.github/workflows/sync-notes.yml`）：只放行 `*.md`、`*.pdf`
+  和图片（`*.png`/`*.jpg`/`*.jpeg`/`*.gif`/`*.svg`/`*.webp`），其余一律留在 vault 里。
+  所以笔记里指向 `.wl`/`.csv`/`.json`/`.txt` 这类附件的链接在站点上仍是 404 —— 要发布它们，
+  往白名单里加对应扩展名就行，路径改写脚本已经会把链接指向正确位置。
+  （rsync 规则是「先匹配者胜」，`agent*.md` 的 exclude 必须排在 `*.md` 的 include 之前。）
+- 站点 `.gitignore` 里对 `notes/**` 还有一层规则，新增类型时记得一起放行
 - 想改同步频率，改 `.github/workflows/sync-notes.yml` 里的 `cron`
 - 想彻底停掉笔记同步，直接删 `.github/workflows/sync-notes.yml`
 

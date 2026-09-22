@@ -19,6 +19,12 @@
 #      紧贴正文的写法（单行 $$X$$、以及 $$ 块前后紧邻文字或另一个 $$ 块）会被降级
 #      成行内 \(...\)，MathJax 便按 inline 渲染，公式就和正文挤在同一行。
 #      所以这里做两步：单行 $$X$$ 展开成三行；成对 $$ 块的外侧补空行（内侧不能动）。
+#   5. 图片与附件链接：`![](相对路径)`、`[](相对路径)` 在站点上会 404 —— 笔记页 URL 是
+#      /notes/<子目录>/<笔记名>/，比源文件所在的 notes/<子目录>/ 多一层，于是浏览器把
+#      相对路径解析到「笔记页目录」下面（那里没有文件）。这里统一改写成站点根绝对路径
+#      /notes/<子目录>/<相对路径>，正好等于文件在 notes/ 里的真实位置。
+#      已经是 http(s): URL、以 / 开头、以 # 开头、或含 ../ 的一律不动。
+#      注意：路径改对了不等于文件一定发布 —— 工作流的 rsync 白名单另有一层过滤。
 #
 # 用法:  scripts/convert-wikilinks.sh notes
 # 说明:  原地修改 notes/ 下的 .md；笔记内链写成绝对路径 /notes/名字/
@@ -99,6 +105,52 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
       gsub(/>/, "\\&gt;", s)
       gsub(/"/, "\\&quot;", s)
       return s
+    }
+
+    # 图片/附件链接的相对路径 → 站点根绝对路径。
+    # 笔记页 URL 是 /notes/<folder>/<笔记名>/，比源文件所在的 notes/<folder>/ 多一层，
+    # 所以 ![](cavity_rates/x.png) 会被浏览器解析成
+    #   /notes/<folder>/<笔记名>/cavity_rates/x.png      ← 那个位置没有文件（404）
+    # 这里改写成文件在站点里的真实位置
+    #   /notes/<folder>/cavity_rates/x.png
+    # 返回空串表示「按原样保留」。
+    function abs_asset_url(u,   sp, q, tail, path, anchor) {
+      if (u == "") return ""
+      if (u ~ /^[a-zA-Z][a-zA-Z0-9+.-]*:/) return ""   # http: / https: / data: / mailto:
+      if (substr(u, 1, 1) == "/") return ""            # 已经是站点根绝对路径
+      if (substr(u, 1, 1) == "#") return ""            # 页内锚点
+      sp = index(u, " \"")                               # 只把「空格+引号」当作 Markdown title
+      if (sp > 0) { tail = substr(u, sp);        u = substr(u, 1, sp - 1) }
+      else        { tail = "" }
+      q = index(u, "#")                                  # 锚点单独处理（# 后面原样跟随）
+      if (q > 0) { anchor = substr(u, q); path = substr(u, 1, q - 1) }
+      else       { anchor = "";           path = u }
+      if (path ~ /\.\.\//) return ""                   # 含 ../ 的相对路径不猜
+      # 指向其它笔记的 .md：站点上渲染成页面，URL 是 /notes/<folder>/<去掉.md>/（与 [[wikilink]] 一致）
+      if (path ~ /\.md$/) {
+        sub(/\.md$/, "", path)
+        return prefix (folder == "" ? "" : encode(folder) "/") encode(path) "/" anchor tail
+      }
+      return prefix (folder == "" ? "" : encode(folder) "/") encode(path) anchor tail
+    }
+
+    # 把行内的 [文字](目标) / ![文字](目标) 逐个取出，重写其中的相对路径。
+    # 先跑 [[wikilink]] 转换，所以这里拿到的已是 /notes/… 开头的绝对路径，会被原样放过。
+    function rewrite_rel_paths(line,   out, tok, mid, p, label, u, newu) {
+      out = ""
+      while (match(line, /\[[^][]*\]\([^()]*\)/)) {
+        out  = out substr(line, 1, RSTART - 1)
+        tok  = substr(line, RSTART, RLENGTH)
+        line = substr(line, RSTART + RLENGTH)
+        mid  = substr(tok, 2)                 # 去掉开头的 "["
+        p    = index(mid, "](")
+        if (p == 0) { out = out tok; continue }
+        label = substr(mid, 1, p - 1)
+        u     = substr(mid, p + 2, length(mid) - p - 2)
+        newu  = abs_asset_url(u)
+        out   = out (newu == "" ? tok : "[" label "](" newu ")")
+      }
+      return out line
     }
 
     # 行内代码里的 PDF 文件名（Obsidian 笔记里常写成「本目录 PDF：`xxx.pdf`」）
@@ -249,7 +301,7 @@ find "$root" -type f -name '*.md' -print0 | while IFS= read -r -d '' file; do
           out = out (embed && is_file ? "!" : "") "[" label "](" u ")"
         }
       }
-      converted[NR] = math_block(link_pdf_codes(out line))
+      converted[NR] = math_block(link_pdf_codes(rewrite_rel_paths(out line)))
       next
     }
 

@@ -46,8 +46,8 @@ jobs:
       - name: Copy only the Notes/ folder
         # 两级白名单：
         #   1) vault 里只有 Notes/ 会被拷出来，其余内容（日记、私密笔记……）永远不进入站点；
-        #   2) Notes/ 里只有 .md / .pdf 会被拷出来 —— 论文目录里的 .tex / .eps / .tar.gz /
-        #      .png / 00README.json 等只留在 vault 仓库里做备份，不发布到站点。
+        #   2) Notes/ 里只有 .md / .pdf / 图片会被拷出来 —— 论文目录里的 .tex / .eps / .tar.gz /
+        #      .wl / .csv / .json / 00README.json 等只留在 vault 仓库里做备份，不发布到站点。图片必须发布，否则笔记正文里的 ![](…png) 在页面上是空白。
         #   另外排除 agent.md 这类「给 AI 看的配置笔记」：它们该进 vault 仓库，但不该出现在站点上。
         # 注意：rsync 规则是「先匹配者胜」，所以 agent*.md 的 exclude 必须排在 *.md 的 include 之前。
         run: |
@@ -58,7 +58,7 @@ jobs:
               --include='*/' \
               --exclude='[Aa]gent*.md' \
               --include='*.md' \
-              --include='*.pdf' \
+              --include='*.pdf' --include='*.png' --include='*.jpg' --include='*.jpeg' --include='*.gif' --include='*.svg' --include='*.webp' \
               --exclude='*' \
               .vault/Notes/ notes/
           else
