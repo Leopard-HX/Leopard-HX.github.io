@@ -189,7 +189,7 @@ folder: "文章整理/arXiv-2211.03512v2"
     f(x)=\frac{\sqrt6Q}{3}\psi(x)=\frac{\sqrt6Q}{3}\left(\frac{1}{4x}+\frac{3x}{2}+\frac{px^3}{4}-tx^2\right)\qquad\text{(原文式 (8))}
     $$
 
-    其中用 $t:=T/T_c$ 把系综温度 $T$ 替换为无量纲版本。（2026-09-14 修正：原抄为 $\sqrt6Q^3$ 与 $3x^2$，已按官方 PDF 与独立复算更正为
+    其中用 $t:=T/T_c$ 把系综温度 $T$ 替换为无量纲版本（**为什么要做这个替换？见 Q6**）。（2026-09-14 修正：原抄为 $\sqrt6Q^3$ 与 $3x^2$，已按官方 PDF 与独立复算更正为
 
     $$
     \frac{\sqrt6Q}{3}
@@ -904,6 +904,8 @@ $$
 > | **Q3** | Q2 中的记号：$\mathcal P(x)$ 是什么、怎么用 | Q2 |
 > | **Q4** | 从"黑洞分子假设"起的逐句计算核验（Kramers 段）：(10) 式的双向验证、端点幂律、峰位与 $t^*$、深阱量级、$t_2$ 处比值的闭式 | 正文第 42–75 条 → 第十二节 |
 > | **Q5** | 文章里的 $x$ 是什么量（第 30 条那个 $x$） | 正文第 30 条（式(6)） |
+> | **Q6** | 为什么要把系综温度换成 $t:=T/T_c$（式(8) 的那句 "replace … with its dimensionless version $t$"） | 正文第 37 条（式(8)）、第 30 条（式(6)） |
+> | **Q7** | 积分时的 $\mathrm dS=12\pi Q^2x\,\mathrm dx$ 是怎么来的、为什么没有 $\mathrm dQ$ 项 | 正文第 31、37 条（式(7)(8)）；触发自推导稿第 1 节 |
 
 ---
 
@@ -1710,7 +1712,7 @@ $$
 #### 4. 两个容易混淆的点
 
 1. **式(10) 里的 $x_{\max,\min}$ 不是新变量**：它就是同一个 $x$，下标只表示"$\psi$ 的极大点/极小点位置"（第 46 条原文："$x_{\max,\min}$ are the locations of the extreme points"）。
-2. **$x$ 与 $t$ 是两回事**：$t:=T/T_c$ 是**系综**温度（可任取），$t_h(x)$ 是**在壳** Hawking 温度（由 $x$ 决定）；相变窗口是 $t\in(t_1,t_3)$，而"三个态"是 $x_1,x_2,x_3$（式(6) 后正文："$T=T_h$ is just one of the ways to derive the value of the ensemble temperature $T$"）。
+2. **$x$ 与 $t$ 是两回事**：$t:=T/T_c$ 是**系综**温度（可任取），$t_h(x)$ 是**在壳** Hawking 温度（由 $x$ 决定）；相变窗口是 $t\in(t_1,t_3)$，而"三个态"是 $x_1,x_2,x_3$（式(6) 后正文："$T=T_h$ is just one of the ways to derive the value of the ensemble temperature $T$"）。（**$t$ 这一支为什么要引入？见 Q6**）
 
 #### 5. Wolfram 核验清单
 
@@ -1719,4 +1721,142 @@ $$
 3. $r_h/x=\sqrt6Q$ ✓
 4. $T_h(x)/T_c-\frac{3px^4+6x^2-1}{8x^3}=0$ ✓
 5. $t_h(1)\big\rvert_{p=1}=1$ ✓（临界点自洽）
+
+---
+
+### Q6. 为什么要把系综温度换成 $t:=T/T_c$（2026-09-19）
+
+**问题**：文章里面 "replace the ensemble temperature $T$ with its dimensionless version $t$" 的动机是什么？
+
+> **本条定位**：这是在展开**正文第 37 条**里那句 "where we replace the ensemble temperature $T$ with its dimensionless version $t$ via $t:=T/T_c$"，并补足**第 30 条**（式(6) 的无量纲量）中 $t$ 这一支的来历——与 Q5 讲的 $x$ 是并列的另一支。
+
+**解答**：
+
+#### 0. 一句话
+
+$T$ 是热势里**唯一一个"外加旋钮"式的维度量**（可任取，与黑洞状态无关）；把它除以体系自带的 $T_c\propto1/Q$ 后，热势的形状只由两个纯数 $(t,p)$ 决定——$Q$ 从所有方程里彻底消失（对应态原理），$t$ 也才能与无量纲化的在壳温度 $t_h$ 放在同一把尺子上比较。
+
+#### 1. 原文自己只说了"方便"
+
+> 式(6) 前："For the convenience of discussion, we now introduce dimensionless thermodynamic quantities, which are respectively defined as follows"
+> 式(8) 后："where we replace the ensemble temperature $T$ with its dimensionless version $t$ via $t:=T/T_c$"
+
+文章没有展开论证。下面四条是这一手真正的结构性作用（第 2–5 节）。
+
+#### 2. 动机一：$T$ 是自由参数，不脱钩就画不出图
+
+- 系综温度 $T$ 是**独立常数**，"can take any positive value in any way"（第 35 条），与黑洞状态无关；而 $T_h$ 由 $(r_h,Q,P)$ 决定。
+- 若把 $T$ 原样留着，热势就是 $f=f(r_h;Q,P,T)$，**四个**维度参数的函数——画一条 $f$–$x$ 曲线须先钉住 $(Q,P,T)$ 三个，换一个 $Q$ 图就变。
+- 引入 $(t,p,x)$ 后形状只依赖 $(t,p)$，**同一张图对所有 $Q$ 通用**：图 1、图 2、图 3 因此只标 $p=0.5$ 而从不标 $Q$。
+
+#### 3. 动机二：$Q$ 完全消掉 = 对应态原理（最硬的证据）
+
+用 $r_h=x\sqrt6Q$、$P=p/(96\pi Q^2)$、$T=t\sqrt6/(18\pi Q)$（式(5)(6)）代入后：
+
+| 对象 | 是否含 $Q$ | 出处 |
+| --- | --- | --- |
+| 极值方程 $3px^4-8tx^3+6x^2-1=0$ | **不含** | 式(8) 后那条未编号式子 |
+| $t_1,t_2,t_3$ | **只含 $p$** | 式(9) |
+| 三根关系 $x_1x_3=1/\sqrt p$ | **不含** | Q1 第 3 节 |
+| $t_2$ 处速率比 $2.06155$ | **不含** | 12.6 |
+
+- 不做这个替换，相变窗口就是 $[t_1T_c,\,t_3T_c]\propto1/Q$——$Q$ 一变窗口整体缩放，"所有带电 AdS 黑洞的相变都发生在各自 $T_c$ 的 $0.73\sim0.84$ 倍之间"这句话根本说不出来。
+- 同一套路即 van der Waals 用 $T/T_c,P/P_c$ 写普适状态方程（第 28 条：带电 AdS 黑洞 ↔ vdW 流体）。
+- 数值示例（$p=0.5$，Wolfram 核验）：$t_1=0.732538$、$t_2=0.757115$、$t_3=0.844623$，且 $x_1x_3=1.41421=1/\sqrt2$ ✓。
+
+#### 4. 动机三：两个温度必须放在同一把尺子上
+
+- 热势的极值 = 平衡态，判据是 $T=T_h$（第 32 条）；无量纲化后这条判据变成两个纯数的相等 $t=t_h(x)$，其中
+
+  $$
+  t_h(x)=\frac{T_h(x)}{T_c}=\frac{3px^4+6x^2-1}{8x^3}
+  $$
+
+  （Q5 第 1 节）。
+- 于是"相变只在 $t\in(t_1,t_3)$ 发生""速率随 $t$ 先增后减""在 $t^*\in(t_2,t_3)$ 处两速率相等（动态平衡）"（第 56、61、71 条）都能只用一个变量 $t$ 说清；用维度温度 $T$ 表述时，所有阈值都随 $Q$ 漂移。
+- 注意 $t$ 与 $t_h$ 是**两个不同的量**：$t$ 是系综温度（旋钮），$t_h(x)$ 是在壳 Hawking 温度（状态量）；式(6) 把两支都除以同一个 $T_c$，正是为了让 $T=T_h$ 变成 "$t=t_h$"（Q5 第 4 节第 2 点）。
+
+#### 5. 动机四（技术）：把能标提出来，$f=G_c\,\psi(x)$
+
+$$
+\int(T_h-T)\,\mathrm{d}S=M-TS=\frac{\sqrt6Q}{3}\left(\frac1{4x}+\frac{3x}2+\frac{px^3}4-tx^2\right)=G_c\,\psi(x)
+$$
+
+- 前置因子 $\frac{\sqrt6Q}{3}$ **恰是式(5) 的临界 Gibbs 自由能 $G_c$**：$t$ 把 $f$ 的整体能标剥出去，只留"形状函数" $\psi$。（**$Q$ 为什么能只留在前置因子里——即积分时 $\mathrm dQ$ 为何为零？见 Q7**）
+- 这与图 1 把 $g=G/G_c$ 与 $\psi$ 并排画是同一约定——两者都以 $G_c$ 为单位，纵轴可直接比较。
+- 量纲信息没丢，只是搬到了前置因子上：深阱条件 $tT_c\ll\Delta f$ 写成式(13) 就是
+
+  $$
+  \underbrace{\frac{\sqrt6}{18\pi Q}}_{T_c}\,t\ \ll\ \underbrace{\frac{\sqrt6Q}{3}}_{G_c}\Delta\psi
+  \quad\Longleftrightarrow\quad
+  t\ll6\pi Q^2\Delta\psi,
+  $$
+
+  这正是式(13) 后说"总能找到合适的 $Q$ 让该条件满足"的原因：**$t$ 只负责形状，能标由 $Q$ 承担**。
+- Kramers 率里是同一分工：$r_k\propto\sqrt{\lvert f''f''\rvert}\,e^{-\Delta f/D}$，无量纲化后 $\sqrt{\lvert\psi''\psi''\rvert}$ 与 $e^{-G_c\Delta\psi/D}$ 分家，图 3 的横轴才可以只是 $t$（第 55 条）。
+
+#### 6. 一句话回答
+
+> 因为 $T$ 是热势里唯一"任取"的维度量，只有把它除以体系自带的 $T_c\propto1/Q$，热势才变成只依赖 $(t,p)$ 的普适形状（$Q$ 消掉），$t$ 也才能与在壳的 $t_h(x)$ 同尺比较，并让 $t_1,t_2,t_3,t^*$ 这些相变温度成为与 $Q$ 无关的纯数。
+
+#### 7. 延伸：本工作区的 RN 腔版怎么归一化
+
+- "除以谁"取决于体系里哪个维度参数是独立旋钮：纯 AdS 情形 $T_c\propto1/Q$ 是天然的；**加了腔壁之后**，本工作区改用 $\tau_B\equiv\pi r_BT$（配 $q=Q/r_B$、$x=r_h/r_B$，见 `RN腔版-从RN-AdS移植的完整计算.md` 第 45 条），因为此时 $r_B$ 才是那个固定背景尺度。
+- 对应关系没变：腔版的"在壳条件"同样是两个无量纲温度相等——腔壁 Tolman 温度 = 系综温度（该文件第 50 条），与这里的 $t=t_h(x)$ 是同一逻辑。
+
+---
+
+### Q7. 积分时的 $\mathrm dS=12\pi Q^2x\,\mathrm dx$ 是怎么来的、为什么没有 $\mathrm dQ$ 项（2026-09-19）
+
+**问题**：推导稿 `带腔壁黑洞替换RN-AdS背景-可核验推导.md` 第 1 节写"由于 $\mathrm dS=12\pi Q^2x\,\mathrm dx$"，这是怎么来的？不应该有 $\mathrm dQ$ 吗？
+
+> **本条定位**：这是在回答**正文第 37 条**（式(7)→(8) 的积分）里的微分约定；与 **Q6 第 5 节**（$Q$ 只出现在前置因子 $G_c$ 里）互为表里。
+
+**解答**：
+
+#### 0. 一句话
+
+$12\pi Q^2x\,\mathrm dx$ 就是 $\dfrac{\partial S}{\partial x}$（$S=\pi r_h^2=6\pi Q^2x^2$）；$\mathrm dQ$ 项**确实存在**——
+
+$$
+\mathrm dS=12\pi Q^2x\,\mathrm dx+12\pi Qx^2\,\mathrm dQ,
+$$
+
+只是本文的系综把 $Q$ 当**参数**（固定电荷的正则系综），故 $\mathrm dQ=0$。
+
+#### 1. 算式：两项都在，只是系数不同
+
+由 $r_c=\sqrt6Q$、$x:=r_h/r_c$（式(5)(6)）得 $r_h=\sqrt6Q\,x$，于是
+
+$$
+S=\pi r_h^2=6\pi Q^2x^2
+\quad\Longrightarrow\quad
+\frac{\partial S}{\partial x}=12\pi Q^2x,\qquad \frac{\partial S}{\partial Q}=12\pi Qx^2 .
+$$
+
+- 直接对 $r_h$ 做也行：$\mathrm dS=2\pi r_h\,\mathrm dr_h=2\pi(\sqrt6Qx)(\sqrt6Q\,\mathrm dx)=12\pi Q^2x\,\mathrm dx$。
+- Wolfram 核验：`Dt[Pi (Sqrt[6] Q x)^2]` $=$ `12πQ²x Dt[x] + 12πQx² Dt[Q]` ✓（后一项就是被丢掉的那个）。
+
+#### 2. 为什么可以丢掉 $\mathrm dQ$：$Q$ 是这个系综的固定参数
+
+1. **系综设定**：原文出发点是 "a canonical ensemble composed of a large number of states (on-shell black hole states and off-shell other unknown states)"（第 31 条）——正则系综即**固定 $Q$、固定 $P$**，离壳自由度只有 $r_h$（等价地 $S$、$x$）一个。
+2. **积分是单参数族**：$f=\int(T_h-T)\,\mathrm dS$（式(7)）沿 $r_h$ 积分，$Q,P$ 全程取定值，$T$ 也是常数（第 35 条），所以才能拆成 $\int T_h\,\mathrm dS-\int T\,\mathrm dS=M-TS$（积分过程见 `参考论文/arXiv-2111.05856v1/备注-热势与Fokker-Planck方程.md` 第 4 节）。
+3. **$\int T_h\,\mathrm dS=M$ 本身也要求固定 $Q,P$**：$M(S,Q,P)=\frac{r_h}{2}+\frac{4\pi P r_h^3}{3}+\frac{Q^2}{2r_h}$ 的全微分是
+
+   $$
+   \mathrm dM=T_h\,\mathrm dS+\underbrace{\frac{Q}{r_h}}_{\Phi}\,\mathrm dQ+\underbrace{\frac{4\pi r_h^3}{3}}_{V}\,\mathrm dP
+   $$
+
+   （Wolfram 核验：三个残差均为 $0$ ✓）。只有 $\mathrm dQ=\mathrm dP=0$ 时它才退化为 $\mathrm dM=T_h\,\mathrm dS$，$\int T_h\,\mathrm dS=M$ 才成立。
+4. **物理图像**：小↔大黑洞相变是在**同一个 $Q$** 下发生的（如同 vdW 在固定粒子数下的气液相变），$Q$ 只是"哪个黑洞族"的标签，不是反应坐标；反应坐标自始至终是 $x$（Q5）。
+
+#### 3. 什么时候 $\mathrm dQ$ 项不能丢
+
+- **巨正则/含化学势**、**限制相空间（变 $G$）**、**腔版变电荷**等场景：离壳势是 $(r_h,Q)$ 的**二元**函数，第一定律须写成 $\mathrm dM=T\,\mathrm dS+\Phi\,\mathrm dQ+V\,\mathrm dP$，此时若沿用 $\mathrm dS=12\pi Q^2x\,\mathrm dx$ 就会漏掉 $\Phi\,\mathrm dQ$，"积分得 $M-TS$"这一步也不再干净。
+- **判别口诀**：变量进积分/进微分，参数只进前置因子。2211 里 $Q$ 恰恰只出现在整体前置因子 $G_c=\sqrt6Q/3$ 中（Q6 第 5 节），这就是"$Q$ 是参数"的直接体现。
+
+#### 4. 本工作区推导稿里的同一件事
+
+- 推导稿 1 节用它做 $\int(T_h-T)\,\mathrm dS$；2.2 节换到腔框架后用 $x=r_h/R$（$R$ 固定）得 $\mathrm dS=2\pi R^2x\,\mathrm dx/G$；3 节 RN 腔里明确写了"固定 $Q,R$ 微分可得 $\mathrm dE_{BY}=T_B\,\mathrm dS$"——三处都是同一个"固定电荷 + 固定外参"约定。
+- 推论：一旦做腔版的**变电荷/变腔壁面积**推广，这三处的 $\mathrm dS$ 都要补 $\mathrm dQ$（或 $\mathrm dR$）项，热势相应地变成多元函数，Kramers 那套一元双阱图像需要重做。
 
