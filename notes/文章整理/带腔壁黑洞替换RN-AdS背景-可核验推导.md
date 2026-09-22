@@ -188,7 +188,7 @@ $$
 
 **下面显式计算“边界参考态 A ↔ 大黑洞 B”的两条速率，并给出势形、分支、势垒、速率和速率差图。** 小 Schwarzschild 黑洞是两者之间的势垒，而不是另一个稳定黑洞态。先区分原文热力学与新增的随机动力学。
 
-本次逐页核对的是 **2211.03512v2（2023-03-06）** 与 **2607.03749v2（2026-08-05）** 的原始 PDF 和对应 HTML。保留原件为 [2211 原文 PDF](cavity_schwarzschild_rates/source_audit/2211.03512v2.pdf) 与 [2607 原文 PDF](cavity_schwarzschild_rates/source_audit/2607.03749v2.pdf)。本轮网络请求超时，故核验的是已有原论文副本，而非确认今日最新版本；没有使用其他 Markdown 作为研究依据。以下页码从 PDF 首页起计；[出处核验记录](cavity_schwarzschild_rates/source_audit/source_evidence.txt) 包含版本、水印、引文位置与文件 SHA256。
+本次逐页核对的是 **2211.03512v2（2023-03-06）** 与 **2607.03749v2（2026-08-05）** 的原始 PDF 和对应 HTML。保留原件为 [2211 原文 PDF](/notes/文章整理/cavity_schwarzschild_rates/source_audit/2211.03512v2.pdf) 与 [2607 原文 PDF](/notes/文章整理/cavity_schwarzschild_rates/source_audit/2607.03749v2.pdf)。本轮网络请求超时，故核验的是已有原论文副本，而非确认今日最新版本；没有使用其他 Markdown 作为研究依据。以下页码从 PDF 首页起计；[出处核验记录](/notes/文章整理/cavity_schwarzschild_rates/source_audit/source_evidence.txt) 包含版本、水印、引文位置与文件 SHA256。
 
 | 证据 | 原文位置及短引文 | 本节使用的内容 |
 |---|---|---|
@@ -541,7 +541,7 @@ $$
 
 ### 2.7 图 1：离壳热势及其随温度的变化
 
-![图1：Schwarzschild腔的离壳热势](cavity_schwarzschild_rates/01_landscapes.png)
+![图1：Schwarzschild腔的离壳热势](/notes/文章整理/cavity_schwarzschild_rates/01_landscapes.png)
 
 **图 1 说明。** 横轴 $x=r_h/R$，纵轴 $\phi=GF_R/R$。曲线由 (S1) 计算，圆点由 (S6) 给出。图例 tau 即 $\tau$，MFPT 指 (S15)(S16)。展示 $\tau=2.8,3.0,\tau_*^{\rm MFPT},27/8,4.0$，其中 $\tau_*^{\rm MFPT}\simeq3.321732$ 在下面求出。
 
@@ -554,9 +554,9 @@ $\tau_0$ 控制大黑洞极小值是否存在，$\tau_{\rm HP}$ 控制两参考�
 
 ### 2.8 图 2：平衡分支与激活势垒
 
-![图2a：两个内部驻点分支](cavity_schwarzschild_rates/02a_branches.png)
+![图2a：两个内部驻点分支](/notes/文章整理/cavity_schwarzschild_rates/02a_branches.png)
 
-![图2b：两个激活势垒](cavity_schwarzschild_rates/02b_barriers.png)
+![图2b：两个激活势垒](/notes/文章整理/cavity_schwarzschild_rates/02b_barriers.png)
 
 **图 2a。** 蓝线为 $x_l$，橙线为 $x_s$，由 (S6) 绘制；它们在 $(\tau_0,2/3)$ 相接。升温使大黑洞半径增大，鞍点向左移动。这里不是原文图 2 的三条黑洞支：另一个盆地固定在 $x=0$。
 
@@ -570,7 +570,7 @@ $$
 
 ### 2.9 图 3：Kramers 速率与精确积分的比较
 
-![图3：两方向Kramers速率与MFPT数值速率](cavity_schwarzschild_rates/03_rates.png)
+![图3：两方向Kramers速率与MFPT数值速率](/notes/文章整理/cavity_schwarzschild_rates/03_rates.png)
 
 **图 3。** 固定 $d=0.005$，横轴 $\tau$，纵轴是以 $s^{-1}$ 计的速率，采用对数刻度。蓝色为 A→B，橙色为 B→A；实线为 (S20)(S22)，同色虚线为 (S15)(S16) 数值积分的倒数。竖线为 $\tau_*^{\rm MFPT}$ 与 $\tau_{\rm HP}$。浅橙阴影表示 $\Delta_B<5d$，边界 $\tau\simeq2.911899386$；$5d$ 仅作近似可能不可靠的视觉提示，不是严格误差界。
 
@@ -687,7 +687,7 @@ $$
 
 此时大黑洞极小值仍高于边界端点，等速率并不要求两点等势。
 
-![图4：速率比和归一化速率差](cavity_schwarzschild_rates/04_rate_asymmetry.png)
+![图4：速率比和归一化速率差](/notes/文章整理/cavity_schwarzschild_rates/04_rate_asymmetry.png)
 
 **图 4。** 上图是速率比，下图是
 
@@ -854,12 +854,12 @@ $$
 
 可复算附件：
 
-- [完整绘图与网格积分程序](cavity_schwarzschild_rates/cavity_rates.wl)
-- [独立高精度核验程序](cavity_schwarzschild_rates/independent_check/verify_rates.wl)
-- [高精度数值表](cavity_schwarzschild_rates/independent_check/sample_rates.csv)、[等率根](cavity_schwarzschild_rates/independent_check/equal_rate_roots.csv)、[高精度完整结果](cavity_schwarzschild_rates/independent_check/verification_results.json)
-- [主网格数值表](cavity_schwarzschild_rates/rates_table.csv)、[曲线数据](cavity_schwarzschild_rates/rates_curve.csv)、[网格收敛记录](cavity_schwarzschild_rates/grid_convergence.csv)
-- [符号检查](cavity_schwarzschild_rates/symbolic_checks.txt)、[绘图参数及求根结果](cavity_schwarzschild_rates/summary.json)
-- [噪声依赖与端点展开核验程序](cavity_schwarzschild_rates/sensitivity.wl)、[对应结果](cavity_schwarzschild_rates/sensitivity_checks.json)
+- [完整绘图与网格积分程序](/notes/文章整理/cavity_schwarzschild_rates/cavity_rates.wl)
+- [独立高精度核验程序](/notes/文章整理/cavity_schwarzschild_rates/independent_check/verify_rates.wl)
+- [高精度数值表](/notes/文章整理/cavity_schwarzschild_rates/independent_check/sample_rates.csv)、[等率根](/notes/文章整理/cavity_schwarzschild_rates/independent_check/equal_rate_roots.csv)、[高精度完整结果](/notes/文章整理/cavity_schwarzschild_rates/independent_check/verification_results.json)
+- [主网格数值表](/notes/文章整理/cavity_schwarzschild_rates/rates_table.csv)、[曲线数据](/notes/文章整理/cavity_schwarzschild_rates/rates_curve.csv)、[网格收敛记录](/notes/文章整理/cavity_schwarzschild_rates/grid_convergence.csv)
+- [符号检查](/notes/文章整理/cavity_schwarzschild_rates/symbolic_checks.txt)、[绘图参数及求根结果](/notes/文章整理/cavity_schwarzschild_rates/summary.json)
+- [噪声依赖与端点展开核验程序](/notes/文章整理/cavity_schwarzschild_rates/sensitivity.wl)、[对应结果](/notes/文章整理/cavity_schwarzschild_rates/sensitivity_checks.json)
 - 每幅 PNG 都有同目录、同名 PDF 可供导出。
 
 在工作区根目录执行：
