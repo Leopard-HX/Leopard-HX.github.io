@@ -31,7 +31,7 @@ Bekenstein 有一个重要观察：非极端黑洞的视界面积表现为经典
 
 - 我们的结果还提示了三维引力与四维引力之间的一种本质差别。四维 Schwarzschild 黑洞处在倒谐振子（inverted harmonic oscillator）势中，故其热力学稳定性如何，一看便知。倒谐振子势中 Schwarzschild 黑洞的本征谱正比于系综温度，同时系统具有非零基态；一旦系综温度与 Schwarzschild 黑洞的温度表达式完全一致，即热势取到极大值，本征值便正比于 Schwarzschild 黑洞质量的倒数。而三维 BTZ 黑洞处在谐振子（harmonic oscillator）势中，其能谱只依赖于 AdS 半径；并且，谐振子势中 BTZ 黑洞的基态为零。
 
-全文安排如下：第 II 节通过引入正则系综来构造黑洞的热势；第 III 节简要介绍 Fokker-Planck 方程及其向本征值问题的转化，并以两个具体黑洞（Schwarzschild 与 BTZ）为例解析求解各自的 Fokker-Planck 方程，给出相应的能谱与相关讨论；第 IV 节作总结并展望。全文采用单位 $\hbar=c=k_{{}_{B}}=G=1$。
+全文安排如下：第 II 节通过引入正则系综来构造黑洞的热势；第 III 节简要介绍 Fokker-Planck 方程及其向本征值问题的转化，并以两个具体黑洞（Schwarzschild 与 BTZ）为例解析求解各自的 Fokker-Planck 方程，给出相应的能谱与相关讨论；第 IV 节作总结并展望。全文采用单位 $\hbar=c=k_{B}=G=1$。
 
 ---
 
@@ -87,7 +87,7 @@ $$
 
 
 $$
-\frac{\partial W(x,t)}{\partial t}=\left[\frac{\partial}{\partial x}f'(x)+D\frac{\partial^{2}}{\partial x^{2}}\right]W(x,t)=L_{{}_{\text{FP}}}W(x,t)=-\frac{\partial}{\partial x}S(x,t), \tag{5}
+\frac{\partial W(x,t)}{\partial t}=\left[\frac{\partial}{\partial x}f'(x)+D\frac{\partial^{2}}{\partial x^{2}}\right]W(x,t)=L_{\text{FP}}W(x,t)=-\frac{\partial}{\partial x}S(x,t), \tag{5}
 $$
 
 
@@ -95,7 +95,7 @@ $$
 
 
 $$
-L_{{}_{\text{FP}}}\varphi(x)=-\varepsilon\varphi(x). \tag{6}
+L_{\text{FP}}\varphi(x)=-\varepsilon\varphi(x). \tag{6}
 $$
 
 
@@ -103,11 +103,11 @@ $$
 
 
 $$
-L_{{}_{\text{FP}}}=\frac{\partial}{\partial x}De^{-\Phi(x)}\frac{\partial}{\partial x}e^{\Phi(x)}. \tag{7}
+L_{\text{FP}}=\frac{\partial}{\partial x}De^{-\Phi(x)}\frac{\partial}{\partial x}e^{\Phi(x)}. \tag{7}
 $$
 
 
-容易构造出一个 Hermite 算符 $L:=-e^{\Phi(x)/2}L_{{}_{\text{FP}}}e^{-\Phi(x)/2}$，本征值方程 (6) 随之化为 [44]
+容易构造出一个 Hermite 算符 $L:=-e^{\Phi(x)/2}L_{\text{FP}}e^{-\Phi(x)/2}$，本征值方程 (6) 随之化为 [44]
 
 
 $$
